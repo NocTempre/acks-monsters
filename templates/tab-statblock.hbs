@@ -1,0 +1,151 @@
+<section class="tab acksm-tab {{tab.cssClass}}" data-group="primary" data-tab="statblock">
+
+  <fieldset class="acksm-section">
+    <legend>{{localize "ACKS-MONSTERS.section.classification"}}</legend>
+    <div class="acksm-grid">
+      <div class="acksm-field acksm-wide">
+        <label>{{localize "ACKS-MONSTERS.field.types"}}</label>
+        <select name="{{x}}.types" multiple size="4">{{selectOptions choices.types selected=selected.types localize=true}}</select>
+      </div>
+      <div class="acksm-field">
+        <label>{{localize "ACKS-MONSTERS.field.subtype"}}</label>
+        <input type="text" name="{{x}}.subtype" value="{{extras.subtype}}" placeholder="{{localize 'ACKS-MONSTERS.hint.subtype'}}" />
+      </div>
+      <div class="acksm-field">
+        <label>{{localize "ACKS-MONSTERS.field.size"}}</label>
+        <select name="{{x}}.size">{{selectOptions choices.size selected=extras.size localize=true blank=""}}</select>
+      </div>
+      <div class="acksm-field">
+        <label>{{localize "ACKS-MONSTERS.field.bodyForm"}}</label>
+        <select name="{{x}}.bodyForm">{{selectOptions choices.bodyForm selected=extras.bodyForm localize=true blank=""}}</select>
+      </div>
+      <div class="acksm-field">
+        <label>{{localize "ACKS-MONSTERS.field.massStone"}}</label>
+        <input type="number" step="any" name="{{x}}.mass.stone" value="{{extras.mass.stone}}" />
+      </div>
+      <div class="acksm-field">
+        <label>{{localize "ACKS-MONSTERS.field.massLbs"}}</label>
+        <input type="number" step="any" name="{{x}}.mass.lbs" value="{{extras.mass.lbs}}" />
+      </div>
+      <div class="acksm-field acksm-check">
+        <label><input type="checkbox" name="{{x}}.noncombatant" {{#if extras.noncombatant}}checked{{/if}} /> {{localize "ACKS-MONSTERS.field.noncombatant"}}</label>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="acksm-section">
+    <legend>{{localize "ACKS-MONSTERS.section.defense"}}</legend>
+    <div class="acksm-grid">
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.hdCount"}}</label>
+        <input type="number" step="any" name="{{x}}.hd.count" value="{{extras.hd.count}}" /></div>
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.hdBonus"}}</label>
+        <input type="number" name="{{x}}.hd.bonus" value="{{extras.hd.bonus}}" /></div>
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.hdAsterisks"}}</label>
+        <input type="number" name="{{x}}.hd.asterisks" value="{{extras.hd.asterisks}}" /></div>
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.hdDie"}}</label>
+        <input type="number" name="{{x}}.hd.dieType" value="{{extras.hd.dieType}}" /></div>
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.ac"}}</label>
+        <input type="number" name="system.aac.value" value="{{system.aac.value}}" /></div>
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.hpHd"}}</label>
+        <input type="text" name="system.hp.hd" value="{{system.hp.hd}}" placeholder="2d8" /></div>
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.hpValue"}}</label>
+        <input type="number" name="system.hp.value" value="{{system.hp.value}}" /></div>
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.hpMax"}}</label>
+        <input type="number" name="system.hp.max" value="{{system.hp.max}}" />
+        <button type="button" class="acksm-inline-btn" data-action="rollHp" data-tooltip="{{localize 'ACKS-MONSTERS.action.rollHp'}}"><i class="fa-solid fa-dice-d8"></i></button></div>
+    </div>
+  </fieldset>
+
+  <fieldset class="acksm-section">
+    <legend>{{localize "ACKS-MONSTERS.section.saves"}}
+      <button type="button" class="acksm-inline-btn" data-action="generateSaves" data-tooltip="{{localize 'ACKS-MONSTERS.action.generateSavesHint'}}"><i class="fa-solid fa-wand-magic-sparkles"></i> {{localize "ACKS-MONSTERS.action.generateSaves"}}</button>
+    </legend>
+    <div class="acksm-grid">
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.saveClass"}}</label>
+        <select name="{{x}}.saveAs.class">{{selectOptions choices.saveClass selected=extras.saveAs.class localize=true blank=""}}</select></div>
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.saveLevel"}}</label>
+        <input type="number" name="{{x}}.saveAs.level" value="{{extras.saveAs.level}}" /></div>
+    </div>
+    <div class="acksm-grid acksm-saves">
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.save.paralysis"}}</label>
+        <input type="number" name="system.saves.paralysis.value" value="{{system.saves.paralysis.value}}" /></div>
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.save.death"}}</label>
+        <input type="number" name="system.saves.death.value" value="{{system.saves.death.value}}" /></div>
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.save.blast"}}</label>
+        <input type="number" name="system.saves.blast.value" value="{{system.saves.blast.value}}" /></div>
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.save.implements"}}</label>
+        <input type="number" name="system.saves.implements.value" value="{{system.saves.implements.value}}" /></div>
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.save.spell"}}</label>
+        <input type="number" name="system.saves.spell.value" value="{{system.saves.spell.value}}" /></div>
+    </div>
+  </fieldset>
+
+  <fieldset class="acksm-section">
+    <legend>{{localize "ACKS-MONSTERS.section.attributes"}}</legend>
+    <div class="acksm-grid acksm-scores">
+      {{#each scores as |score key|}}
+      <div class="acksm-field"><label>{{localize score.label}}</label>
+        <input type="number" name="{{@root.x}}.scores.{{key}}" value="{{lookup @root.extras.scores key}}" placeholder="9" /></div>
+      {{/each}}
+    </div>
+  </fieldset>
+
+  <fieldset class="acksm-section">
+    <legend>{{localize "ACKS-MONSTERS.section.senses"}}</legend>
+    <div class="acksm-grid">
+      <div class="acksm-field acksm-wide">
+        <label>{{localize "ACKS-MONSTERS.field.vision"}}</label>
+        <select name="{{x}}.vision" multiple size="3">{{selectOptions choices.vision selected=selected.vision localize=true}}</select>
+      </div>
+      <div class="acksm-field">
+        <label>{{localize "ACKS-MONSTERS.field.lightlessRange"}}</label>
+        <input type="number" name="{{x}}.lightlessRange" value="{{extras.lightlessRange}}" />
+      </div>
+    </div>
+    <div class="acksm-rows">
+      <div class="acksm-rows-head">
+        <span>{{localize "ACKS-MONSTERS.field.otherSenses"}}</span>
+        <button type="button" class="acksm-inline-btn" data-action="addRow" data-path="otherSenses"><i class="fa-solid fa-plus"></i></button>
+      </div>
+      {{#each extras.otherSenses as |row i|}}
+      <div class="acksm-row">
+        <select name="{{@root.x}}.otherSenses.{{i}}.type">{{selectOptions @root.choices.sense selected=row.type localize=true}}</select>
+        <input type="number" name="{{@root.x}}.otherSenses.{{i}}.range" value="{{row.range}}" placeholder="{{localize 'ACKS-MONSTERS.field.range'}}" />
+        <input type="text" name="{{@root.x}}.otherSenses.{{i}}.note" value="{{row.note}}" placeholder="{{localize 'ACKS-MONSTERS.field.note'}}" />
+        <button type="button" class="acksm-inline-btn" data-action="removeRow" data-path="otherSenses" data-index="{{i}}"><i class="fa-solid fa-trash"></i></button>
+      </div>
+      {{/each}}
+    </div>
+  </fieldset>
+
+  <fieldset class="acksm-section">
+    <legend>{{localize "ACKS-MONSTERS.section.movement"}}
+      <button type="button" class="acksm-inline-btn" data-action="addRow" data-path="speeds"><i class="fa-solid fa-plus"></i></button>
+    </legend>
+    <div class="acksm-rows">
+      <div class="acksm-row acksm-row-head">
+        <span>{{localize "ACKS-MONSTERS.field.moveType"}}</span>
+        <span>{{localize "ACKS-MONSTERS.field.combatSpeed"}}</span>
+        <span>{{localize "ACKS-MONSTERS.field.runSpeed"}}</span>
+        <span>{{localize "ACKS-MONSTERS.field.hover"}}</span>
+        <span></span>
+      </div>
+      {{#each extras.speeds as |row i|}}
+      <div class="acksm-row">
+        <select name="{{@root.x}}.speeds.{{i}}.type">{{selectOptions @root.choices.movement selected=row.type localize=true}}</select>
+        <input type="number" name="{{@root.x}}.speeds.{{i}}.combat" value="{{row.combat}}" />
+        <input type="number" name="{{@root.x}}.speeds.{{i}}.run" value="{{row.run}}" />
+        <input type="checkbox" name="{{@root.x}}.speeds.{{i}}.hover" {{#if row.hover}}checked{{/if}} />
+        <button type="button" class="acksm-inline-btn" data-action="removeRow" data-path="speeds" data-index="{{i}}"><i class="fa-solid fa-trash"></i></button>
+      </div>
+      {{/each}}
+    </div>
+    <div class="acksm-grid">
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.loadNormal"}}</label>
+        <input type="number" step="any" name="{{x}}.load.normal" value="{{extras.load.normal}}" /></div>
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.loadCapacity"}}</label>
+        <input type="number" step="any" name="{{x}}.load.capacity" value="{{extras.load.capacity}}" /></div>
+    </div>
+  </fieldset>
+
+</section>

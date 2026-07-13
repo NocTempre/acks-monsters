@@ -1,0 +1,27 @@
+<section class="tab acksm-tab {{tab.cssClass}}" data-group="primary" data-tab="abilities">
+  <div class="acksm-list-head">
+    <h3>{{localize "ACKS-MONSTERS.section.abilities"}}</h3>
+    <button type="button" data-action="createItem" data-item-type="ability"><i class="fa-solid fa-plus"></i> {{localize "ACKS-MONSTERS.action.addAbility"}}</button>
+  </div>
+  <p class="acksm-hint">{{localize "ACKS-MONSTERS.hint.abilities"}}</p>
+  <ol class="acksm-items">
+    {{#each abilities as |item|}}
+    <li class="acksm-item" data-item-id="{{item.id}}">
+      <img class="acksm-item-img" src="{{item.img}}" data-action="editItem" alt="{{item.name}}" />
+      <span class="acksm-item-name" data-action="editItem">{{item.name}}</span>
+      {{#if item.system.rollTarget}}<span class="acksm-item-meta">{{item.system.rollTarget}}+</span>{{/if}}
+      <span class="acksm-badge">{{item.system.proficiencytype}}</span>
+      {{#with item.flags.[acks-monsters] as |mf|}}
+        {{#if mf.abilityCategory}}<span class="acksm-badge acksm-cat">{{mf.abilityCategory}}</span>{{/if}}
+        {{#if mf.usage}}<span class="acksm-badge">{{mf.usage}}</span>{{/if}}
+      {{/with}}
+      <span class="acksm-item-controls">
+        <a data-action="editItem" data-tooltip="{{localize 'ACKS-MONSTERS.action.edit'}}"><i class="fa-solid fa-pen-to-square"></i></a>
+        <a data-action="deleteItem" data-tooltip="{{localize 'ACKS-MONSTERS.action.delete'}}"><i class="fa-solid fa-trash"></i></a>
+      </span>
+    </li>
+    {{else}}
+    <li class="acksm-empty">{{localize "ACKS-MONSTERS.empty.abilities"}}</li>
+    {{/each}}
+  </ol>
+</section>

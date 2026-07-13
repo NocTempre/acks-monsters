@@ -1,0 +1,38 @@
+{
+  "_id": "acksmSpoilSkull0",
+  "name": "Rock Baboon Skull",
+  "type": "item",
+  "img": "icons/commodities/bones/skull-orange.webp",
+  "system": {
+    "_schemaVersion": 3,
+    "description": "<p>A special component useful in magic research (2/6 st).</p>",
+    "subtype": "item",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "cost": 20,
+    "weight": 0,
+    "weight6": 2
+  },
+  "effects": [],
+  "flags": {
+    "acks-monsters": {
+      "component": true,
+      "researchEffects": [
+        "frighten beast",
+        "speak with beasts"
+      ]
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "13",
+    "createdTime": 1783985986106,
+    "modifiedTime": 1783985986106
+  },
+  "_key": "!items!acksmSpoilSkull0"
+}

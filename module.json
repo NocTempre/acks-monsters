@@ -1,0 +1,73 @@
+{
+  "id": "acks-monsters",
+  "title": "ACKS II — Full Monster Sheet",
+  "description": "Adds a complete, structured Monstrous Manual stat block to ACKS II monster actors: an alternate 'Full Monster' sheet (toggle it in the actor's Sheet Configuration) plus automation-ready storage for every primary, secondary, and encounter characteristic — types, size/mass, body form, multi-row speeds, per-attack damage types, spoils, proficiencies, lifespan, market values, and henchman/retainer data. Storage-only: it reuses the system's own weapon/ability/item documents and leaves game logic to consumer modules.",
+  "version": "0.1.0",
+  "socket": false,
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14.364"
+  },
+  "authors": [
+    {
+      "name": "NocTempre"
+    }
+  ],
+  "esmodules": ["scripts/module.mjs"],
+  "styles": ["styles/monster.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "bestiary",
+      "label": "ACKS Full Monsters (Example)",
+      "path": "packs/bestiary",
+      "type": "Actor",
+      "system": "acks",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "spoils",
+      "label": "ACKS Monster Spoils (Example)",
+      "path": "packs/spoils",
+      "type": "Item",
+      "system": "acks",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "treasure",
+      "label": "ACKS Monster Treasure (Example)",
+      "path": "packs/treasure",
+      "type": "RollTable",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "acks",
+        "type": "system",
+        "compatibility": {
+          "minimum": "13"
+        }
+      }
+    ]
+  },
+  "url": "https://github.com/NocTempre/acks-monsters",
+  "manifest": "https://github.com/NocTempre/acks-monsters/releases/latest/download/module.json",
+  "download": "https://github.com/NocTempre/acks-monsters/releases/latest/download/module.zip"
+}

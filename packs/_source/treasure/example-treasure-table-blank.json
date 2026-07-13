@@ -1,0 +1,22 @@
+{
+  "_id": "acksmTreasBlank0",
+  "_key": "!tables!acksmTreasBlank0",
+  "name": "Example Treasure Table (blank)",
+  "img": "icons/svg/chest.svg",
+  "description": "<p>Blank example — drop this table onto a Full Monster's Treasure tab and add results.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "results": [],
+  "_stats": {
+    "coreVersion": "13",
+    "createdTime": 1783985986106,
+    "modifiedTime": 1783985986106
+  }
+}

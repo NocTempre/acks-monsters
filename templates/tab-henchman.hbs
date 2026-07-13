@@ -1,0 +1,39 @@
+<section class="tab acksm-tab {{tab.cssClass}}" data-group="primary" data-tab="henchman">
+
+  <fieldset class="acksm-section">
+    <legend>{{localize "ACKS-MONSTERS.section.retainer"}}</legend>
+    <p class="acksm-hint">{{localize "ACKS-MONSTERS.hint.henchman"}}</p>
+    <div class="acksm-grid">
+      <div class="acksm-field acksm-check">
+        <label><input type="checkbox" name="system.retainer.enabled" {{#if system.retainer.enabled}}checked{{/if}} /> {{localize "ACKS-MONSTERS.field.isRetainer"}}</label>
+      </div>
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.category"}}</label>
+        <select name="system.retainer.category">{{selectOptions choices.category selected=system.retainer.category localize=true}}</select></div>
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.loyalty"}}</label>
+        <input type="number" name="system.retainer.loyalty" value="{{system.retainer.loyalty}}" min="-4" max="4" /></div>
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.wage"}}</label>
+        <input type="text" name="system.retainer.wage" value="{{system.retainer.wage}}" placeholder="gp" /></div>
+      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.quantity"}}</label>
+        <input type="number" name="system.retainer.quantity" value="{{system.retainer.quantity}}" min="1" /></div>
+    </div>
+    <div class="acksm-manager">
+      <span>{{localize "ACKS-MONSTERS.field.manager"}}:
+        <strong>{{#if managerName}}{{managerName}}{{else}}{{localize "ACKS-MONSTERS.field.noManager"}}{{/if}}</strong></span>
+      <button type="button" data-action="serveAsHenchman"><i class="fa-solid fa-handshake"></i> {{localize "ACKS-MONSTERS.henchman.serve"}}</button>
+    </div>
+  </fieldset>
+
+  <fieldset class="acksm-section">
+    <legend>{{localize "ACKS-MONSTERS.section.henchmanSummary"}}</legend>
+    <p class="acksm-hint">{{localize "ACKS-MONSTERS.hint.henchmanSummary"}}</p>
+    <div class="acksm-grid acksm-readout">
+      <div class="acksm-ro"><label>{{localize "ACKS-MONSTERS.field.hdShort"}}</label><span>{{acksmVal extras.hd.count}}{{#if extras.hd.bonus}}+{{extras.hd.bonus}}{{/if}}</span></div>
+      <div class="acksm-ro"><label>{{localize "ACKS-MONSTERS.field.hp"}}</label><span>{{acksmVal system.hp.value}}/{{acksmVal system.hp.max}}</span></div>
+      <div class="acksm-ro"><label>{{localize "ACKS-MONSTERS.field.ac"}}</label><span>{{acksmVal system.aac.value}}</span></div>
+      <div class="acksm-ro"><label>{{localize "ACKS-MONSTERS.field.morale"}}</label><span>{{acksmVal system.details.morale}}</span></div>
+      <div class="acksm-ro"><label>{{localize "ACKS-MONSTERS.field.xp"}}</label><span>{{acksmVal system.details.xp}}</span></div>
+      <div class="acksm-ro"><label>{{localize "ACKS-MONSTERS.field.alignment"}}</label><span>{{acksmVal system.details.alignment}}</span></div>
+    </div>
+  </fieldset>
+
+</section>

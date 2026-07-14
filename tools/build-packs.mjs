@@ -88,7 +88,7 @@ function spoil(id, name, { weight6, cost, component = false, effects = [], desc 
     _id: id,
     name,
     type: "item",
-    img: img ?? "icons/svg/bones.svg",
+    img: img ?? "icons/svg/item-bag.svg",
     system: {
       _schemaVersion: SV,
       description: desc ? `<p>${desc}</p>` : "",
@@ -170,7 +170,7 @@ function monster({ id, name, img, system, extras, items = [] }) {
 /*  Rock Baboon (ACKS II Monstrous Manual p.33) */
 /* -------------------------------------------- */
 
-const BABOON_IMG = "icons/creatures/mammals/monkey-shaman-glow-purple.webp";
+const BABOON_IMG = "icons/svg/mystery-man.svg";
 
 function buildBestiary() {
   const adult = monster({
@@ -241,14 +241,14 @@ function buildBestiary() {
       },
     },
     items: [
-      weapon("acksmBabBite0000", "Bite", { damage: "1d3", natural: "bite", dmgType: "piercing", img: "icons/creatures/abilities/mouth-teeth-long-red.webp" }),
-      weapon("acksmBabClub0000", "Club", { damage: "1d6", natural: "weapon", dmgType: "bludgeoning", img: "icons/weapons/clubs/club-simple-brown.webp" }),
+      weapon("acksmBabBite0000", "Bite", { damage: "1d3", natural: "bite", dmgType: "piercing", img: "icons/svg/pawprint.svg" }),
+      weapon("acksmBabClub0000", "Club", { damage: "1d6", natural: "weapon", dmgType: "bludgeoning", img: "icons/svg/sword.svg" }),
       ability("acksmBabClimb000", "Climbing", {
         target: 4,
         type: "class",
         category: "classPowers",
         desc: "Climbs as a 5th-level thief (Climbing proficiency throw 4+).",
-        img: "icons/skills/movement/figure-running-gray.webp",
+        img: "icons/svg/book.svg",
       }),
       spoil("acksmBabSkull000", "Rock Baboon Skull", {
         weight6: 2,
@@ -256,14 +256,14 @@ function buildBestiary() {
         component: true,
         effects: ["frighten beast", "speak with beasts"],
         desc: "A special component useful in magic research (2/6 st).",
-        img: "icons/commodities/bones/skull-orange.webp",
+        img: "icons/svg/skull.svg",
       }),
       spoil("acksmBabPelt0000", "Rock Baboon Pelt", {
         weight6: 4,
         cost: 25,
         component: false,
         desc: "A rock baboon's pelt fetches 25gp and weighs 4/6 st.",
-        img: "icons/commodities/leather/fur-black.webp",
+        img: "icons/svg/item-bag.svg",
       }),
     ],
   });
@@ -294,7 +294,7 @@ function buildBestiary() {
       secondary: { intelligence: "semiSapient" },
     },
     items: [
-      weapon("acksmBabJBite000", "Bite", { damage: "1", natural: "bite", dmgType: "piercing", img: "icons/creatures/abilities/mouth-teeth-long-red.webp" }),
+      weapon("acksmBabJBite000", "Bite", { damage: "1", natural: "bite", dmgType: "piercing", img: "icons/svg/pawprint.svg" }),
     ],
   });
 
@@ -343,7 +343,7 @@ function buildSpoils() {
         component: true,
         effects: ["frighten beast", "speak with beasts"],
         desc: "A special component useful in magic research (2/6 st).",
-        img: "icons/commodities/bones/skull-orange.webp",
+        img: "icons/svg/skull.svg",
       }),
       _key: "!items!acksmSpoilSkull0",
     },
@@ -353,7 +353,7 @@ function buildSpoils() {
         cost: 25,
         component: false,
         desc: "A rock baboon's pelt fetches 25gp and weighs 4/6 st.",
-        img: "icons/commodities/leather/fur-black.webp",
+        img: "icons/svg/item-bag.svg",
       }),
       _key: "!items!acksmSpoilPelt00",
     },

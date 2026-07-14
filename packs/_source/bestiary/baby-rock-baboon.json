@@ -3,7 +3,7 @@
   "_key": "!actors!acksmBaboonBaby0",
   "name": "Baby Rock Baboon",
   "type": "monster",
-  "img": "icons/creatures/mammals/monkey-shaman-glow-purple.webp",
+  "img": "icons/svg/mystery-man.svg",
   "system": {
     "_schemaVersion": 3,
     "isNew": false,
@@ -147,7 +147,7 @@
   },
   "_stats": {
     "coreVersion": "13",
-    "createdTime": 1783988375474,
-    "modifiedTime": 1783988375474
+    "createdTime": 1783990278748,
+    "modifiedTime": 1783990278748
   }
 }

@@ -2,7 +2,7 @@
   "_id": "acksmSpoilPelt00",
   "name": "Rock Baboon Pelt",
   "type": "item",
-  "img": "icons/commodities/leather/fur-black.webp",
+  "img": "icons/svg/item-bag.svg",
   "system": {
     "_schemaVersion": 3,
     "description": "<p>A rock baboon's pelt fetches 25gp and weighs 4/6 st.</p>",
@@ -28,8 +28,8 @@
   "sort": 0,
   "_stats": {
     "coreVersion": "13",
-    "createdTime": 1783988375474,
-    "modifiedTime": 1783988375474
+    "createdTime": 1783990278748,
+    "modifiedTime": 1783990278748
   },
   "_key": "!items!acksmSpoilPelt00"
 }

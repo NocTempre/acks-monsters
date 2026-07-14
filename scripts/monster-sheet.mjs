@@ -114,15 +114,29 @@ export function createFullMonsterSheet(Base) {
       const path = `flags.${MODULE_ID}.${FLAG_EXTRAS}`;
       const raw = foundry.utils.getProperty(submitData, path);
       if (raw && typeof raw === "object") {
-        const existing = foundry.utils.deepClone(this.actor.getFlag(MODULE_ID, FLAG_EXTRAS) ?? {});
-        const merged = foundry.utils.mergeObject(existing, raw, { inplace: false, overwrite: true, insertKeys: true });
-        const cleaned = MonsterExtras.normalize(merged);
+        const stored = foundry.utils.deepClone(this.actor.getFlag(MODULE_ID, FLAG_EXTRAS) ?? {});
+        const merged = foundry.utils.mergeObject(stored, raw, { inplace: false, overwrite: true, insertKeys: true });
+        // Fail-safe: one bad value must never block the whole sheet from saving.
+        let cleaned;
+        try {
+          cleaned = MonsterExtras.normalize(merged);
+        } catch (err) {
+          console.error(`${MODULE_ID} | extras normalization failed; saving merged data as-is`, err);
+          cleaned = merged;
+        }
         foundry.utils.setProperty(submitData, path, cleaned);
-        const enc = cleaned.encounter ?? {};
-        const d = enc.dungeon?.wandering?.number || enc.dungeon?.lair?.number || "";
-        const w = enc.wilderness?.wandering?.number || enc.wilderness?.lair?.number || "";
-        if (d) foundry.utils.setProperty(submitData, "system.details.appearing.d", d);
-        if (w) foundry.utils.setProperty(submitData, "system.details.appearing.w", w);
+
+        // Mirror the number-appearing formulas into the core details.appearing
+        // fields — but ONLY when the encounter-tab value itself changed. The
+        // form always serializes both sides, so an unconditional mirror would
+        // clobber direct edits made to the header D.E. / W.E. inputs.
+        const firstOf = (enc, side) => enc?.[side]?.wandering?.number || enc?.[side]?.lair?.number || "";
+        for (const [side, key] of [["dungeon", "d"], ["wilderness", "w"]]) {
+          const next = firstOf(cleaned.encounter, side);
+          if (next && next !== firstOf(stored.encounter, side)) {
+            foundry.utils.setProperty(submitData, `system.details.appearing.${key}`, next);
+          }
+        }
       }
       return submitData;
     }

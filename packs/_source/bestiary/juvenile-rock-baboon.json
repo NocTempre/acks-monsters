@@ -3,7 +3,7 @@
   "_key": "!actors!acksmBaboonJuv00",
   "name": "Juvenile Rock Baboon",
   "type": "monster",
-  "img": "icons/creatures/mammals/monkey-shaman-glow-purple.webp",
+  "img": "icons/svg/mystery-man.svg",
   "system": {
     "_schemaVersion": 3,
     "isNew": false,
@@ -95,7 +95,7 @@
       "_id": "acksmBabJBite000",
       "name": "Bite",
       "type": "weapon",
-      "img": "icons/creatures/abilities/mouth-teeth-long-red.webp",
+      "img": "icons/svg/pawprint.svg",
       "system": {
         "_schemaVersion": 3,
         "description": "",
@@ -128,8 +128,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1783988375474,
-        "modifiedTime": 1783988375474
+        "createdTime": 1783990278748,
+        "modifiedTime": 1783990278748
       },
       "_key": "!actors.items!acksmBaboonJuv00.acksmBabJBite000"
     }
@@ -186,7 +186,7 @@
   },
   "_stats": {
     "coreVersion": "13",
-    "createdTime": 1783988375474,
-    "modifiedTime": 1783988375474
+    "createdTime": 1783990278748,
+    "modifiedTime": 1783990278748
   }
 }

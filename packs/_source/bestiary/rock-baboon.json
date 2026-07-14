@@ -3,7 +3,7 @@
   "_key": "!actors!acksmBaboonAdlt0",
   "name": "Rock Baboon",
   "type": "monster",
-  "img": "icons/creatures/mammals/monkey-shaman-glow-purple.webp",
+  "img": "icons/svg/mystery-man.svg",
   "system": {
     "_schemaVersion": 3,
     "isNew": false,
@@ -95,7 +95,7 @@
       "_id": "acksmBabBite0000",
       "name": "Bite",
       "type": "weapon",
-      "img": "icons/creatures/abilities/mouth-teeth-long-red.webp",
+      "img": "icons/svg/pawprint.svg",
       "system": {
         "_schemaVersion": 3,
         "description": "",
@@ -128,8 +128,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1783988375474,
-        "modifiedTime": 1783988375474
+        "createdTime": 1783990278748,
+        "modifiedTime": 1783990278748
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabBite0000"
     },
@@ -137,7 +137,7 @@
       "_id": "acksmBabClub0000",
       "name": "Club",
       "type": "weapon",
-      "img": "icons/weapons/clubs/club-simple-brown.webp",
+      "img": "icons/svg/sword.svg",
       "system": {
         "_schemaVersion": 3,
         "description": "",
@@ -170,8 +170,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1783988375474,
-        "modifiedTime": 1783988375474
+        "createdTime": 1783990278748,
+        "modifiedTime": 1783990278748
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabClub0000"
     },
@@ -179,7 +179,7 @@
       "_id": "acksmBabClimb000",
       "name": "Climbing",
       "type": "ability",
-      "img": "icons/skills/movement/figure-running-gray.webp",
+      "img": "icons/svg/book.svg",
       "system": {
         "_schemaVersion": 3,
         "description": "<p>Climbs as a 5th-level thief (Climbing proficiency throw 4+).</p>",
@@ -205,8 +205,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1783988375474,
-        "modifiedTime": 1783988375474
+        "createdTime": 1783990278748,
+        "modifiedTime": 1783990278748
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabClimb000"
     },
@@ -214,7 +214,7 @@
       "_id": "acksmBabSkull000",
       "name": "Rock Baboon Skull",
       "type": "item",
-      "img": "icons/commodities/bones/skull-orange.webp",
+      "img": "icons/svg/skull.svg",
       "system": {
         "_schemaVersion": 3,
         "description": "<p>A special component useful in magic research (2/6 st).</p>",
@@ -243,8 +243,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1783988375474,
-        "modifiedTime": 1783988375474
+        "createdTime": 1783990278748,
+        "modifiedTime": 1783990278748
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabSkull000"
     },
@@ -252,7 +252,7 @@
       "_id": "acksmBabPelt0000",
       "name": "Rock Baboon Pelt",
       "type": "item",
-      "img": "icons/commodities/leather/fur-black.webp",
+      "img": "icons/svg/item-bag.svg",
       "system": {
         "_schemaVersion": 3,
         "description": "<p>A rock baboon's pelt fetches 25gp and weighs 4/6 st.</p>",
@@ -278,8 +278,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1783988375474,
-        "modifiedTime": 1783988375474
+        "createdTime": 1783990278748,
+        "modifiedTime": 1783990278748
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabPelt0000"
     }
@@ -433,7 +433,7 @@
   },
   "_stats": {
     "coreVersion": "13",
-    "createdTime": 1783988375474,
-    "modifiedTime": 1783988375474
+    "createdTime": 1783990278748,
+    "modifiedTime": 1783990278748
   }
 }

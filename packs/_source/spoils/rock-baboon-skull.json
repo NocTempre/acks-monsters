@@ -2,7 +2,7 @@
   "_id": "acksmSpoilSkull0",
   "name": "Rock Baboon Skull",
   "type": "item",
-  "img": "icons/commodities/bones/skull-orange.webp",
+  "img": "icons/svg/skull.svg",
   "system": {
     "_schemaVersion": 3,
     "description": "<p>A special component useful in magic research (2/6 st).</p>",
@@ -31,8 +31,8 @@
   "sort": 0,
   "_stats": {
     "coreVersion": "13",
-    "createdTime": 1783988375474,
-    "modifiedTime": 1783988375474
+    "createdTime": 1783990278748,
+    "modifiedTime": 1783990278748
   },
   "_key": "!items!acksmSpoilSkull0"
 }

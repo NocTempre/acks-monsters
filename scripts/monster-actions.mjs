@@ -67,15 +67,20 @@ async function serveAsHenchman() {
   const optionsHtml = managers
     .map((m) => `<option value="${m.id}" ${m.id === current ? "selected" : ""}>${foundry.utils.escapeHTML(m.name)}</option>`)
     .join("");
-  const managerId = await foundry.applications.api.DialogV2.prompt({
-    window: { title: game.i18n.localize("ACKS-MONSTERS.henchman.serveTitle") },
-    content: `<p>${game.i18n.localize("ACKS-MONSTERS.henchman.servePrompt")}</p>
-      <select name="managerId" style="width:100%">${optionsHtml}</select>`,
-    ok: {
-      label: game.i18n.localize("ACKS-MONSTERS.henchman.serve"),
-      callback: (_event, button) => button.form.elements.managerId.value,
-    },
-  });
+  let managerId = null;
+  try {
+    managerId = await foundry.applications.api.DialogV2.prompt({
+      window: { title: game.i18n.localize("ACKS-MONSTERS.henchman.serveTitle") },
+      content: `<p>${game.i18n.localize("ACKS-MONSTERS.henchman.servePrompt")}</p>
+        <select name="managerId" style="width:100%">${optionsHtml}</select>`,
+      ok: {
+        label: game.i18n.localize("ACKS-MONSTERS.henchman.serve"),
+        callback: (_event, button) => button.form.elements.managerId.value,
+      },
+    });
+  } catch {
+    return; // dialog dismissed
+  }
   if (!managerId) return;
   const manager = game.actors.get(managerId);
   if (!manager) return;

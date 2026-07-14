@@ -39,18 +39,6 @@ Hooks.once("init", () => {
   registerHelpers();
   registerItemAnnotations();
 
-  const Base = resolveMonsterSheetBase();
-  if (!Base) {
-    console.error(`${MODULE_ID} | could not resolve the acks monster sheet; Full Monster sheet NOT registered.`);
-  } else {
-    FullMonsterSheet = createFullMonsterSheet(Base);
-    foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, MODULE_ID, FullMonsterSheet, {
-      types: [MONSTER_TYPE],
-      makeDefault: false,
-      label: "ACKS-MONSTERS.sheet.full",
-    });
-  }
-
   // Public API for consumer modules (which add behavior on this stored data).
   const api = {
     MODULE_ID,
@@ -83,10 +71,30 @@ Hooks.once("init", () => {
   }
 });
 
+/*
+ * Sheet registration happens at READY, not init: Foundry v14 defers every
+ * DocumentSheetConfig.registerSheet call made before `game.ready` into a
+ * pending queue that is only flushed by DocumentSheetConfig.initializeSheets()
+ * (late in setupGame). CONFIG.Actor.sheetClasses is therefore EMPTY during
+ * init/setup and the system's monster sheet — our base class — can only be
+ * resolved here. Registering at ready takes the immediate (non-queued) path.
+ */
 Hooks.once("ready", () => {
   if (game.system?.id !== "acks") {
     console.warn(`${MODULE_ID} | Active system is not "acks"; the Full Monster sheet expects acks monster actors.`);
+    return;
   }
+  const Base = resolveMonsterSheetBase();
+  if (!Base) {
+    console.error(`${MODULE_ID} | could not resolve the acks monster sheet; Full Monster sheet NOT registered.`);
+    return;
+  }
+  FullMonsterSheet = createFullMonsterSheet(Base);
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, MODULE_ID, FullMonsterSheet, {
+    types: [MONSTER_TYPE],
+    makeDefault: false,
+    label: game.i18n.localize("ACKS-MONSTERS.sheet.full"),
+  });
 });
 
 /* Actor-directory convenience: open the Full Monster sheet directly. */

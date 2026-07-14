@@ -1,76 +1,75 @@
-<section class="tab acksm-tab {{tab.cssClass}}" data-group="primary" data-tab="ecology">
+<section class="tab {{tab.cssClass}}" data-group="primary" data-tab="ecology">
+  <div class="content flexcol acksm-content">
 
-  <fieldset class="acksm-section">
-    <legend>{{localize "ACKS-MONSTERS.section.economy"}}</legend>
-    <div class="acksm-grid">
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.expeditionSpeed"}}</label>
-        <input type="number" step="any" name="{{x}}.secondary.expeditionSpeed" value="{{extras.secondary.expeditionSpeed}}" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.supplyCost"}}</label>
-        <input type="number" step="any" name="{{x}}.secondary.supplyCost" value="{{extras.secondary.supplyCost}}" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.intelligence"}}</label>
-        <select name="{{x}}.secondary.intelligence">{{selectOptions choices.intelligence selected=extras.secondary.intelligence localize=true blank=""}}</select></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.trainingMonths"}}</label>
-        <input type="number" step="any" name="{{x}}.secondary.trainingMonths" value="{{extras.secondary.trainingMonths}}" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.trainingModifier"}}</label>
-        <input type="number" name="{{x}}.secondary.trainingModifier" value="{{extras.secondary.trainingModifier}}" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.brIndividual"}}</label>
-        <input type="number" step="any" name="{{x}}.secondary.battleRating.individual" value="{{extras.secondary.battleRating.individual}}" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.brUnit"}}</label>
-        <input type="number" step="any" name="{{x}}.secondary.battleRating.unit" value="{{extras.secondary.battleRating.unit}}" /></div>
-    </div>
-  </fieldset>
-
-  <fieldset class="acksm-section">
-    <legend>{{localize "ACKS-MONSTERS.section.lifespan"}}
-      <label class="acksm-legend-check"><input type="checkbox" name="{{x}}.secondary.oviparous" {{#if extras.secondary.oviparous}}checked{{/if}} /> {{localize "ACKS-MONSTERS.field.oviparous"}}</label>
-    </legend>
-    <div class="acksm-grid acksm-lifespan">
-      {{#each ages as |age key|}}
-      <div class="acksm-field"><label>{{localize age.label}}</label>
-        <input type="number" step="any" name="{{@root.x}}.secondary.lifespan.{{key}}" value="{{lookup @root.extras.secondary.lifespan key}}" /></div>
-      {{/each}}
-    </div>
-    <p class="acksm-hint">{{localize "ACKS-MONSTERS.hint.lifespan"}}</p>
-  </fieldset>
-
-  <fieldset class="acksm-section">
-    <legend>{{localize "ACKS-MONSTERS.section.reproduction"}}</legend>
-    <div class="acksm-grid">
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.reproCount"}}</label>
-        <input type="text" name="{{x}}.secondary.reproduction.count" value="{{extras.secondary.reproduction.count}}" placeholder="1d4" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.youngType"}}</label>
-        <select name="{{x}}.secondary.reproduction.youngType">{{selectOptions choices.youngType selected=extras.secondary.reproduction.youngType localize=true blank=""}}</select></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.interval"}}</label>
-        <input type="number" name="{{x}}.secondary.reproduction.interval" value="{{extras.secondary.reproduction.interval}}" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.intervalUnit"}}</label>
-        <select name="{{x}}.secondary.reproduction.intervalUnit">{{selectOptions choices.intervalUnit selected=extras.secondary.reproduction.intervalUnit localize=true blank=""}}</select></div>
-    </div>
-  </fieldset>
-
-  <fieldset class="acksm-section">
-    <legend>{{localize "ACKS-MONSTERS.section.values"}}</legend>
-    <div class="acksm-grid">
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.untrainedAdult"}}</label>
-        <input type="number" step="any" name="{{x}}.secondary.untrainedValue.adult" value="{{extras.secondary.untrainedValue.adult}}" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.untrainedJuvenile"}}</label>
-        <input type="number" step="any" name="{{x}}.secondary.untrainedValue.juvenile" value="{{extras.secondary.untrainedValue.juvenile}}" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.untrainedBaby"}}</label>
-        <input type="number" step="any" name="{{x}}.secondary.untrainedValue.baby" value="{{extras.secondary.untrainedValue.baby}}" /></div>
-    </div>
-    <div class="acksm-rows">
-      <div class="acksm-rows-head">
-        <span>{{localize "ACKS-MONSTERS.field.trainedValue"}}</span>
-        <button type="button" class="acksm-inline-btn" data-action="addRow" data-path="secondary.trainedValue"><i class="fa-solid fa-plus"></i></button>
+    <fieldset>
+      <legend>{{localize "ACKS-MONSTERS.section.economy"}}</legend>
+      <div class="flexrow">
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.expeditionSpeed"}}</label>
+          <div class="form-fields"><input type="number" step="any" name="{{x}}.secondary.expeditionSpeed" value="{{extras.secondary.expeditionSpeed}}"/></div></div>
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.supplyCost"}}</label>
+          <div class="form-fields"><input type="number" step="any" name="{{x}}.secondary.supplyCost" value="{{extras.secondary.supplyCost}}"/></div></div>
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.trainingMonths"}}</label>
+          <div class="form-fields"><input type="number" step="any" name="{{x}}.secondary.trainingMonths" value="{{extras.secondary.trainingMonths}}"/></div></div>
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.trainingModifier"}}</label>
+          <div class="form-fields"><input type="number" name="{{x}}.secondary.trainingModifier" value="{{extras.secondary.trainingModifier}}"/></div></div>
       </div>
-      {{#each extras.secondary.trainedValue as |row i|}}
-      <div class="acksm-row">
-        <select name="{{@root.x}}.secondary.trainedValue.{{i}}.role">{{selectOptions @root.choices.trainedRole selected=row.role localize=true}}</select>
-        <input type="number" step="any" name="{{@root.x}}.secondary.trainedValue.{{i}}.value" value="{{row.value}}" placeholder="gp" />
-        <input type="text" name="{{@root.x}}.secondary.trainedValue.{{i}}.note" value="{{row.note}}" placeholder="{{localize 'ACKS-MONSTERS.field.note'}}" />
-        <button type="button" class="acksm-inline-btn" data-action="removeRow" data-path="secondary.trainedValue" data-index="{{i}}"><i class="fa-solid fa-trash"></i></button>
+      <div class="flexrow">
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.brIndividual"}}</label>
+          <div class="form-fields"><input type="number" step="any" name="{{x}}.secondary.battleRating.individual" value="{{extras.secondary.battleRating.individual}}"/></div></div>
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.brUnit"}}</label>
+          <div class="form-fields"><input type="number" step="any" name="{{x}}.secondary.battleRating.unit" value="{{extras.secondary.battleRating.unit}}"/></div></div>
       </div>
-      {{/each}}
-    </div>
-  </fieldset>
+    </fieldset>
 
+    <fieldset>
+      <legend>{{localize "ACKS-MONSTERS.section.lifespan"}}
+        <label class="acksm-cb"><input type="checkbox" name="{{x}}.secondary.oviparous" {{#if extras.secondary.oviparous}}checked{{/if}}/> {{localize "ACKS-MONSTERS.field.oviparous"}}</label>
+      </legend>
+      <div class="flexrow acksm-wrap">
+        {{#each ages as |age key|}}
+        <div class="form-group acksm-narrow"><label>{{localize age.label}}</label>
+          <div class="form-fields"><input type="number" step="any" name="{{@root.x}}.secondary.lifespan.{{key}}" value="{{lookup @root.extras.secondary.lifespan key}}"/></div></div>
+        {{/each}}
+      </div>
+      <p class="acksm-hint">{{localize "ACKS-MONSTERS.hint.lifespan"}}</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>{{localize "ACKS-MONSTERS.section.reproduction"}}</legend>
+      <div class="flexrow">
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.reproCount"}}</label>
+          <div class="form-fields"><input type="text" name="{{x}}.secondary.reproduction.count" value="{{extras.secondary.reproduction.count}}" placeholder="1d4"/></div></div>
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.youngType"}}</label>
+          <div class="form-fields"><select name="{{x}}.secondary.reproduction.youngType">{{selectOptions choices.youngType selected=extras.secondary.reproduction.youngType localize=true blank=""}}</select></div></div>
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.interval"}}</label>
+          <div class="form-fields"><input type="number" name="{{x}}.secondary.reproduction.interval" value="{{extras.secondary.reproduction.interval}}"/></div></div>
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.intervalUnit"}}</label>
+          <div class="form-fields"><select name="{{x}}.secondary.reproduction.intervalUnit">{{selectOptions choices.intervalUnit selected=extras.secondary.reproduction.intervalUnit localize=true blank=""}}</select></div></div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>{{localize "ACKS-MONSTERS.section.values"}}
+        <a class="acksm-mini" data-action="addRow" data-path="secondary.trainedValue"><i class="fa-solid fa-plus"></i></a></legend>
+      <div class="flexrow">
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.untrainedAdult"}}</label>
+          <div class="form-fields"><input type="number" step="any" name="{{x}}.secondary.untrainedValue.adult" value="{{extras.secondary.untrainedValue.adult}}"/></div></div>
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.untrainedJuvenile"}}</label>
+          <div class="form-fields"><input type="number" step="any" name="{{x}}.secondary.untrainedValue.juvenile" value="{{extras.secondary.untrainedValue.juvenile}}"/></div></div>
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.untrainedBaby"}}</label>
+          <div class="form-fields"><input type="number" step="any" name="{{x}}.secondary.untrainedValue.baby" value="{{extras.secondary.untrainedValue.baby}}"/></div></div>
+      </div>
+      <div class="acksm-rows">
+        {{#each extras.secondary.trainedValue as |row i|}}
+        <div class="acksm-row">
+          <select name="{{@root.x}}.secondary.trainedValue.{{i}}.role">{{selectOptions @root.choices.trainedRole selected=row.role localize=true}}</select>
+          <input type="number" step="any" name="{{@root.x}}.secondary.trainedValue.{{i}}.value" value="{{row.value}}" placeholder="gp"/>
+          <input type="text" name="{{@root.x}}.secondary.trainedValue.{{i}}.note" value="{{row.note}}" placeholder="{{localize 'ACKS-MONSTERS.field.note'}}"/>
+          <a class="acksm-mini" data-action="removeRow" data-path="secondary.trainedValue" data-index="{{i}}"><i class="fa-solid fa-trash"></i></a>
+        </div>
+        {{/each}}
+      </div>
+    </fieldset>
+
+  </div>
 </section>

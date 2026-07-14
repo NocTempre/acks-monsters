@@ -27,8 +27,12 @@ henchman/retainer data.
   henchman of…" helper, and an item-sheet metadata injector.
 - **Invent** nothing that the system already provides.
 
-No new document sub-type is created — the Full Monster sheet is registered as an
-**alternate sheet** on the existing `monster` type.
+No new document sub-type is created — the Full Monster sheet is a runtime
+**subclass of the system's own monster sheet** (inheriting its compact header,
+Attributes/Spells/Notes/Effects tabs, item handling, Generate Saves, and CSS)
+registered as an **alternate sheet** on the existing `monster` type. It simply
+**adds tabs** — Classification, Defenses & Magic, Ecology, Encounter, Henchman,
+and Lore — for the extended data.
 
 ## Requirements
 

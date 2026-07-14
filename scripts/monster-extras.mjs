@@ -25,6 +25,7 @@ import {
   YOUNG_TYPES,
   INTERVAL_UNITS,
   TRAINED_ROLES,
+  DAMAGE_TYPES,
   choicesOf,
 } from "./config.mjs";
 
@@ -63,16 +64,57 @@ export default class MonsterExtras extends foundry.abstract.DataModel {
       bodyForm: choice(BODY_FORMS),
       mass: new SchemaField({ stone: num(), lbs: num() }),
 
-      // --- Hit Dice rating (core hp.hd stays the roll formula) ---
+      // --- Hit Dice rating (core hp.hd stays the roll formula). countMax lets
+      //     variable-HD monsters store a range, e.g. a hydra's "5 to 12". ---
       hd: new SchemaField({
         count: num({ integer: false }),
+        countMax: num({ integer: false }),
         bonus: num({ integer: true }),
         asterisks: num({ integer: true }),
         dieType: new fields.NumberField({ required: false, nullable: true, integer: true, initial: 8 }),
       }),
 
-      // --- Saves-as class/level (live values reuse core system.saves.*) ---
-      saveAs: new SchemaField({ class: choice(SAVE_CLASSES), level: num({ integer: true }) }),
+      // --- Saves-as class/level (live values reuse core system.saves.*).
+      //     levelMax covers ranges like "F5 to F12". ---
+      saveAs: new SchemaField({
+        class: choice(SAVE_CLASSES),
+        level: num({ integer: true }),
+        levelMax: num({ integer: true }),
+      }),
+
+      // --- Defenses: type & special immunities/resistances/susceptibilities.
+      //     `damage` is a set of damage types; `effects` is free text (open
+      //     keywords like "enchantment", "all death effects"). ---
+      defenses: new SchemaField({
+        immunities: new SchemaField({
+          damage: choiceSet(DAMAGE_TYPES),
+          mundane: bool(false),
+          extraordinary: bool(false),
+          effects: str(),
+          note: str(),
+        }),
+        resistances: new SchemaField({
+          damage: choiceSet(DAMAGE_TYPES),
+          mundane: bool(false),
+          extraordinary: bool(false),
+          effects: str(),
+          note: str(),
+        }),
+        susceptibilities: new SchemaField({
+          damage: choiceSet(DAMAGE_TYPES),
+          mundane: bool(false),
+          extraordinary: bool(false),
+          effects: str(),
+          note: str(),
+        }),
+      }),
+
+      // --- Spellcasting (repertoire uses core spell items + system.spells slots). ---
+      spellcasting: new SchemaField({
+        class: str(),
+        level: num({ integer: true }),
+        note: str(),
+      }),
 
       // --- Monster attributes (MM Rules p.349; default 9 if left blank) ---
       scores: new SchemaField({

@@ -1,17 +1,14 @@
-/* global foundry, game, ui, CONST */
+/* global foundry, game, ui */
 /**
- * Action handlers for the Full Monster sheet. Each function is registered in the
- * sheet's DEFAULT_OPTIONS.actions and invoked by ApplicationV2 with `this` bound
- * to the sheet instance (so `this.actor` is the monster).
+ * Actions added by the Full Monster sheet on top of the system's monster sheet.
+ * Item CRUD, active effects, Generate Saves, and reaction/HP/encounter rolls are
+ * all inherited from the base sheet — we only add the array-row editors and the
+ * henchman-attach helper.
  *
- * Where the core acks system already implements behavior we call through to it
- * (rollHP, rollReaction, rollAppearing) rather than reinventing it. Saves are
- * generated from the module's own MONSTER_SAVES_LUT and written to the reused
- * core `system.saves.*` fields.
+ * Each is invoked by ApplicationV2 with `this` bound to the sheet instance.
  */
 import { MODULE_ID, FLAG_EXTRAS } from "./constants.mjs";
 import MonsterExtras from "./monster-extras.mjs";
-import { savesForLevel } from "./config.mjs";
 
 /** Default blank row for each array-valued extras path. */
 function defaultRow(path) {
@@ -36,10 +33,6 @@ async function mutateExtras(actor, mutator) {
   return actor.setFlag(MODULE_ID, FLAG_EXTRAS, extras);
 }
 
-/* -------------------------------------------- */
-/*  Array row management                        */
-/* -------------------------------------------- */
-
 async function addRow(event, target) {
   const path = target.dataset.path;
   await mutateExtras(this.actor, (extras) => {
@@ -59,66 +52,11 @@ async function removeRow(event, target) {
   });
 }
 
-/* -------------------------------------------- */
-/*  Embedded items (attacks / abilities / spoils)*/
-/* -------------------------------------------- */
-
-const NEW_ITEM_DEFAULTS = {
-  weapon: { key: "ACKS-MONSTERS.new.attack", flags: { melee: true } },
-  ability: { key: "ACKS-MONSTERS.new.ability" },
-  item: { key: "ACKS-MONSTERS.new.spoil" },
-};
-
-async function createItem(event, target) {
-  const type = target.dataset.itemType;
-  const def = NEW_ITEM_DEFAULTS[type] ?? { key: "ACKS-MONSTERS.new.item" };
-  const data = { name: game.i18n.localize(def.key), type };
-  if (def.flags) data.system = def.flags;
-  const [item] = await this.actor.createEmbeddedDocuments("Item", [data]);
-  item?.sheet?.render(true);
-}
-
-function getItem(sheet, target) {
-  const id = target.closest("[data-item-id]")?.dataset.itemId;
-  return id ? sheet.actor.items.get(id) : null;
-}
-
-function editItem(event, target) {
-  getItem(this, target)?.sheet?.render(true);
-}
-
-async function deleteItem(event, target) {
-  const item = getItem(this, target);
-  if (!item) return;
-  const confirmed = await foundry.applications.api.DialogV2.confirm({
-    window: { title: game.i18n.localize("ACKS-MONSTERS.confirm.deleteItemTitle") },
-    content: `<p>${game.i18n.format("ACKS-MONSTERS.confirm.deleteItem", { name: item.name })}</p>`,
-  });
-  if (confirmed) await item.delete();
-}
-
-/* -------------------------------------------- */
-/*  Saves                                       */
-/* -------------------------------------------- */
-
-async function generateSaves() {
-  const extras = MonsterExtras.fromActor(this.actor);
-  const level = extras.saveAs?.level ?? extras.hd?.count ?? 0;
-  const s = savesForLevel(Math.floor(level));
-  await this.actor.update({
-    "system.saves.paralysis.value": s.paralysis,
-    "system.saves.death.value": s.death,
-    "system.saves.blast.value": s.blast,
-    "system.saves.implements.value": s.implements,
-    "system.saves.spell.value": s.spell,
-  });
-  ui.notifications.info(game.i18n.format("ACKS-MONSTERS.notify.savesGenerated", { band: s.band }));
-}
-
-/* -------------------------------------------- */
-/*  Henchman attachment (core blocks the built-in path for monsters) */
-/* -------------------------------------------- */
-
+/**
+ * Attach this monster as a henchman of a chosen character. The core system's
+ * built-in addHenchman rejects non-character actors, so we set the reused
+ * retainer fields and append to the manager's henchmenList directly.
+ */
 async function serveAsHenchman() {
   const managers = game.actors.filter((a) => a.type === "character");
   if (!managers.length) {
@@ -126,13 +64,13 @@ async function serveAsHenchman() {
     return;
   }
   const current = this.actor.system?.retainer?.managerid ?? "";
-  const options = managers
+  const optionsHtml = managers
     .map((m) => `<option value="${m.id}" ${m.id === current ? "selected" : ""}>${foundry.utils.escapeHTML(m.name)}</option>`)
     .join("");
   const managerId = await foundry.applications.api.DialogV2.prompt({
     window: { title: game.i18n.localize("ACKS-MONSTERS.henchman.serveTitle") },
     content: `<p>${game.i18n.localize("ACKS-MONSTERS.henchman.servePrompt")}</p>
-      <select name="managerId" style="width:100%">${options}</select>`,
+      <select name="managerId" style="width:100%">${optionsHtml}</select>`,
     ok: {
       label: game.i18n.localize("ACKS-MONSTERS.henchman.serve"),
       callback: (_event, button) => button.form.elements.managerId.value,
@@ -143,8 +81,6 @@ async function serveAsHenchman() {
   if (!manager) return;
 
   await this.actor.update({ "system.retainer.enabled": true, "system.retainer.managerid": managerId });
-
-  // Reuse the core data structure the built-in henchman flow uses.
   const list = foundry.utils.deepClone(manager.system?.henchmenList ?? []);
   if (!list.includes(this.actor.id)) {
     list.push(this.actor.id);
@@ -153,37 +89,4 @@ async function serveAsHenchman() {
   ui.notifications.info(game.i18n.format("ACKS-MONSTERS.notify.henchmanSet", { name: manager.name }));
 }
 
-/* -------------------------------------------- */
-/*  Roll passthroughs to core AcksActor methods  */
-/* -------------------------------------------- */
-
-function rollHp() {
-  this.actor.rollHP?.();
-}
-
-function rollReaction(event) {
-  this.actor.rollReaction?.({ event });
-}
-
-function rollAppearing(event, target) {
-  const check = target.dataset.check; // "dungeon" | "wilderness"
-  this.actor.rollAppearing?.({ event, check });
-}
-
-async function treasureDelete() {
-  await this.actor.update({ "system.details.treasure.table": "", "system.details.treasure.type": "" });
-}
-
-export const ACTIONS = {
-  addRow,
-  removeRow,
-  createItem,
-  editItem,
-  deleteItem,
-  generateSaves,
-  serveAsHenchman,
-  rollHp,
-  rollReaction,
-  rollAppearing,
-  treasureDelete,
-};
+export const ACTIONS = { addRow, removeRow, serveAsHenchman };

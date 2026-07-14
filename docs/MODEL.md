@@ -31,6 +31,9 @@ behavior.
 | **Noncombatant** | extras | `.noncombatant` |
 | **Secondary characteristics** | extras | `.secondary.*` (expeditionSpeed, supplyCost, trainingMonths, intelligence, trainingModifier, battleRating, lifespan, oviparous, reproduction, untrainedValue, trainedValue[]) |
 | **Encounter (rich)** | extras | `.encounter.{lairChance, dungeon, wilderness}` |
+| **Immunities / resistances / susceptibilities** | extras | `.defenses.{immunities,resistances,susceptibilities}` = `{damage:Set, mundane, extraordinary, effects, note}` |
+| **Spellcasting** | extras | `.spellcasting.{class,level,note}` (repertoire = core spell items + `system.spells` slots) |
+| **HD / save ranges** | extras | `.hd.countMax`, `.saveAs.levelMax` (e.g. hydra "5 to 12") |
 | **Related stat lines** | extras | `.variants[]` = `{label, uuid}` |
 | **Entry prose** | extras | `.description.{appearance,combat,ecology,encounterText,lore,notes}` |
 | **Attacks** | items | `weapon` items (`system.damage`, `counter`) + flags below |

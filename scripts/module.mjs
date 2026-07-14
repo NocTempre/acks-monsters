@@ -1,17 +1,21 @@
-/* global game, foundry, Hooks, CONFIG */
+/* global game, foundry, Hooks, CONFIG, Actor */
 /**
  * ACKS II — Full Monster Sheet.
  *
- * Registers an alternate (non-default) sheet for the core `monster` actor type
- * — no new document sub-type — and an item-sheet annotator. All extended
- * storage lives in `flags["acks-monsters"]`; nothing here mutates the acks
- * system. Toggle the sheet per-actor from the actor's Sheet Configuration.
+ * At init we resolve the system's own registered monster sheet and register an
+ * alternate (non-default) SUBCLASS of it that adds tabs for the extended stat
+ * block. No new document sub-type; nothing mutates the acks system. Extended
+ * data lives in `flags["acks-monsters"].extras`. Toggle the sheet per-actor from
+ * the actor's Sheet Configuration.
  */
 import { MODULE_ID, FLAG_EXTRAS, MONSTER_TYPE } from "./constants.mjs";
-import FullMonsterSheet from "./monster-sheet.mjs";
+import { createFullMonsterSheet } from "./monster-sheet.mjs";
 import MonsterExtras from "./monster-extras.mjs";
 import { registerItemAnnotations } from "./item-annotations.mjs";
 import * as config from "./config.mjs";
+
+/** The dynamically-created sheet class (base is resolved at init). */
+let FullMonsterSheet = null;
 
 /** Register the module's Handlebars helpers. */
 function registerHelpers() {
@@ -24,23 +28,36 @@ function registerHelpers() {
   });
 }
 
+/** Resolve the system's default monster sheet class (our base to extend). */
+function resolveMonsterSheetBase() {
+  const registered = CONFIG.Actor?.sheetClasses?.monster ?? {};
+  const entries = Object.values(registered);
+  return entries.find((e) => e.default)?.cls ?? entries[0]?.cls ?? null;
+}
+
 Hooks.once("init", () => {
   registerHelpers();
-
-  // Alternate sheet for the core monster type (user toggles via Sheet Config).
-  foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, MODULE_ID, FullMonsterSheet, {
-    types: [MONSTER_TYPE],
-    makeDefault: false,
-    label: "ACKS-MONSTERS.sheet.full",
-  });
-
   registerItemAnnotations();
+
+  const Base = resolveMonsterSheetBase();
+  if (!Base) {
+    console.error(`${MODULE_ID} | could not resolve the acks monster sheet; Full Monster sheet NOT registered.`);
+  } else {
+    FullMonsterSheet = createFullMonsterSheet(Base);
+    foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, MODULE_ID, FullMonsterSheet, {
+      types: [MONSTER_TYPE],
+      makeDefault: false,
+      label: "ACKS-MONSTERS.sheet.full",
+    });
+  }
 
   // Public API for consumer modules (which add behavior on this stored data).
   const api = {
     MODULE_ID,
     FLAG_EXTRAS,
-    FullMonsterSheet,
+    get FullMonsterSheet() {
+      return FullMonsterSheet;
+    },
     MonsterExtras,
     config,
     /** Read the extended stat block for an actor (a MonsterExtras instance). */
@@ -50,20 +67,16 @@ Hooks.once("init", () => {
   if (module) module.api = api;
   globalThis.acksMonsters = api;
 
-  // Best-effort template preload.
+  // Best-effort template preload (added tabs; base tabs preload with the system).
   try {
     const T = `modules/${MODULE_ID}/templates`;
     foundry.applications.handlebars.loadTemplates([
-      `${T}/header.hbs`,
-      `${T}/tab-statblock.hbs`,
-      `${T}/tab-attacks.hbs`,
-      `${T}/tab-abilities.hbs`,
+      `${T}/tab-classification.hbs`,
+      `${T}/tab-defenses.hbs`,
       `${T}/tab-ecology.hbs`,
       `${T}/tab-encounter.hbs`,
       `${T}/tab-henchman.hbs`,
-      `${T}/tab-spoils.hbs`,
-      `${T}/tab-description.hbs`,
-      `${T}/tab-effects.hbs`,
+      `${T}/tab-lore.hbs`,
     ]);
   } catch (err) {
     console.warn(`${MODULE_ID} | template preload skipped`, err);
@@ -86,10 +99,10 @@ Hooks.on("getActorContextOptions", (_directory, options) => {
   options.push({
     name: "ACKS-MONSTERS.context.openFull",
     icon: '<i class="fa-solid fa-dragon"></i>',
-    condition: (li) => findActor(li)?.type === MONSTER_TYPE,
+    condition: (li) => findActor(li)?.type === MONSTER_TYPE && !!FullMonsterSheet,
     callback: (li) => {
       const actor = findActor(li);
-      if (actor) new FullMonsterSheet({ document: actor }).render(true);
+      if (actor && FullMonsterSheet) new FullMonsterSheet({ document: actor }).render(true);
     },
   });
 });

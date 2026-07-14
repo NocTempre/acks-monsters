@@ -1,258 +1,128 @@
-/* ACKS II — Full Monster Sheet */
+/* ACKS II — Full Monster Sheet: styles for the ADDED tabs only.
+   The sheet subclasses the system's monster sheet, so header, base tabs, and
+   form controls inherit the acks/Foundry styling; we only tune our extras. */
 
-.acks-monsters.application {
-  max-height: 94vh;
-}
-
-.acks-monsters .window-content {
-  padding: 0;
-}
-
-/* --- Tabs: only the active one shows --- */
-.acks-monsters .acksm-tab {
-  display: none;
-  padding: 8px 10px;
-}
-.acks-monsters .acksm-tab.active {
-  display: block;
+.acks-monsters .acksm-content {
+  gap: 8px;
+  padding: 6px 8px;
 }
 
-/* --- Header --- */
-.acks-monsters .acksm-header {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  padding: 8px 10px;
-  border-bottom: 1px solid var(--color-border-light-tertiary, #7a7971);
-}
-.acks-monsters .acksm-portrait {
-  flex: 0 0 auto;
-  width: 64px;
-  height: 64px;
-  object-fit: cover;
-  border: 1px solid var(--color-border-dark, #111);
-  border-radius: 4px;
-  cursor: pointer;
-}
-.acks-monsters .acksm-head-main {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-.acks-monsters .acksm-name {
-  font-size: 1.35rem;
-  font-weight: 700;
-  width: 100%;
-}
-.acks-monsters .acksm-head-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 6px;
-}
-.acks-monsters .acksm-hstat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 46px;
-  padding: 2px 6px;
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-}
-.acks-monsters .acksm-hstat label {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  opacity: 0.7;
-}
-.acks-monsters .acksm-hstat span {
-  font-weight: 700;
-}
-
-/* --- Sections & grids --- */
-.acks-monsters .acksm-section {
+.acks-monsters .acksm-content fieldset {
   border: 1px solid var(--color-border-light-tertiary, #7a7971);
   border-radius: 5px;
-  margin: 0 0 8px;
-  padding: 6px 8px 8px;
+  padding: 4px 8px 8px;
+  margin: 0;
 }
-.acks-monsters .acksm-section > legend {
+
+.acks-monsters .acksm-content legend {
   font-weight: 700;
   padding: 0 4px;
   display: flex;
   align-items: center;
   gap: 8px;
 }
-.acks-monsters .acksm-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+
+/* Keep grouped rows tight and wrapping. */
+.acks-monsters .acksm-content .flexrow {
   gap: 6px 10px;
+  align-items: flex-end;
+  flex-wrap: wrap;
 }
-.acks-monsters .acksm-grid.acksm-saves,
-.acks-monsters .acksm-grid.acksm-scores {
-  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+
+.acks-monsters .acksm-content .form-group {
+  flex: 1 1 130px;
+  min-width: 90px;
 }
-.acks-monsters .acksm-field {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+.acks-monsters .acksm-content .form-group.flex-2 {
+  flex: 2 1 220px;
 }
-.acks-monsters .acksm-field.acksm-wide {
-  grid-column: 1 / -1;
-}
-.acks-monsters .acksm-field > label {
+
+.acks-monsters .acksm-content .form-group > label,
+.acks-monsters .acksm-lore-label,
+.acks-monsters .acksm-rows-head {
   font-size: 0.72rem;
   text-transform: uppercase;
   opacity: 0.75;
 }
-.acks-monsters .acksm-field.acksm-check,
-.acks-monsters .acksm-field .acksm-inline-btn {
-  align-self: end;
-}
-.acks-monsters .acksm-field.acksm-check label {
-  flex-direction: row;
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  text-transform: none;
-  opacity: 1;
-}
-.acks-monsters .acksm-legend-check {
-  font-size: 0.72rem;
-  font-weight: normal;
-  display: inline-flex;
-  gap: 4px;
-  align-items: center;
+
+.acks-monsters .acksm-content select[multiple] {
+  min-height: 4.5em;
 }
 
-/* --- Repeatable rows --- */
+/* Inline checkbox + label. */
+.acks-monsters .acksm-cb {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  font-size: 0.8rem;
+}
+.acks-monsters .acksm-cb input {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+/* Repeatable rows (speeds, senses, values, variants). */
 .acks-monsters .acksm-rows {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 .acks-monsters .acksm-rows-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  opacity: 0.75;
 }
 .acks-monsters .acksm-row {
   display: flex;
   gap: 6px;
   align-items: center;
 }
-.acks-monsters .acksm-row > * {
+.acks-monsters .acksm-row > select,
+.acks-monsters .acksm-row > input[type="text"],
+.acks-monsters .acksm-row > input[type="number"] {
   flex: 1 1 0;
   min-width: 0;
 }
-.acks-monsters .acksm-row input[type="checkbox"] {
+.acks-monsters .acksm-row .acksm-cb {
   flex: 0 0 auto;
-}
-.acks-monsters .acksm-row.acksm-row-head {
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  opacity: 0.7;
-}
-.acks-monsters .acksm-inline-btn {
-  flex: 0 0 auto;
-  width: auto;
-  line-height: 1;
-  padding: 2px 6px;
 }
 
-/* --- Item & effect lists --- */
-.acks-monsters .acksm-list-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 4px;
-}
-.acks-monsters .acksm-list-head h3 {
-  margin: 0;
-  border: none;
-}
-.acks-monsters .acksm-items {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-.acks-monsters .acksm-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 3px 5px;
-  border: 1px solid var(--color-border-light-tertiary, #7a7971);
-  border-radius: 4px;
-}
-.acks-monsters .acksm-item-img {
+.acks-monsters .acksm-mini {
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  object-fit: cover;
   cursor: pointer;
-  border: none;
+  padding: 2px 5px;
+  opacity: 0.85;
 }
-.acks-monsters .acksm-item-name {
-  flex: 1 1 auto;
-  font-weight: 600;
-  cursor: pointer;
-}
-.acks-monsters .acksm-item-meta {
-  flex: 0 0 auto;
-  opacity: 0.8;
-  font-size: 0.85rem;
-}
-.acks-monsters .acksm-item-controls {
-  flex: 0 0 auto;
-  display: flex;
-  gap: 6px;
-}
-.acks-monsters .acksm-item-controls a {
-  cursor: pointer;
-}
-.acks-monsters .acksm-empty {
-  opacity: 0.6;
-  font-style: italic;
-  padding: 4px 5px;
-}
-.acks-monsters .acksm-badge {
-  flex: 0 0 auto;
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  padding: 1px 5px;
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.08);
-}
-.acks-monsters .acksm-badge.acksm-dmg {
-  background: rgba(130, 38, 80, 0.18);
-}
-.acks-monsters .acksm-badge.acksm-xtra {
-  background: rgba(180, 120, 20, 0.22);
-}
-.acks-monsters .acksm-badge.acksm-cat {
-  background: rgba(40, 90, 140, 0.18);
-}
-.acks-monsters .acksm-badge.acksm-eff {
-  background: rgba(40, 120, 60, 0.18);
+.acks-monsters .acksm-mini:hover {
+  opacity: 1;
 }
 
-/* --- Henchman / readouts --- */
+.acks-monsters .acksm-wrap .acksm-narrow {
+  flex: 1 1 70px;
+  min-width: 60px;
+}
+
+.acks-monsters .acksm-hint {
+  font-size: 0.78rem;
+  opacity: 0.72;
+  margin: 2px 0 4px;
+}
+
+/* Henchman */
 .acks-monsters .acksm-manager {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 8px;
   gap: 8px;
+  margin-top: 6px;
 }
 .acks-monsters .acksm-readout {
-  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 6px;
 }
 .acks-monsters .acksm-ro {
+  flex: 1 1 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -269,39 +139,18 @@
   font-weight: 700;
 }
 
-/* --- Treasure & descriptions --- */
-.acks-monsters .acksm-treasure {
-  margin-top: 6px;
-}
-.acks-monsters .acksm-treasure-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.acks-monsters .acksm-hint {
-  font-size: 0.78rem;
-  opacity: 0.75;
-  margin: 2px 0 6px;
-}
-.acks-monsters .acksm-desc {
-  display: flex;
-  flex-direction: column;
+/* Lore prose editors */
+.acks-monsters .acksm-lore {
   gap: 4px;
 }
-.acks-monsters .acksm-desc-label {
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  opacity: 0.8;
-  margin-top: 6px;
-}
-.acks-monsters .acksm-desc prose-mirror {
-  min-height: 80px;
+.acks-monsters .acksm-lore prose-mirror {
+  min-height: 70px;
   border: 1px solid var(--color-border-light-tertiary, #7a7971);
   border-radius: 4px;
+  margin-bottom: 6px;
 }
 
-/* --- Injected item-sheet flag fieldset --- */
+/* --- Injected item-sheet flag fieldset (NOT scoped to .acks-monsters) --- */
 .acksm-flags {
   margin: 6px 0 2px;
   border: 1px solid var(--color-border-light-tertiary, #7a7971);

@@ -1,81 +1,60 @@
-<section class="tab acksm-tab {{tab.cssClass}}" data-group="primary" data-tab="encounter">
+<section class="tab {{tab.cssClass}}" data-group="primary" data-tab="encounter">
+  <div class="content flexcol acksm-content">
 
-  <fieldset class="acksm-section">
-    <legend>{{localize "ACKS-MONSTERS.section.encounter"}}</legend>
-    <div class="acksm-grid">
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.lairChance"}}</label>
-        <input type="number" name="{{x}}.encounter.lairChance" value="{{extras.encounter.lairChance}}" placeholder="%" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.xp"}}</label>
-        <input type="number" name="system.details.xp" value="{{system.details.xp}}" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.morale"}}</label>
-        <input type="number" name="system.details.morale" value="{{system.details.morale}}" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.alignment"}}</label>
-        <select name="system.details.alignment">{{selectOptions choices.alignment selected=system.details.alignment localize=true blank=""}}</select></div>
-    </div>
-  </fieldset>
+    <p class="acksm-hint">{{localize "ACKS-MONSTERS.hint.encounter"}}</p>
 
-  <fieldset class="acksm-section">
-    <legend>{{localize "ACKS-MONSTERS.section.dungeonEnc"}}
-      <button type="button" class="acksm-inline-btn" data-action="rollAppearing" data-check="dungeon" data-tooltip="{{localize 'ACKS-MONSTERS.action.rollAppearing'}}"><i class="fa-solid fa-dice"></i></button>
-    </legend>
-    <div class="acksm-grid">
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.wanderNoun"}}</label>
-        <input type="text" name="{{x}}.encounter.dungeon.wandering.noun" value="{{extras.encounter.dungeon.wandering.noun}}" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.wanderNumber"}}</label>
-        <input type="text" name="{{x}}.encounter.dungeon.wandering.number" value="{{extras.encounter.dungeon.wandering.number}}" placeholder="2d6" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.lairNoun"}}</label>
-        <input type="text" name="{{x}}.encounter.dungeon.lair.noun" value="{{extras.encounter.dungeon.lair.noun}}" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.lairNumber"}}</label>
-        <input type="text" name="{{x}}.encounter.dungeon.lair.number" value="{{extras.encounter.dungeon.lair.number}}" placeholder="6d10" /></div>
-    </div>
-  </fieldset>
-
-  <fieldset class="acksm-section">
-    <legend>{{localize "ACKS-MONSTERS.section.wildernessEnc"}}
-      <button type="button" class="acksm-inline-btn" data-action="rollAppearing" data-check="wilderness" data-tooltip="{{localize 'ACKS-MONSTERS.action.rollAppearing'}}"><i class="fa-solid fa-dice"></i></button>
-    </legend>
-    <div class="acksm-grid">
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.wanderNoun"}}</label>
-        <input type="text" name="{{x}}.encounter.wilderness.wandering.noun" value="{{extras.encounter.wilderness.wandering.noun}}" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.wanderNumber"}}</label>
-        <input type="text" name="{{x}}.encounter.wilderness.wandering.number" value="{{extras.encounter.wilderness.wandering.number}}" placeholder="5d6" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.lairNoun"}}</label>
-        <input type="text" name="{{x}}.encounter.wilderness.lair.noun" value="{{extras.encounter.wilderness.lair.noun}}" /></div>
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.lairNumber"}}</label>
-        <input type="text" name="{{x}}.encounter.wilderness.lair.number" value="{{extras.encounter.wilderness.lair.number}}" placeholder="6d10" /></div>
-    </div>
-  </fieldset>
-
-  <fieldset class="acksm-section">
-    <legend>{{localize "ACKS-MONSTERS.section.treasure"}}</legend>
-    <div class="acksm-grid">
-      <div class="acksm-field"><label>{{localize "ACKS-MONSTERS.field.treasureType"}}</label>
-        <select name="system.details.treasure.type">{{selectOptions choices.treasure selected=system.details.treasure.type localize=true blank=""}}</select></div>
-    </div>
-    <div class="acksm-treasure">
-      {{#if treasureLink}}
-        <div class="acksm-treasure-link">{{{treasureLink}}}
-          <a data-action="treasureDelete" data-tooltip="{{localize 'ACKS-MONSTERS.action.delete'}}"><i class="fa-solid fa-trash"></i></a></div>
-      {{else}}
-        <span class="acksm-hint">{{localize "ACKS-MONSTERS.hint.treasureDrop"}}</span>
-      {{/if}}
-    </div>
-  </fieldset>
-
-  <fieldset class="acksm-section">
-    <legend>{{localize "ACKS-MONSTERS.section.variants"}}
-      <button type="button" class="acksm-inline-btn" data-action="addRow" data-path="variants"><i class="fa-solid fa-plus"></i></button>
-    </legend>
-    <p class="acksm-hint">{{localize "ACKS-MONSTERS.hint.variants"}}</p>
-    <div class="acksm-rows">
-      {{#each extras.variants as |row i|}}
-      <div class="acksm-row">
-        <input type="text" name="{{@root.x}}.variants.{{i}}.label" value="{{row.label}}" placeholder="{{localize 'ACKS-MONSTERS.field.variantLabel'}}" />
-        <input type="text" name="{{@root.x}}.variants.{{i}}.uuid" value="{{row.uuid}}" placeholder="{{localize 'ACKS-MONSTERS.field.variantUuid'}}" />
-        <button type="button" class="acksm-inline-btn" data-action="removeRow" data-path="variants" data-index="{{i}}"><i class="fa-solid fa-trash"></i></button>
+    <fieldset>
+      <legend>{{localize "ACKS-MONSTERS.section.encounter"}}</legend>
+      <div class="flexrow">
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.lairChance"}}</label>
+          <div class="form-fields"><input type="number" name="{{x}}.encounter.lairChance" value="{{extras.encounter.lairChance}}" placeholder="%"/></div></div>
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.treasureType"}}</label>
+          <div class="form-fields"><select name="system.details.treasure.type">{{selectOptions choices.treasure selected=system.details.treasure.type localize=true blank=""}}</select></div></div>
       </div>
-      {{/each}}
-    </div>
-  </fieldset>
+    </fieldset>
 
+    <fieldset>
+      <legend>{{localize "ACKS-MONSTERS.section.dungeonEnc"}}</legend>
+      <div class="flexrow">
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.wanderNoun"}}</label>
+          <div class="form-fields"><input type="text" name="{{x}}.encounter.dungeon.wandering.noun" value="{{extras.encounter.dungeon.wandering.noun}}"/></div></div>
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.wanderNumber"}}</label>
+          <div class="form-fields"><input type="text" name="{{x}}.encounter.dungeon.wandering.number" value="{{extras.encounter.dungeon.wandering.number}}" placeholder="2d6"/></div></div>
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.lairNoun"}}</label>
+          <div class="form-fields"><input type="text" name="{{x}}.encounter.dungeon.lair.noun" value="{{extras.encounter.dungeon.lair.noun}}"/></div></div>
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.lairNumber"}}</label>
+          <div class="form-fields"><input type="text" name="{{x}}.encounter.dungeon.lair.number" value="{{extras.encounter.dungeon.lair.number}}" placeholder="6d10"/></div></div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>{{localize "ACKS-MONSTERS.section.wildernessEnc"}}</legend>
+      <div class="flexrow">
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.wanderNoun"}}</label>
+          <div class="form-fields"><input type="text" name="{{x}}.encounter.wilderness.wandering.noun" value="{{extras.encounter.wilderness.wandering.noun}}"/></div></div>
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.wanderNumber"}}</label>
+          <div class="form-fields"><input type="text" name="{{x}}.encounter.wilderness.wandering.number" value="{{extras.encounter.wilderness.wandering.number}}" placeholder="5d6"/></div></div>
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.lairNoun"}}</label>
+          <div class="form-fields"><input type="text" name="{{x}}.encounter.wilderness.lair.noun" value="{{extras.encounter.wilderness.lair.noun}}"/></div></div>
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.lairNumber"}}</label>
+          <div class="form-fields"><input type="text" name="{{x}}.encounter.wilderness.lair.number" value="{{extras.encounter.wilderness.lair.number}}" placeholder="6d10"/></div></div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>{{localize "ACKS-MONSTERS.section.variants"}}
+        <a class="acksm-mini" data-action="addRow" data-path="variants"><i class="fa-solid fa-plus"></i></a></legend>
+      <p class="acksm-hint">{{localize "ACKS-MONSTERS.hint.variants"}}</p>
+      <div class="acksm-rows">
+        {{#each extras.variants as |row i|}}
+        <div class="acksm-row">
+          <input type="text" name="{{@root.x}}.variants.{{i}}.label" value="{{row.label}}" placeholder="{{localize 'ACKS-MONSTERS.field.variantLabel'}}"/>
+          <input type="text" name="{{@root.x}}.variants.{{i}}.uuid" value="{{row.uuid}}" placeholder="{{localize 'ACKS-MONSTERS.field.variantUuid'}}"/>
+          <a class="acksm-mini" data-action="removeRow" data-path="variants" data-index="{{i}}"><i class="fa-solid fa-trash"></i></a>
+        </div>
+        {{/each}}
+      </div>
+    </fieldset>
+
+  </div>
 </section>

@@ -1,27 +1,28 @@
 {
-  "_id": "acksmSpoilSkull0",
-  "name": "Rock Baboon Skull",
+  "_id": "acksmSpDrgGland0",
+  "name": "Pyrrhous Gland",
   "type": "item",
-  "img": "icons/svg/skull.svg",
+  "img": "icons/svg/fire.svg",
   "system": {
     "_schemaVersion": 3,
-    "description": "<p>A special component useful in magic research (2/6 st).</p>",
+    "description": "<p>The fire-gland of a red dragon. 8 st.</p>",
     "subtype": "item",
     "quantity": {
       "value": 1,
       "max": 0
     },
-    "cost": 20,
+    "cost": 480,
     "weight": 0,
-    "weight6": 2
+    "weight6": 48
   },
   "effects": [],
   "flags": {
     "acks-monsters": {
       "component": true,
       "researchEffects": [
-        "frighten beast",
-        "speak with beasts"
+        "conflagration",
+        "fireball",
+        "energy invulnerability - fire"
       ]
     }
   },
@@ -34,5 +35,5 @@
     "createdTime": 1784007759477,
     "modifiedTime": 1784007759477
   },
-  "_key": "!items!acksmSpoilSkull0"
+  "_key": "!items!acksmSpDrgGland0"
 }

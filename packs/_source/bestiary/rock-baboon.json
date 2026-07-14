@@ -128,8 +128,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1783990278748,
-        "modifiedTime": 1783990278748
+        "createdTime": 1784007759477,
+        "modifiedTime": 1784007759477
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabBite0000"
     },
@@ -170,8 +170,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1783990278748,
-        "modifiedTime": 1783990278748
+        "createdTime": 1784007759477,
+        "modifiedTime": 1784007759477
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabClub0000"
     },
@@ -205,8 +205,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1783990278748,
-        "modifiedTime": 1783990278748
+        "createdTime": 1784007759477,
+        "modifiedTime": 1784007759477
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabClimb000"
     },
@@ -243,8 +243,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1783990278748,
-        "modifiedTime": 1783990278748
+        "createdTime": 1784007759477,
+        "modifiedTime": 1784007759477
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabSkull000"
     },
@@ -278,8 +278,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1783990278748,
-        "modifiedTime": 1783990278748
+        "createdTime": 1784007759477,
+        "modifiedTime": 1784007759477
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabPelt0000"
     }
@@ -300,7 +300,6 @@
         },
         "hd": {
           "count": 2,
-          "bonus": null,
           "asterisks": 0,
           "dieType": 8
         },
@@ -309,12 +308,7 @@
           "level": 2
         },
         "scores": {
-          "str": null,
-          "int": null,
-          "wis": null,
-          "dex": 18,
-          "con": null,
-          "cha": null
+          "dex": 18
         },
         "speeds": [
           {
@@ -327,13 +321,10 @@
         "vision": [
           "night"
         ],
-        "lightlessRange": null,
-        "otherSenses": [],
         "load": {
           "normal": 14,
           "capacity": 28
         },
-        "noncombatant": false,
         "secondary": {
           "expeditionSpeed": 24,
           "supplyCost": 0.5,
@@ -412,7 +403,6 @@
           "combat": "<p>Unlike most apes, rock baboons are highly aggressive and easily stimulated to fight (-1 penalty to reaction rolls). In combat they both bite and use sticks as clubs. They can climb as if they were 5th level thieves and jump as if they had 18 DEX.</p>",
           "ecology": "<p>When encountered in their den, the adults raise 3d6-3 juvenile and 2d6-2 baby baboons. They are omnivores that often hunt for meat.</p>",
           "encounterText": "<p>High atop the trees of a rugged, broken landscape, 15 rock baboons keep watch for intruders to their den. The seven largest attack, leaping down from the upper branches; the rest hang back to protect 5 juveniles and 7 babies.</p>",
-          "lore": "",
           "notes": "<p>Monstrous Manual p.33.</p>"
         }
       }
@@ -433,7 +423,7 @@
   },
   "_stats": {
     "coreVersion": "13",
-    "createdTime": 1783990278748,
-    "modifiedTime": 1783990278748
+    "createdTime": 1784007759477,
+    "modifiedTime": 1784007759477
   }
 }

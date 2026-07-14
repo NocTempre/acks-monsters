@@ -9,7 +9,15 @@
         <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.lairChance"}}</label>
           <div class="form-fields"><input type="number" name="{{x}}.encounter.lairChance" value="{{extras.encounter.lairChance}}" placeholder="%"/></div></div>
         <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.treasureType"}}</label>
-          <div class="form-fields"><select name="system.details.treasure.type">{{selectOptions choices.treasure selected=system.details.treasure.type localize=true blank=""}}</select></div></div>
+          <div class="form-fields">
+            {{!-- Free text with letter suggestions: printed treasure types include
+                  combos and qualifiers ("Q, N", "J (per warband)", "I (5-7 HD)"). --}}
+            <input type="text" name="system.details.treasure.type" value="{{system.details.treasure.type}}"
+                   list="acksm-treasure-types" placeholder="{{localize 'ACKS-MONSTERS.hint.treasureType'}}"/>
+            <datalist id="acksm-treasure-types">
+              {{#each choices.treasure as |label key|}}<option value="{{key}}"></option>{{/each}}
+            </datalist>
+          </div></div>
       </div>
     </fieldset>
 

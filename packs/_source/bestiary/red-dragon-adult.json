@@ -1,0 +1,577 @@
+{
+  "_id": "acksmRedDragon00",
+  "_key": "!actors!acksmRedDragon00",
+  "name": "Red Dragon (Adult)",
+  "type": "monster",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "_schemaVersion": 3,
+    "isNew": false,
+    "hp": {
+      "hd": "10d8",
+      "value": 45,
+      "max": 45,
+      "bhr": "1d3"
+    },
+    "aac": {
+      "value": 7,
+      "mod": 0
+    },
+    "thac0": {
+      "value": 19,
+      "bba": 0,
+      "throw": 10,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "damage": {
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "movement": {
+      "base": 120,
+      "mod": 0,
+      "value": ""
+    },
+    "initiative": {
+      "value": 0,
+      "mod": 0
+    },
+    "surprise": {
+      "mod": 0,
+      "surpriseothers": 0,
+      "avoidsurprise": 0
+    },
+    "saves": {
+      "paralysis": {
+        "value": 7
+      },
+      "death": {
+        "value": 8
+      },
+      "blast": {
+        "value": 9
+      },
+      "implements": {
+        "value": 10
+      },
+      "spell": {
+        "value": 11
+      }
+    },
+    "save": {
+      "mod": 0
+    },
+    "retainer": {
+      "enabled": false,
+      "loyalty": 0,
+      "wage": "",
+      "managerid": "",
+      "category": "henchman",
+      "quantity": 1
+    },
+    "details": {
+      "biography": "<p>An adult winged drake of the fire-scarred wastes: flaming red hide, a 90'×30' cone of dragon-flame, and a hoard worth killing for.</p>",
+      "alignment": "Chaotic",
+      "xp": 3650,
+      "treasure": {
+        "table": "",
+        "type": "Q, N"
+      },
+      "appearing": {
+        "d": "1d4",
+        "w": "1d4"
+      },
+      "morale": 1
+    },
+    "attacks": ""
+  },
+  "items": [
+    {
+      "_id": "acksmDrgClaw0000",
+      "name": "Claw",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "_schemaVersion": 3,
+        "description": "",
+        "damage": "2d3",
+        "bonus": 0,
+        "melee": true,
+        "missile": false,
+        "equipped": true,
+        "pattern": "transparent",
+        "tags": [],
+        "counter": {
+          "value": 2,
+          "max": 2
+        },
+        "cost": 0,
+        "weight": 0,
+        "weight6": 0
+      },
+      "effects": [],
+      "flags": {
+        "acks-monsters": {
+          "naturalWeapon": "claw",
+          "damageType": "slashing",
+          "extraordinary": true
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "13",
+        "createdTime": 1784007759477,
+        "modifiedTime": 1784007759477
+      },
+      "_key": "!actors.items!acksmRedDragon00.acksmDrgClaw0000"
+    },
+    {
+      "_id": "acksmDrgBite0000",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/pawprint.svg",
+      "system": {
+        "_schemaVersion": 3,
+        "description": "",
+        "damage": "2d10",
+        "bonus": 0,
+        "melee": true,
+        "missile": false,
+        "equipped": true,
+        "pattern": "transparent",
+        "tags": [],
+        "counter": {
+          "value": 1,
+          "max": 1
+        },
+        "cost": 0,
+        "weight": 0,
+        "weight6": 0
+      },
+      "effects": [],
+      "flags": {
+        "acks-monsters": {
+          "naturalWeapon": "bite",
+          "damageType": "piercing",
+          "extraordinary": true
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "13",
+        "createdTime": 1784007759477,
+        "modifiedTime": 1784007759477
+      },
+      "_key": "!actors.items!acksmRedDragon00.acksmDrgBite0000"
+    },
+    {
+      "_id": "acksmDrgBreath00",
+      "name": "Flame Breath",
+      "type": "ability",
+      "img": "icons/svg/fire.svg",
+      "system": {
+        "_schemaVersion": 3,
+        "description": "<p>90'×30' cone of flame dealing 10d6 extraordinary fire damage (Blast save for half). Ignites combustibles; deals full damage to wood and one-tenth to stone. The dragon is immune to its own breath.</p>",
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "above",
+        "rollTarget": 0,
+        "blindroll": false,
+        "save": ""
+      },
+      "effects": [],
+      "flags": {
+        "acks-monsters": {
+          "abilityCategory": "breathWeapon",
+          "usage": "thricePerDay"
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "13",
+        "createdTime": 1784007759477,
+        "modifiedTime": 1784007759477
+      },
+      "_key": "!actors.items!acksmRedDragon00.acksmDrgBreath00"
+    },
+    {
+      "_id": "acksmDrgClutch00",
+      "name": "Clutching Claws",
+      "type": "ability",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "_schemaVersion": 3,
+        "description": "<p>Dive attack with claws for double damage dice. If both claws hit a smaller creature during a dive, it must make a size-adjusted Paralysis save or be grabbed and carried off.</p>",
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "above",
+        "rollTarget": 0,
+        "blindroll": false,
+        "save": ""
+      },
+      "effects": [],
+      "flags": {
+        "acks-monsters": {
+          "abilityCategory": "diveAttack"
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "13",
+        "createdTime": 1784007759477,
+        "modifiedTime": 1784007759477
+      },
+      "_key": "!actors.items!acksmRedDragon00.acksmDrgClutch00"
+    },
+    {
+      "_id": "acksmDrgSpells00",
+      "name": "Innate Spellcasting",
+      "type": "ability",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "_schemaVersion": 3,
+        "description": "<p>Casts arcane spells as a caster of level 5 (half HD): 2 first-, 2 second-, and 1 third-level spell per day. Its repertoire is innate.</p>",
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "above",
+        "rollTarget": 0,
+        "blindroll": false,
+        "save": ""
+      },
+      "effects": [],
+      "flags": {
+        "acks-monsters": {
+          "abilityCategory": "spellcasting"
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "13",
+        "createdTime": 1784007759477,
+        "modifiedTime": 1784007759477
+      },
+      "_key": "!actors.items!acksmRedDragon00.acksmDrgSpells00"
+    },
+    {
+      "_id": "acksmDrgGizzard0",
+      "name": "Dragon Gizzard (Adult)",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "_schemaVersion": 3,
+        "description": "<p>Harvest with Animal Husbandry and/or Healing 3 (combined ranks). 8 st.</p>",
+        "subtype": "item",
+        "quantity": {
+          "value": 1,
+          "max": 0
+        },
+        "cost": 480,
+        "weight": 0,
+        "weight6": 48
+      },
+      "effects": [],
+      "flags": {
+        "acks-monsters": {
+          "component": true,
+          "researchEffects": [
+            "locate treasure"
+          ]
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "13",
+        "createdTime": 1784007759477,
+        "modifiedTime": 1784007759477
+      },
+      "_key": "!actors.items!acksmRedDragon00.acksmDrgGizzard0"
+    },
+    {
+      "_id": "acksmDrgGland000",
+      "name": "Pyrrhous Gland",
+      "type": "item",
+      "img": "icons/svg/fire.svg",
+      "system": {
+        "_schemaVersion": 3,
+        "description": "<p>The fire-gland of a red dragon. 8 st.</p>",
+        "subtype": "item",
+        "quantity": {
+          "value": 1,
+          "max": 0
+        },
+        "cost": 480,
+        "weight": 0,
+        "weight6": 48
+      },
+      "effects": [],
+      "flags": {
+        "acks-monsters": {
+          "component": true,
+          "researchEffects": [
+            "conflagration",
+            "fireball",
+            "energy invulnerability - fire"
+          ]
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "13",
+        "createdTime": 1784007759477,
+        "modifiedTime": 1784007759477
+      },
+      "_key": "!actors.items!acksmRedDragon00.acksmDrgGland000"
+    },
+    {
+      "_id": "acksmDrgClaws000",
+      "name": "Dragon Front Claws",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "_schemaVersion": 3,
+        "description": "<p>8 st.</p>",
+        "subtype": "item",
+        "quantity": {
+          "value": 1,
+          "max": 0
+        },
+        "cost": 480,
+        "weight": 0,
+        "weight6": 48
+      },
+      "effects": [],
+      "flags": {
+        "acks-monsters": {
+          "component": true,
+          "researchEffects": [
+            "swift sword"
+          ]
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "13",
+        "createdTime": 1784007759477,
+        "modifiedTime": 1784007759477
+      },
+      "_key": "!actors.items!acksmRedDragon00.acksmDrgClaws000"
+    },
+    {
+      "_id": "acksmDrgHide0000",
+      "name": "Armored Dragon Hide",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "_schemaVersion": 3,
+        "description": "<p>An adult dragon's armored hide: 400gp, 24 st.</p>",
+        "subtype": "item",
+        "quantity": {
+          "value": 1,
+          "max": 0
+        },
+        "cost": 400,
+        "weight": 0,
+        "weight6": 144
+      },
+      "effects": [],
+      "flags": {
+        "acks-monsters": {
+          "component": false,
+          "researchEffects": []
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "13",
+        "createdTime": 1784007759477,
+        "modifiedTime": 1784007759477
+      },
+      "_key": "!actors.items!acksmRedDragon00.acksmDrgHide0000"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "acks-monsters": {
+      "extras": {
+        "types": [
+          "monstrosity"
+        ],
+        "subtype": "red dragon (winged drake)",
+        "size": "gigantic",
+        "bodyForm": "draconine",
+        "mass": {
+          "stone": 900,
+          "lbs": 9000
+        },
+        "hd": {
+          "count": 10,
+          "asterisks": 3,
+          "dieType": 8
+        },
+        "saveAs": {
+          "class": "fighter",
+          "level": 10
+        },
+        "speeds": [
+          {
+            "type": "land",
+            "combat": 30,
+            "run": 90,
+            "hover": false
+          },
+          {
+            "type": "fly",
+            "combat": 80,
+            "run": 240,
+            "hover": false
+          }
+        ],
+        "vision": [
+          "acute",
+          "lightless"
+        ],
+        "lightlessRange": 90,
+        "otherSenses": [
+          {
+            "type": "acuteHearing",
+            "range": null,
+            "note": ""
+          },
+          {
+            "type": "acuteOlfaction",
+            "range": null,
+            "note": ""
+          }
+        ],
+        "load": {
+          "normal": 180,
+          "capacity": 360
+        },
+        "defenses": {
+          "immunities": {
+            "damage": [
+              "fire"
+            ],
+            "mundane": true,
+            "extraordinary": false,
+            "effects": "its own breath weapon",
+            "note": ""
+          },
+          "resistances": {
+            "damage": [
+              "fire"
+            ],
+            "mundane": false,
+            "extraordinary": true,
+            "effects": "",
+            "note": ""
+          }
+        },
+        "spellcasting": {
+          "class": "Arcane (innate)",
+          "level": 5,
+          "note": "2/2/1 spells per day; repertoire is innate (no formula or study); speaks Common, Draconic, and one other language per age category"
+        },
+        "secondary": {
+          "expeditionSpeed": 48,
+          "trainingMonths": 1,
+          "intelligence": "sapient",
+          "reproduction": {
+            "count": "1d4",
+            "youngType": "egg",
+            "intervalUnit": ""
+          },
+          "oviparous": true
+        },
+        "encounter": {
+          "lairChance": 40,
+          "dungeon": {
+            "wandering": {
+              "noun": "Solitary",
+              "number": "1d4"
+            },
+            "lair": {
+              "noun": "Lair",
+              "number": "1d4"
+            }
+          },
+          "wilderness": {
+            "wandering": {
+              "noun": "Solitary",
+              "number": "1d4"
+            },
+            "lair": {
+              "noun": "Lair",
+              "number": "1d4"
+            }
+          }
+        },
+        "description": {
+          "appearance": "<p>Gigantic (900 st.). Hide of flaming red, burnt orange, or charcoal.</p>",
+          "combat": "<p>40% chance caught asleep in its lair (surprised the first round). Natural weapons always deal extraordinary damage. Speech chance 20% at adult age — this specimen speaks and casts spells (counts as one additional special ability for XP).</p>",
+          "ecology": "<p>Dragons live indefinitely, growing through ten age categories. A mated pair without offspring incubates 1d4 eggs (600gp, 8 st, 2 hp each; hatch in 1d4×12 months).</p>",
+          "lore": "<p>\"The last dwarf to truly rule the Meniri Mountains was King Orik Kairn, who died in 225 BE to the dragon-flame of Orm.\" — Sürcaneus of Cyfaraun</p>"
+        }
+      }
+    }
+  },
+  "prototypeToken": {
+    "name": "Red Dragon (Adult)",
+    "actorLink": false,
+    "disposition": -1,
+    "sight": {
+      "enabled": true
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13",
+    "createdTime": 1784007759477,
+    "modifiedTime": 1784007759477
+  }
+}

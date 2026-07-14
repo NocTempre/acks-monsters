@@ -1,0 +1,307 @@
+{
+  "_id": "acksmElemAir00000",
+  "_key": "!actors!acksmElemAir00000",
+  "name": "Air Elemental (Minor)",
+  "type": "monster",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "_schemaVersion": 3,
+    "isNew": false,
+    "hp": {
+      "hd": "8d8",
+      "value": 36,
+      "max": 36,
+      "bhr": "1d3"
+    },
+    "aac": {
+      "value": 7,
+      "mod": 0
+    },
+    "thac0": {
+      "value": 19,
+      "bba": 0,
+      "throw": 10,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "damage": {
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "movement": {
+      "base": 120,
+      "mod": 0,
+      "value": ""
+    },
+    "initiative": {
+      "value": 0,
+      "mod": 0
+    },
+    "surprise": {
+      "mod": 0,
+      "surpriseothers": 0,
+      "avoidsurprise": 0
+    },
+    "saves": {
+      "paralysis": {
+        "value": 8
+      },
+      "death": {
+        "value": 9
+      },
+      "blast": {
+        "value": 10
+      },
+      "implements": {
+        "value": 11
+      },
+      "spell": {
+        "value": 12
+      }
+    },
+    "save": {
+      "mod": 0
+    },
+    "retainer": {
+      "enabled": false,
+      "loyalty": 0,
+      "wage": "",
+      "managerid": "",
+      "category": "henchman",
+      "quantity": 1
+    },
+    "details": {
+      "biography": "<p>A fragment of the living element of the Sphere of Air, torn from its collective and instantiated by conjuration.</p>",
+      "alignment": "Neutral",
+      "xp": 1100,
+      "treasure": {
+        "table": "",
+        "type": "none"
+      },
+      "appearing": {
+        "d": "1",
+        "w": "1"
+      },
+      "morale": 4
+    },
+    "attacks": ""
+  },
+  "items": [
+    {
+      "_id": "acksmElmAir00000Slam",
+      "name": "Elemental Strike",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "_schemaVersion": 3,
+        "description": "",
+        "damage": "1d8",
+        "bonus": 0,
+        "melee": true,
+        "missile": false,
+        "equipped": true,
+        "pattern": "transparent",
+        "tags": [],
+        "counter": {
+          "value": 1,
+          "max": 1
+        },
+        "cost": 0,
+        "weight": 0,
+        "weight6": 0
+      },
+      "effects": [],
+      "flags": {
+        "acks-monsters": {
+          "damageType": "electrical",
+          "extraordinary": true
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "13",
+        "createdTime": 1784007759477,
+        "modifiedTime": 1784007759477
+      },
+      "_key": "!actors.items!acksmElemAir00000.acksmElmAir00000Slam"
+    },
+    {
+      "_id": "acksmElmAir00000Mstr",
+      "name": "Air Mastery",
+      "type": "ability",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "_schemaVersion": 3,
+        "description": "<p>Deals double damage dice against flying targets. A damaged creature smaller than the elemental must make a size-adjusted Paralysis save or be spun off in a random direction a distance equal to the elemental's height, landing prone (the elemental can cleave after).</p>",
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "above",
+        "rollTarget": 0,
+        "blindroll": false,
+        "save": ""
+      },
+      "effects": [],
+      "flags": {
+        "acks-monsters": {
+          "abilityCategory": "unusual"
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "13",
+        "createdTime": 1784007759477,
+        "modifiedTime": 1784007759477
+      },
+      "_key": "!actors.items!acksmElemAir00000.acksmElmAir00000Mstr"
+    },
+    {
+      "_id": "acksmElmAir00000Resi",
+      "name": "Gaseous Residue",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "_schemaVersion": 3,
+        "description": "<p>Harvest from a destroyed elemental with Alchemy 2. 18 2/6 st.</p>",
+        "subtype": "item",
+        "quantity": {
+          "value": 1,
+          "max": 0
+        },
+        "cost": 1100,
+        "weight": 0,
+        "weight6": 110
+      },
+      "effects": [],
+      "flags": {
+        "acks-monsters": {
+          "component": true,
+          "researchEffects": [
+            "all air effects"
+          ]
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "13",
+        "createdTime": 1784007759477,
+        "modifiedTime": 1784007759477
+      },
+      "_key": "!actors.items!acksmElemAir00000.acksmElmAir00000Resi"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "acks-monsters": {
+      "extras": {
+        "types": [
+          "incarnation"
+        ],
+        "subtype": "elemental",
+        "size": "huge",
+        "hd": {
+          "count": 8,
+          "asterisks": 1,
+          "dieType": 8
+        },
+        "saveAs": {
+          "class": "fighter",
+          "level": 8
+        },
+        "speeds": [
+          {
+            "type": "fly",
+            "combat": 120,
+            "run": 360,
+            "hover": true
+          }
+        ],
+        "vision": [
+          "lightless"
+        ],
+        "lightlessRange": 60,
+        "otherSenses": [
+          {
+            "type": "mechAerial",
+            "range": 360,
+            "note": "range equals movement"
+          }
+        ],
+        "defenses": {
+          "immunities": {
+            "damage": [
+              "electrical"
+            ],
+            "mundane": true,
+            "extraordinary": true,
+            "effects": "enchantment; necrotic; poisonous; mundane bludgeoning, piercing, and slashing damage",
+            "note": "A twirling mass of air crackling with lightning; 6\" diameter and 2' height per HD."
+          }
+        },
+        "secondary": {
+          "trainingMonths": 1,
+          "intelligence": "sapient"
+        },
+        "encounter": {
+          "dungeon": {
+            "wandering": {
+              "noun": "Solitary",
+              "number": "1"
+            },
+            "lair": {
+              "noun": "",
+              "number": ""
+            }
+          },
+          "wilderness": {
+            "wandering": {
+              "noun": "Solitary",
+              "number": "1"
+            },
+            "lair": {
+              "noun": "",
+              "number": ""
+            }
+          }
+        },
+        "description": {
+          "combat": "<p>As incarnations, elementals can be held at bay by <em>holy circle</em> and dispelled with <em>counterspell</em> or <em>dispel magic</em>. They understand the languages of their summoner. Minor tier: Huge, AC 7, 8* HD, 1d8 damage, saves F8, XP 1,100.</p>",
+          "ecology": "<p>Elementals endure until destroyed (indefinite lifespan) and do not reproduce. They cannot be bought or sold.</p>"
+        }
+      }
+    }
+  },
+  "prototypeToken": {
+    "name": "Air Elemental (Minor)",
+    "actorLink": false,
+    "disposition": -1,
+    "sight": {
+      "enabled": true
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13",
+    "createdTime": 1784007759477,
+    "modifiedTime": 1784007759477
+  }
+}

@@ -101,12 +101,6 @@
         "subtype": "wild",
         "size": "small",
         "bodyForm": "simian",
-        "hd": {
-          "count": null,
-          "bonus": null,
-          "asterisks": 0,
-          "dieType": 8
-        },
         "saveAs": {
           "class": "fighter",
           "level": 0
@@ -126,6 +120,12 @@
         "secondary": {
           "intelligence": "semiSapient"
         },
+        "variants": [
+          {
+            "label": "Rock Baboon (adult)",
+            "uuid": "Compendium.acks-monsters.bestiary.Actor.acksmBaboonAdlt0"
+          }
+        ],
         "description": {
           "combat": "<p>Infant baboons do not fight.</p>"
         }
@@ -147,7 +147,7 @@
   },
   "_stats": {
     "coreVersion": "13",
-    "createdTime": 1783990278748,
-    "modifiedTime": 1783990278748
+    "createdTime": 1784007759477,
+    "modifiedTime": 1784007759477
   }
 }

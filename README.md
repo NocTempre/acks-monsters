@@ -47,8 +47,14 @@ and Lore — for the extended data.
 3. Fill in the tabbed stat block. Attacks/abilities/spoils are added as normal
    ACKS items; open a monster-owned weapon/ability/item to set its ACKS Monster
    metadata (damage type, ability category, spoil component/effects).
-4. The **example compendia** include a fully-populated Rock Baboon (adult +
-   juvenile + baby), its spoils items, and a blank treasure table.
+4. The **example compendia** ship 15 fully-populated monsters spanning the
+   storage model — Rock Baboon family (variants linking), Hydra (HD/save
+   ranges, per-head attacks), all four Minor Elementals (immunities, senses,
+   movement modes), Cave Bear (proficiencies, hug, trained-value roles), Adult
+   Red Dragon (breath weapon, innate spellcasting, defenses, hoarder treasure),
+   Heavy Horse (domestic mount), Lizardman + Champion (multi-type beastman,
+   weapons + natural attacks, oviparous), Orc, and Brigand — plus standalone
+   spoils items and a blank treasure table.
 
 ### Henchmen
 

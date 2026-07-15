@@ -52,6 +52,10 @@ function fieldsFor(item) {
       return `
         <div class="acksm-flag-row">
           <label class="checkbox">
+            <input type="checkbox" data-field="spoil" ${item.getFlag(MODULE_ID, "spoil") ? "checked" : ""} />
+            ${game.i18n.localize("ACKS-MONSTERS.item.spoil")}
+          </label>
+          <label class="checkbox">
             <input type="checkbox" data-field="component" ${item.getFlag(MODULE_ID, "component") ? "checked" : ""} />
             ${game.i18n.localize("ACKS-MONSTERS.item.component")}
           </label>

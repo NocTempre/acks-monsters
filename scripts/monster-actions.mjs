@@ -42,6 +42,14 @@ async function addRow(event, target) {
   });
 }
 
+/** Create a generic item pre-flagged as a spoil (so it lands on the Spoils tab). */
+async function createSpoil() {
+  const [item] = await this.actor.createEmbeddedDocuments("Item", [
+    { name: game.i18n.localize("ACKS-MONSTERS.new.spoil"), type: "item", flags: { [MODULE_ID]: { spoil: true } } },
+  ]);
+  item?.sheet?.render(true);
+}
+
 async function removeRow(event, target) {
   const path = target.dataset.path;
   const index = Number(target.dataset.index);
@@ -94,4 +102,4 @@ async function serveAsHenchman() {
   ui.notifications.info(game.i18n.format("ACKS-MONSTERS.notify.henchmanSet", { name: manager.name }));
 }
 
-export const ACTIONS = { addRow, removeRow, serveAsHenchman };
+export const ACTIONS = { addRow, removeRow, serveAsHenchman, createSpoil };

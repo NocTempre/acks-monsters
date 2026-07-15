@@ -18,6 +18,7 @@
   "effects": [],
   "flags": {
     "acks-monsters": {
+      "spoil": true,
       "component": true,
       "researchEffects": [
         "conflagration",
@@ -32,8 +33,8 @@
   "sort": 0,
   "_stats": {
     "coreVersion": "13",
-    "createdTime": 1784007759477,
-    "modifiedTime": 1784007759477
+    "createdTime": 1784076152845,
+    "modifiedTime": 1784076152845
   },
   "_key": "!items!acksmSpDrgGland0"
 }

@@ -128,8 +128,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmRedDragon00.acksmDrgClaw0000"
     },
@@ -170,8 +170,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmRedDragon00.acksmDrgBite0000"
     },
@@ -206,8 +206,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmRedDragon00.acksmDrgBreath00"
     },
@@ -241,8 +241,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmRedDragon00.acksmDrgClutch00"
     },
@@ -276,8 +276,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmRedDragon00.acksmDrgSpells00"
     },
@@ -301,6 +301,7 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
+          "spoil": true,
           "component": true,
           "researchEffects": [
             "locate treasure"
@@ -313,8 +314,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmRedDragon00.acksmDrgGizzard0"
     },
@@ -338,6 +339,7 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
+          "spoil": true,
           "component": true,
           "researchEffects": [
             "conflagration",
@@ -352,8 +354,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmRedDragon00.acksmDrgGland000"
     },
@@ -377,6 +379,7 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
+          "spoil": true,
           "component": true,
           "researchEffects": [
             "swift sword"
@@ -389,8 +392,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmRedDragon00.acksmDrgClaws000"
     },
@@ -414,6 +417,7 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
+          "spoil": true,
           "component": false,
           "researchEffects": []
         }
@@ -424,8 +428,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmRedDragon00.acksmDrgHide0000"
     }
@@ -571,7 +575,7 @@
   },
   "_stats": {
     "coreVersion": "13",
-    "createdTime": 1784007759477,
-    "modifiedTime": 1784007759477
+    "createdTime": 1784076152845,
+    "modifiedTime": 1784076152845
   }
 }

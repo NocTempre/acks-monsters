@@ -128,8 +128,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabBite0000"
     },
@@ -170,8 +170,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabClub0000"
     },
@@ -205,8 +205,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabClimb000"
     },
@@ -230,6 +230,7 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
+          "spoil": true,
           "component": true,
           "researchEffects": [
             "frighten beast",
@@ -243,8 +244,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabSkull000"
     },
@@ -268,6 +269,7 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
+          "spoil": true,
           "component": false,
           "researchEffects": []
         }
@@ -278,8 +280,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabPelt0000"
     }
@@ -423,7 +425,7 @@
   },
   "_stats": {
     "coreVersion": "13",
-    "createdTime": 1784007759477,
-    "modifiedTime": 1784007759477
+    "createdTime": 1784076152845,
+    "modifiedTime": 1784076152845
   }
 }

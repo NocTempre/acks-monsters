@@ -11,10 +11,18 @@
       "attacks": "Attacks",
       "abilities": "Abilities",
       "inventory": "Inventory",
+      "spoils": "Spoils",
       "defenses": "Defenses & Magic",
       "ecology": "Ecology",
       "henchman": "Henchman",
       "description": "Description"
+    },
+    "save": {
+      "paralysis": "Paralysis",
+      "death": "Death",
+      "blast": "Blast",
+      "implements": "Implements",
+      "spell": "Spells"
     },
     "section": {
       "classification": "Classification",
@@ -24,7 +32,8 @@
       "movement": "Movement",
       "attacks": "Attacks",
       "abilities": "Proficiencies & Special Abilities",
-      "inventory": "Inventory & Spoils",
+      "inventory": "Carried Inventory",
+      "spoils": "Spoils & Harvestable Parts",
       "immunities": "Immunities",
       "resistances": "Resistances",
       "susceptibilities": "Susceptibilities",
@@ -125,13 +134,18 @@
     "empty": {
       "attacks": "No attacks yet — add weapon items.",
       "abilities": "No proficiencies or special abilities yet.",
-      "spoils": "No inventory or spoils yet."
+      "inventory": "No carried inventory yet.",
+      "spoils": "No spoils yet."
+    },
+    "new": {
+      "spoil": "New Spoil"
     },
     "hint": {
       "subtype": "e.g. wild, Demon",
       "attacks": "Monster attacks are weapon items. Open a weapon to set its damage type & natural weapon in the ACKS Monster section.",
       "abilities": "Proficiencies and special abilities are ability items — drag them from the ACKS Proficiencies / Monster Abilities compendia.",
-      "spoils": "Harvestable parts are generic items (weight in 1/6-stone, gp cost, component & research-effect flags); armor is stored here too.",
+      "inventory": "Gear the monster carries: generic items, armor, and clothing. Mark an item as a Spoil (in its ACKS Monster section) to move it to the Spoils tab.",
+      "spoils": "Harvestable parts (weight in 1/6-stone, gp cost, component & research-effect flags). Use the + to add a pre-flagged spoil.",
       "effectKeywords": "comma-separated, e.g. enchantment, all death effects",
       "spellcasting": "e.g. casts as Mage 6",
       "spellItems": "Add the actual spells as spell items; toggle the Spells tab via Actor Tweaks (system.spells.enabled).",
@@ -154,7 +168,8 @@
       "component": "Special component (magic research)",
       "componentShort": "component",
       "researchEffects": "Research Effects",
-      "researchEffectsHint": "comma-separated, e.g. frighten beast, speak with beasts"
+      "researchEffectsHint": "comma-separated, e.g. frighten beast, speak with beasts",
+      "spoil": "Spoil / harvestable part"
     },
     "henchman": {
       "serve": "Serve as henchman of…",

@@ -51,6 +51,7 @@ export function createFullMonsterSheet(Base) {
     attacks: { template: `${T}/tab-attacks.hbs`, scrollable: [""] },
     abilities: { template: `${T}/tab-abilities.hbs`, scrollable: [""] },
     inventory: { template: `${T}/tab-inventory.hbs`, scrollable: [""] },
+    spoils: { template: `${T}/tab-spoils.hbs`, scrollable: [""] },
     defenses: { template: `${T}/tab-defenses.hbs`, scrollable: [""] },
     ecology: { template: `${T}/tab-ecology.hbs`, scrollable: [""] },
     henchman: { template: `${T}/tab-henchman.hbs`, scrollable: [""] },
@@ -68,6 +69,7 @@ export function createFullMonsterSheet(Base) {
     { id: "attacks", icon: "fa-solid fa-khanda", label: "ACKS-MONSTERS.tab.attacks" },
     { id: "abilities", icon: "fa-solid fa-star", label: "ACKS-MONSTERS.tab.abilities" },
     { id: "inventory", icon: "fa-solid fa-sack", label: "ACKS-MONSTERS.tab.inventory" },
+    { id: "spoils", icon: "fa-solid fa-bone", label: "ACKS-MONSTERS.tab.spoils" },
     { id: "defenses", icon: "fa-solid fa-shield-halved", label: "ACKS-MONSTERS.tab.defenses" },
     { id: "ecology", icon: "fa-solid fa-leaf", label: "ACKS-MONSTERS.tab.ecology" },
     { id: "henchman", icon: "fa-solid fa-handshake", label: "ACKS-MONSTERS.tab.henchman" },
@@ -93,6 +95,11 @@ export function createFullMonsterSheet(Base) {
       const context = await super._prepareContext(options);
       const extras = MonsterExtras.fromActor(this.actor);
       context.extras = extras;
+      // Split generic items into carried inventory vs. flagged spoils so the
+      // two lists live on separate tabs (a monster can carry gear AND drop parts).
+      const items = context.owned?.items ?? [];
+      context.spoilItems = items.filter((i) => i.getFlag(MODULE_ID, "spoil"));
+      context.carriedItems = items.filter((i) => !i.getFlag(MODULE_ID, "spoil"));
       context.choices = choices();
       context.scores = CFG.ABILITY_SCORES;
       context.ages = CFG.AGE_CATEGORIES;

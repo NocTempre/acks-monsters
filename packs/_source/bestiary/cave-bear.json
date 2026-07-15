@@ -128,8 +128,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmCaveBear000.acksmBearClaw000"
     },
@@ -170,8 +170,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmCaveBear000.acksmBearBite000"
     },
@@ -205,8 +205,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmCaveBear000.acksmBearHug0000"
     },
@@ -240,8 +240,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmCaveBear000.acksmBearBlindF0"
     },
@@ -275,8 +275,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmCaveBear000.acksmBearCaving0"
     },
@@ -310,8 +310,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmCaveBear000.acksmBearClimb00"
     },
@@ -345,8 +345,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmCaveBear000.acksmBearTrack00"
     },
@@ -370,6 +370,7 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
+          "spoil": true,
           "component": true,
           "researchEffects": [
             "iron maiden",
@@ -383,8 +384,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmCaveBear000.acksmBearClaws00"
     },
@@ -408,6 +409,7 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
+          "spoil": true,
           "component": true,
           "researchEffects": [
             "call of the wild bear",
@@ -422,8 +424,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmCaveBear000.acksmBearStomch0"
     },
@@ -447,6 +449,7 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
+          "spoil": true,
           "component": false,
           "researchEffects": []
         }
@@ -457,8 +460,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmCaveBear000.acksmBearPelt000"
     }
@@ -597,7 +600,7 @@
   },
   "_stats": {
     "coreVersion": "13",
-    "createdTime": 1784007759477,
-    "modifiedTime": 1784007759477
+    "createdTime": 1784076152845,
+    "modifiedTime": 1784076152845
   }
 }

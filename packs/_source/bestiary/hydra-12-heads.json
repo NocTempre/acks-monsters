@@ -128,8 +128,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmHydra000000.acksmHydBite0000"
     },
@@ -163,8 +163,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmHydra000000.acksmHydHeads000"
     },
@@ -198,8 +198,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmHydra000000.acksmHydRegen000"
     },
@@ -223,6 +223,7 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
+          "spoil": true,
           "component": true,
           "researchEffects": [
             "cure injury",
@@ -238,8 +239,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmHydra000000.acksmHydBlood000"
     },
@@ -263,6 +264,7 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
+          "spoil": true,
           "component": true,
           "researchEffects": [
             "repair disability & disfigurement",
@@ -276,8 +278,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmHydra000000.acksmHydScale000"
     },
@@ -301,6 +303,7 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
+          "spoil": true,
           "component": true,
           "researchEffects": [
             "swift sword"
@@ -313,8 +316,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmHydra000000.acksmHydSkull000"
     }
@@ -448,7 +451,7 @@
   },
   "_stats": {
     "coreVersion": "13",
-    "createdTime": 1784007759477,
-    "modifiedTime": 1784007759477
+    "createdTime": 1784076152845,
+    "modifiedTime": 1784076152845
   }
 }

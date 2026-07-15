@@ -127,8 +127,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmElemEarth000.acksmElmEarth000Slam"
     },
@@ -162,8 +162,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmElemEarth000.acksmElmEarth000Mstr"
     },
@@ -187,6 +187,7 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
+          "spoil": true,
           "component": true,
           "researchEffects": [
             "all earth effects"
@@ -199,8 +200,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "13",
-        "createdTime": 1784007759477,
-        "modifiedTime": 1784007759477
+        "createdTime": 1784076152845,
+        "modifiedTime": 1784076152845
       },
       "_key": "!actors.items!acksmElemEarth000.acksmElmEarth000Resi"
     }
@@ -301,7 +302,7 @@
   },
   "_stats": {
     "coreVersion": "13",
-    "createdTime": 1784007759477,
-    "modifiedTime": 1784007759477
+    "createdTime": 1784076152845,
+    "modifiedTime": 1784076152845
   }
 }

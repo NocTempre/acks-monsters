@@ -109,7 +109,7 @@ export function spoil(id, name, { weight6, cost, component = false, effects = []
       weight6,
     },
     effects: [],
-    flags: { [MODULE_ID]: { component, researchEffects: effects } },
+    flags: { [MODULE_ID]: { spoil: true, component, researchEffects: effects } },
     ownership: { default: 0 },
     sort: 0,
     _stats: { ...STATS },

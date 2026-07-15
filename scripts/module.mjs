@@ -65,6 +65,7 @@ Hooks.once("init", () => {
       `${T}/tab-attacks.hbs`,
       `${T}/tab-abilities.hbs`,
       `${T}/tab-inventory.hbs`,
+      `${T}/tab-spoils.hbs`,
       `${T}/tab-defenses.hbs`,
       `${T}/tab-ecology.hbs`,
       `${T}/tab-henchman.hbs`,

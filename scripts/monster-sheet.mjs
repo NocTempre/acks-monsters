@@ -1,14 +1,16 @@
-/* global foundry */
+/* global foundry, game */
 /**
  * The Full Monster sheet is created at init time as a SUBCLASS of the system's
- * own registered monster sheet (resolved from CONFIG.Actor.sheetClasses). That
- * way it inherits the exact compact header, the Attributes / Spells / Notes /
- * Effects tabs, item handling, Generate Saves, reaction/HP/encounter rolls, and
- * CSS — and we merely ADD tabs for the extended, structured stat block.
+ * own registered monster sheet (resolved from CONFIG.Actor.sheetClasses). It
+ * inherits the compact header, item/effect/save actions, Generate Saves, and
+ * CSS, and REPLACES the tab set with a cleaner one:
  *
- * We can't `import` the system class (the system ships as a single bundle), so
- * the base is passed in from module.mjs and we return the subclass from a
- * factory.
+ *   Classification · Attacks · Abilities · Inventory · Defenses & Magic ·
+ *   Ecology · Henchman · Spells (system) · Description · Effects (system)
+ *
+ * Attacks (weapons), Abilities (ability items), and Inventory (items/armor)
+ * are deliberately separate lists. Header and the Spells/Effects tabs reuse the
+ * system's own templates so they stay pixel-identical to the default sheet.
  */
 import { MODULE_ID, FLAG_EXTRAS } from "./constants.mjs";
 import MonsterExtras from "./monster-extras.mjs";
@@ -17,27 +19,7 @@ import * as CFG from "./config.mjs";
 
 const T = `modules/${MODULE_ID}/templates`;
 
-/** Additional sheet PARTS (one per added tab). */
-const EXTRA_PARTS = {
-  classification: { template: `${T}/tab-classification.hbs`, scrollable: [""] },
-  defenses: { template: `${T}/tab-defenses.hbs`, scrollable: [""] },
-  ecology: { template: `${T}/tab-ecology.hbs`, scrollable: [""] },
-  encounter: { template: `${T}/tab-encounter.hbs`, scrollable: [""] },
-  henchman: { template: `${T}/tab-henchman.hbs`, scrollable: [""] },
-  lore: { template: `${T}/tab-lore.hbs`, scrollable: [""] },
-};
-
-/** Added tabs, inserted right after the system's "attributes" tab. */
-const EXTRA_TABS = [
-  { id: "classification", icon: "fa-solid fa-dragon", label: "ACKS-MONSTERS.tab.classification" },
-  { id: "defenses", icon: "fa-solid fa-shield-halved", label: "ACKS-MONSTERS.tab.defenses" },
-  { id: "ecology", icon: "fa-solid fa-leaf", label: "ACKS-MONSTERS.tab.ecology" },
-  { id: "encounter", icon: "fa-solid fa-dice-d20", label: "ACKS-MONSTERS.tab.encounter" },
-  { id: "henchman", icon: "fa-solid fa-handshake", label: "ACKS-MONSTERS.tab.henchman" },
-  { id: "lore", icon: "fa-solid fa-scroll", label: "ACKS-MONSTERS.tab.lore" },
-];
-
-/** { key: label } choices maps consumed by the {{selectOptions}} helper. */
+/** { key: label } choices maps consumed by templates. */
 function choices() {
   return {
     types: CFG.choicesOf(CFG.MONSTER_TYPES),
@@ -62,25 +44,48 @@ function choices() {
  * @param {typeof foundry.applications.api.ApplicationV2} Base  The system's monster sheet class.
  */
 export function createFullMonsterSheet(Base) {
-  const baseTabs = Base.TABS?.primary?.tabs ?? [];
-  const attrIdx = baseTabs.findIndex((t) => t.id === "attributes");
-  const mergedTabs = [...baseTabs];
-  mergedTabs.splice(attrIdx >= 0 ? attrIdx + 1 : mergedTabs.length, 0, ...EXTRA_TABS);
+  const P = Base.PARTS ?? {};
+  const OWN = {
+    classification: { template: `${T}/tab-classification.hbs`, scrollable: [""] },
+    attacks: { template: `${T}/tab-attacks.hbs`, scrollable: [""] },
+    abilities: { template: `${T}/tab-abilities.hbs`, scrollable: [""] },
+    inventory: { template: `${T}/tab-inventory.hbs`, scrollable: [""] },
+    defenses: { template: `${T}/tab-defenses.hbs`, scrollable: [""] },
+    ecology: { template: `${T}/tab-ecology.hbs`, scrollable: [""] },
+    henchman: { template: `${T}/tab-henchman.hbs`, scrollable: [""] },
+    description: { template: `${T}/tab-description.hbs`, scrollable: [""] },
+  };
+
+  // Reuse the system's header/tabs/spells/effects parts; drop its mixed
+  // "attributes" and "notes" parts (their content now lives in our tabs).
+  const parts = { header: P.header, tabs: P.tabs, ...OWN };
+  if (P.spells) parts.spells = P.spells;
+  if (P.effects) parts.effects = P.effects;
+
+  const tabList = [
+    { id: "classification", icon: "fa-solid fa-dragon", label: "ACKS-MONSTERS.tab.classification" },
+    { id: "attacks", icon: "fa-solid fa-khanda", label: "ACKS-MONSTERS.tab.attacks" },
+    { id: "abilities", icon: "fa-solid fa-star", label: "ACKS-MONSTERS.tab.abilities" },
+    { id: "inventory", icon: "fa-solid fa-sack", label: "ACKS-MONSTERS.tab.inventory" },
+    { id: "defenses", icon: "fa-solid fa-shield-halved", label: "ACKS-MONSTERS.tab.defenses" },
+    { id: "ecology", icon: "fa-solid fa-leaf", label: "ACKS-MONSTERS.tab.ecology" },
+    { id: "henchman", icon: "fa-solid fa-handshake", label: "ACKS-MONSTERS.tab.henchman" },
+  ];
+  if (P.spells) tabList.push({ id: "spells", icon: "fa-solid fa-wand-sparkles", label: "ACKS.category.spells" });
+  tabList.push({ id: "description", icon: "fa-solid fa-scroll", label: "ACKS-MONSTERS.tab.description" });
+  if (P.effects) tabList.push({ id: "effects", icon: "fa-solid fa-sparkles", label: "ACKS.category.effects" });
 
   return class FullMonsterSheet extends Base {
-    /** @override — classes are unioned across the chain; actions deep-merge. */
     static DEFAULT_OPTIONS = {
       classes: ["acks", "actor-v2", "monster-v2", "acks-monsters"],
       actions: { ...ACTIONS },
     };
 
-    /** @override — static PARTS/TABS are NOT auto-merged; include the base's. */
-    static PARTS = { ...Base.PARTS, ...EXTRA_PARTS };
+    static PARTS = parts;
 
-    static TABS = {
-      ...Base.TABS,
-      primary: { ...(Base.TABS?.primary ?? {}), tabs: mergedTabs },
-    };
+    static TABS = { primary: { tabs: tabList, initial: "classification" } };
+
+    tabGroups = { primary: "classification" };
 
     /** @override */
     async _prepareContext(options) {
@@ -91,7 +96,14 @@ export function createFullMonsterSheet(Base) {
       context.scores = CFG.ABILITY_SCORES;
       context.ages = CFG.AGE_CATEGORIES;
       context.x = `flags.${MODULE_ID}.${FLAG_EXTRAS}`;
-      // Sets → arrays for {{selectOptions ... selected=…}}.
+      // Pre-localized save rows (roll link + value) for the Classification tab.
+      const sysSaves = this.actor.system?.saves ?? {};
+      context.saveRows = ["paralysis", "death", "blast", "implements", "spell"].map((k) => ({
+        key: k,
+        value: sysSaves[k]?.value,
+        label: game.i18n.localize(`ACKS-MONSTERS.save.${k}`),
+        tip: game.i18n.localize(`ACKS.saves.${k}.long`),
+      }));
       const def = extras.defenses ?? {};
       context.selected = {
         types: Array.from(extras.types ?? []),
@@ -116,7 +128,6 @@ export function createFullMonsterSheet(Base) {
       if (raw && typeof raw === "object") {
         const stored = foundry.utils.deepClone(this.actor.getFlag(MODULE_ID, FLAG_EXTRAS) ?? {});
         const merged = foundry.utils.mergeObject(stored, raw, { inplace: false, overwrite: true, insertKeys: true });
-        // Fail-safe: one bad value must never block the whole sheet from saving.
         let cleaned;
         try {
           cleaned = MonsterExtras.normalize(merged);
@@ -126,10 +137,6 @@ export function createFullMonsterSheet(Base) {
         }
         foundry.utils.setProperty(submitData, path, cleaned);
 
-        // Mirror the number-appearing formulas into the core details.appearing
-        // fields — but ONLY when the encounter-tab value itself changed. The
-        // form always serializes both sides, so an unconditional mirror would
-        // clobber direct edits made to the header D.E. / W.E. inputs.
         const firstOf = (enc, side) => enc?.[side]?.wandering?.number || enc?.[side]?.lair?.number || "";
         for (const [side, key] of [["dungeon", "d"], ["wilderness", "w"]]) {
           const next = firstOf(cleaned.encounter, side);

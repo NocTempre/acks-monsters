@@ -1,6 +1,6 @@
 /* ACKS II — Full Monster Sheet: styles for the ADDED tabs only.
-   The sheet subclasses the system's monster sheet, so header, base tabs, and
-   form controls inherit the acks/Foundry styling; we only tune our extras. */
+   The sheet subclasses the system's monster sheet, so header, item lists, and
+   base form controls inherit the acks/Foundry styling; we only tune our extras. */
 
 .acks-monsters .acksm-content {
   gap: 8px;
@@ -22,7 +22,7 @@
   gap: 8px;
 }
 
-/* Keep grouped rows tight and wrapping. */
+/* Grouped rows: tight, wrapping. */
 .acks-monsters .acksm-content .flexrow {
   gap: 6px 10px;
   align-items: flex-end;
@@ -36,6 +36,11 @@
 .acks-monsters .acksm-content .form-group.flex-2 {
   flex: 2 1 220px;
 }
+.acks-monsters .acksm-content .form-group.stacked {
+  flex: 1 1 100%;
+  flex-direction: column;
+  align-items: stretch;
+}
 
 .acks-monsters .acksm-content .form-group > label,
 .acks-monsters .acksm-lore-label,
@@ -45,11 +50,39 @@
   opacity: 0.75;
 }
 
-.acks-monsters .acksm-content select[multiple] {
-  min-height: 4.5em;
+/* --- Checkbox "chips" for short enum sets (types, vision, damage) --- */
+.acks-monsters multi-checkbox.acksm-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  border: none;
+  padding: 2px 0;
+}
+.acks-monsters multi-checkbox.acksm-chips label.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  padding: 2px 8px 2px 6px;
+  border: 1px solid var(--color-border-light-tertiary, #7a7971);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.04);
+  font-size: 0.82rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.acks-monsters multi-checkbox.acksm-chips label.checkbox:has(input:checked) {
+  background: rgba(130, 38, 80, 0.18);
+  border-color: rgba(130, 38, 80, 0.5);
+  font-weight: 600;
+}
+.acks-monsters multi-checkbox.acksm-chips input {
+  width: auto;
+  flex: 0 0 auto;
+  margin: 0;
 }
 
-/* Inline checkbox + label. */
+/* Inline checkbox + label (single booleans). */
 .acks-monsters .acksm-cb {
   display: inline-flex;
   align-items: center;
@@ -60,6 +93,31 @@
 .acks-monsters .acksm-cb input {
   flex: 0 0 auto;
   width: auto;
+}
+
+/* Save row (Classification). */
+.acks-monsters .acksm-saves .form-group {
+  flex: 1 1 90px;
+}
+.acks-monsters .acksm-saves .rollable-header {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+}
+.acks-monsters .acksm-saves .rollable-header__label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* Encounter grid: two columns of noun/number pairs. */
+.acks-monsters .acksm-enc-grid .form-group {
+  flex: 1 1 45%;
+}
+.acks-monsters .acksm-enc-grid .form-fields {
+  display: flex;
+  gap: 4px;
 }
 
 /* Repeatable rows (speeds, senses, values, variants). */
@@ -107,7 +165,35 @@
 .acks-monsters .acksm-hint {
   font-size: 0.78rem;
   opacity: 0.72;
-  margin: 2px 0 4px;
+  margin: 2px 0 6px;
+}
+
+/* --- Item-row tags (damage, category, inventory meta) --- */
+.acks-monsters .acksm-dmg-tag,
+.acks-monsters .acksm-cat-tag,
+.acks-monsters .acksm-inv-meta {
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  opacity: 0.85;
+  padding: 1px 6px;
+  border-radius: 8px;
+}
+.acks-monsters .acksm-dmg-tag {
+  background: rgba(130, 38, 80, 0.14);
+  font-weight: 600;
+}
+.acks-monsters .acksm-cat-tag {
+  background: rgba(40, 90, 140, 0.16);
+  text-transform: capitalize;
+}
+.acks-monsters .acksm-inv-meta {
+  opacity: 0.7;
+}
+.acks-monsters .acksm-empty {
+  opacity: 0.6;
+  font-style: italic;
+  padding: 4px 6px;
+  list-style: none;
 }
 
 /* Henchman */
@@ -139,7 +225,7 @@
   font-weight: 700;
 }
 
-/* Lore prose editors */
+/* Description prose editors */
 .acks-monsters .acksm-lore {
   gap: 4px;
 }

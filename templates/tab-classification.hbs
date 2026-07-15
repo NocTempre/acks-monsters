@@ -3,11 +3,13 @@
 
     <fieldset>
       <legend>{{localize "ACKS-MONSTERS.section.classification"}}</legend>
-      <div class="form-group">
+      <div class="form-group stacked">
         <label>{{localize "ACKS-MONSTERS.field.types"}}</label>
-        <div class="form-fields">
-          <select name="{{x}}.types" multiple size="4">{{selectOptions choices.types selected=selected.types localize=true}}</select>
-        </div>
+        <multi-checkbox name="{{x}}.types" class="acksm-chips">
+          {{#each choices.types as |label key|}}
+          <option value="{{key}}" {{#if (acksmHas @root.selected.types key)}}selected{{/if}}>{{localize label}}</option>
+          {{/each}}
+        </multi-checkbox>
       </div>
       <div class="flexrow">
         <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.subtype"}}</label>
@@ -16,14 +18,14 @@
           <div class="form-fields"><select name="{{x}}.size">{{selectOptions choices.size selected=extras.size localize=true blank=""}}</select></div></div>
         <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.bodyForm"}}</label>
           <div class="form-fields"><select name="{{x}}.bodyForm">{{selectOptions choices.bodyForm selected=extras.bodyForm localize=true blank=""}}</select></div></div>
+        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.intelligence"}}</label>
+          <div class="form-fields"><select name="{{x}}.secondary.intelligence">{{selectOptions choices.intelligence selected=extras.secondary.intelligence localize=true blank=""}}</select></div></div>
       </div>
       <div class="flexrow">
         <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.massStone"}}</label>
           <div class="form-fields"><input type="number" step="any" name="{{x}}.mass.stone" value="{{extras.mass.stone}}"/></div></div>
         <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.massLbs"}}</label>
           <div class="form-fields"><input type="number" step="any" name="{{x}}.mass.lbs" value="{{extras.mass.lbs}}"/></div></div>
-        <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.intelligence"}}</label>
-          <div class="form-fields"><select name="{{x}}.secondary.intelligence">{{selectOptions choices.intelligence selected=extras.secondary.intelligence localize=true blank=""}}</select></div></div>
         <label class="checkbox acksm-cb"><input type="checkbox" name="{{x}}.noncombatant" {{#if extras.noncombatant}}checked{{/if}}/> {{localize "ACKS-MONSTERS.field.noncombatant"}}</label>
       </div>
     </fieldset>
@@ -56,6 +58,17 @@
         <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.loadCapacity"}}</label>
           <div class="form-fields"><input type="number" step="any" name="{{x}}.load.capacity" value="{{extras.load.capacity}}"/></div></div>
       </div>
+      <div class="flexrow acksm-saves">
+        {{#each saveRows as |s|}}
+        <div class="form-group">
+          <a class="rollable-header" data-action="rollSave" data-save="{{s.key}}" data-tooltip="{{s.tip}}">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label">{{s.label}}</label>
+          </a>
+          <div class="form-fields"><input type="text" data-dtype="Number" name="system.saves.{{s.key}}.value" value="{{s.value}}"/></div>
+        </div>
+        {{/each}}
+      </div>
     </fieldset>
 
     <fieldset>
@@ -70,9 +83,15 @@
 
     <fieldset>
       <legend>{{localize "ACKS-MONSTERS.section.senses"}}</legend>
+      <div class="form-group stacked">
+        <label>{{localize "ACKS-MONSTERS.field.vision"}}</label>
+        <multi-checkbox name="{{x}}.vision" class="acksm-chips">
+          {{#each choices.vision as |label key|}}
+          <option value="{{key}}" {{#if (acksmHas @root.selected.vision key)}}selected{{/if}}>{{localize label}}</option>
+          {{/each}}
+        </multi-checkbox>
+      </div>
       <div class="flexrow">
-        <div class="form-group flex-2"><label>{{localize "ACKS-MONSTERS.field.vision"}}</label>
-          <div class="form-fields"><select name="{{x}}.vision" multiple size="3">{{selectOptions choices.vision selected=selected.vision localize=true}}</select></div></div>
         <div class="form-group"><label>{{localize "ACKS-MONSTERS.field.lightlessRange"}}</label>
           <div class="form-fields"><input type="number" name="{{x}}.lightlessRange" value="{{extras.lightlessRange}}"/></div></div>
       </div>
@@ -103,6 +122,9 @@
           <a class="acksm-mini" data-action="removeRow" data-path="speeds" data-index="{{i}}"><i class="fa-solid fa-trash"></i></a>
         </div>
         {{/each}}
+      </div>
+      <div class="flexrow">
+        <div class="form-group">{{formGroup actorFields.movement.fields.value label="ACKS.movement.details" value=system.movement.value rootId=@root.partId localize=true}}</div>
       </div>
     </fieldset>
 

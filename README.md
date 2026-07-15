@@ -29,10 +29,12 @@ henchman/retainer data.
 
 No new document sub-type is created — the Full Monster sheet is a runtime
 **subclass of the system's own monster sheet** (inheriting its compact header,
-Attributes/Spells/Notes/Effects tabs, item handling, Generate Saves, and CSS)
-registered as an **alternate sheet** on the existing `monster` type. It simply
-**adds tabs** — Classification, Defenses & Magic, Ecology, Encounter, Henchman,
-and Lore — for the extended data.
+item/effect/save actions, Generate Saves, and CSS) registered as an **alternate
+sheet** on the existing `monster` type. It replaces the tab set with:
+**Classification · Attacks · Abilities · Inventory · Defenses & Magic · Ecology ·
+Henchman · Spells · Description · Effects**. Attacks (weapon items), Abilities
+(ability items), and Inventory (item/armor) are separate lists; short enum sets
+(types, vision, damage) use native checkbox chips.
 
 ## Requirements
 

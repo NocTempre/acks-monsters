@@ -26,6 +26,8 @@ function registerHelpers() {
     const fallback = typeof dash === "string" ? dash : "—";
     return value === null || value === undefined || value === "" ? fallback : value;
   });
+  // Membership test for <multi-checkbox> option `selected` state.
+  Handlebars.registerHelper("acksmHas", (list, key) => Array.isArray(list) && list.includes(key));
 }
 
 /** Resolve the system's default monster sheet class (our base to extend). */
@@ -60,11 +62,13 @@ Hooks.once("init", () => {
     const T = `modules/${MODULE_ID}/templates`;
     foundry.applications.handlebars.loadTemplates([
       `${T}/tab-classification.hbs`,
+      `${T}/tab-attacks.hbs`,
+      `${T}/tab-abilities.hbs`,
+      `${T}/tab-inventory.hbs`,
       `${T}/tab-defenses.hbs`,
       `${T}/tab-ecology.hbs`,
-      `${T}/tab-encounter.hbs`,
       `${T}/tab-henchman.hbs`,
-      `${T}/tab-lore.hbs`,
+      `${T}/tab-description.hbs`,
     ]);
   } catch (err) {
     console.warn(`${MODULE_ID} | template preload skipped`, err);

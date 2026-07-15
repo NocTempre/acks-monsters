@@ -8,11 +8,13 @@
     },
     "tab": {
       "classification": "Classification",
+      "attacks": "Attacks",
+      "abilities": "Abilities",
+      "inventory": "Inventory",
       "defenses": "Defenses & Magic",
       "ecology": "Ecology",
-      "encounter": "Encounter",
       "henchman": "Henchman",
-      "lore": "Lore"
+      "description": "Description"
     },
     "section": {
       "classification": "Classification",
@@ -20,6 +22,9 @@
       "attributes": "Attributes",
       "senses": "Vision & Senses",
       "movement": "Movement",
+      "attacks": "Attacks",
+      "abilities": "Proficiencies & Special Abilities",
+      "inventory": "Inventory & Spoils",
       "immunities": "Immunities",
       "resistances": "Resistances",
       "susceptibilities": "Susceptibilities",
@@ -85,10 +90,13 @@
       "untrainedBaby": "Untrained (Baby)",
       "lairChance": "Lair Chance (%)",
       "treasureType": "Treasure Type",
-      "wanderNoun": "Wandering Noun",
-      "wanderNumber": "Wandering Number",
-      "lairNoun": "Lair Noun",
-      "lairNumber": "Lair Number",
+      "noun": "noun",
+      "dungeonWander": "Dungeon — Wandering",
+      "dungeonLair": "Dungeon — Lair",
+      "wildernessWander": "Wilderness — Wandering",
+      "wildernessLair": "Wilderness — Lair",
+      "item": "Item",
+      "armor": "Armor",
       "variantLabel": "Label",
       "variantUuid": "Actor UUID",
       "isRetainer": "Is a hireling / retainer",
@@ -107,13 +115,23 @@
       "ecology": "Ecology",
       "encounterText": "Encounter",
       "lore": "Lore",
-      "notes": "Notes"
+      "notes": "Notes",
+      "biography": "Biography (system)"
     },
     "action": {
-      "generateSavesHint": "Generate the five saving throws from Hit Dice."
+      "generateSavesHint": "Generate the five saving throws from Hit Dice.",
+      "addSpoil": "Add spoil / item"
+    },
+    "empty": {
+      "attacks": "No attacks yet — add weapon items.",
+      "abilities": "No proficiencies or special abilities yet.",
+      "spoils": "No inventory or spoils yet."
     },
     "hint": {
       "subtype": "e.g. wild, Demon",
+      "attacks": "Monster attacks are weapon items. Open a weapon to set its damage type & natural weapon in the ACKS Monster section.",
+      "abilities": "Proficiencies and special abilities are ability items — drag them from the ACKS Proficiencies / Monster Abilities compendia.",
+      "spoils": "Harvestable parts are generic items (weight in 1/6-stone, gp cost, component & research-effect flags); armor is stored here too.",
       "effectKeywords": "comma-separated, e.g. enchantment, all death effects",
       "spellcasting": "e.g. casts as Mage 6",
       "spellItems": "Add the actual spells as spell items; toggle the Spells tab via Actor Tweaks (system.spells.enabled).",

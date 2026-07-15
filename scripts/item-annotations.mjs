@@ -94,13 +94,13 @@ export function registerItemAnnotations() {
       if (!["weapon", "ability", "item"].includes(item.type)) return;
 
       const root = element instanceof HTMLElement ? element : element?.[0];
-      if (!root || root.querySelector(".acksm-flags")) return;
+      if (!root || root.querySelector(".acks-monsters-flags")) return;
       const inner = fieldsFor(item);
       if (!inner) return;
 
       const host = root.querySelector(".window-content") ?? root;
       const section = document.createElement("fieldset");
-      section.className = "acksm-flags";
+      section.className = "acks-monsters-flags";
       section.innerHTML = `<legend><i class="fa-solid fa-dragon"></i> ${game.i18n.localize("ACKS-MONSTERS.item.section")}</legend>${inner}`;
 
       for (const el of section.querySelectorAll("[data-field]")) {

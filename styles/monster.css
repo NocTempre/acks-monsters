@@ -295,28 +295,28 @@
 }
 
 /* --- Injected item-sheet flag fieldset (NOT scoped to .acks-monsters) --- */
-.acksm-flags {
+.acks-monsters-flags {
   margin: 6px 0 2px;
   border: 1px solid var(--color-border-light-tertiary, #7a7971);
   border-radius: 5px;
   padding: 4px 8px 8px;
 }
-.acksm-flags > legend {
+.acks-monsters-flags > legend {
   font-weight: 700;
   padding: 0 4px;
 }
-.acksm-flags .acksm-flag-row {
+.acks-monsters-flags .acksm-flag-row {
   display: flex;
   flex-wrap: wrap;
   gap: 6px 10px;
   align-items: center;
 }
-.acksm-flags .acksm-flag-row label {
+.acks-monsters-flags .acksm-flag-row label {
   font-size: 0.72rem;
   text-transform: uppercase;
   opacity: 0.75;
 }
-.acksm-flags .acksm-flag-row label.checkbox {
+.acks-monsters-flags .acksm-flag-row label.checkbox {
   text-transform: none;
   display: inline-flex;
   gap: 4px;

@@ -22,12 +22,12 @@ function registerHelpers() {
   const Handlebars = globalThis.Handlebars;
   if (!Handlebars) return;
   // Value-or-dash that treats a real 0 as a value (only null/""/undefined dash).
-  Handlebars.registerHelper("acksmVal", (value, dash) => {
+  Handlebars.registerHelper("acksMonstersVal", (value, dash) => {
     const fallback = typeof dash === "string" ? dash : "—";
     return value === null || value === undefined || value === "" ? fallback : value;
   });
   // Membership test for <multi-checkbox> option `selected` state.
-  Handlebars.registerHelper("acksmHas", (list, key) => Array.isArray(list) && list.includes(key));
+  Handlebars.registerHelper("acksMonstersHas", (list, key) => Array.isArray(list) && list.includes(key));
 }
 
 /** Resolve the system's default monster sheet class (our base to extend). */

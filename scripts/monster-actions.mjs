@@ -42,6 +42,21 @@ async function addRow(event, target) {
   });
 }
 
+/**
+ * Guarded save roll. The system's rollSave() reads this.system.saves[key].value
+ * with no guard, so it throws on legacy monsters whose saves object still uses
+ * pre-migration keys (breath/wand instead of blast/implements). Warn instead of
+ * crashing; the value input on the sheet lets the GM set the missing save.
+ */
+function rollSave(event, target) {
+  const save = target?.dataset?.save;
+  if (this.actor.system?.saves?.[save]?.value == null) {
+    ui.notifications.warn(game.i18n.format("ACKS-MONSTERS.notify.noSave", { save: save ?? "?" }));
+    return;
+  }
+  this.actor.rollSave(save, { event });
+}
+
 /** Create a generic item pre-flagged as a spoil (so it lands on the Spoils tab). */
 async function createSpoil() {
   const [item] = await this.actor.createEmbeddedDocuments("Item", [
@@ -102,4 +117,4 @@ async function serveAsHenchman() {
   ui.notifications.info(game.i18n.format("ACKS-MONSTERS.notify.henchmanSet", { name: manager.name }));
 }
 
-export const ACTIONS = { addRow, removeRow, serveAsHenchman, createSpoil };
+export const ACTIONS = { addRow, removeRow, serveAsHenchman, createSpoil, rollSave };

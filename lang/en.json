@@ -178,7 +178,8 @@
     },
     "notify": {
       "noManagers": "No character actors exist to serve as a manager.",
-      "henchmanSet": "Now serving as a henchman of {name}."
+      "henchmanSet": "Now serving as a henchman of {name}.",
+      "noSave": "This monster has no \"{save}\" saving throw value yet — set one in the field first. (Legacy monsters may use breath/wand instead of blast/implements.)"
     }
   }
 }

@@ -127,9 +127,9 @@
       },
       "sort": 0,
       "_stats": {
-        "coreVersion": "13",
-        "createdTime": 1784076152845,
-        "modifiedTime": 1784076152845
+        "coreVersion": "14",
+        "createdTime": 1784081105402,
+        "modifiedTime": 1784081105402
       },
       "_key": "!actors.items!acksmOrcWarrior0.acksmOrcSpear000"
     },
@@ -169,9 +169,9 @@
       },
       "sort": 0,
       "_stats": {
-        "coreVersion": "13",
-        "createdTime": 1784076152845,
-        "modifiedTime": 1784076152845
+        "coreVersion": "14",
+        "createdTime": 1784081105402,
+        "modifiedTime": 1784081105402
       },
       "_key": "!actors.items!acksmOrcWarrior0.acksmOrcSword000"
     },
@@ -207,9 +207,9 @@
       },
       "sort": 0,
       "_stats": {
-        "coreVersion": "13",
-        "createdTime": 1784076152845,
-        "modifiedTime": 1784076152845
+        "coreVersion": "14",
+        "createdTime": 1784081105402,
+        "modifiedTime": 1784081105402
       },
       "_key": "!actors.items!acksmOrcWarrior0.acksmOrcTeeth000"
     }
@@ -336,8 +336,8 @@
     "default": 0
   },
   "_stats": {
-    "coreVersion": "13",
-    "createdTime": 1784076152845,
-    "modifiedTime": 1784076152845
+    "coreVersion": "14",
+    "createdTime": 1784081105402,
+    "modifiedTime": 1784081105402
   }
 }

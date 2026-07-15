@@ -2,10 +2,10 @@
   "id": "acks-monsters",
   "title": "ACKS II — Full Monster Sheet",
   "description": "Adds a complete, structured Monstrous Manual stat block to ACKS II monster actors: an alternate 'Full Monster' sheet (toggle it in the actor's Sheet Configuration) plus automation-ready storage for every primary, secondary, and encounter characteristic — types, size/mass, body form, multi-row speeds, per-attack damage types, spoils, proficiencies, lifespan, market values, and henchman/retainer data. Storage-only: it reuses the system's own weapon/ability/item documents and leaves game logic to consumer modules.",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "socket": false,
   "compatibility": {
-    "minimum": "13",
+    "minimum": "14",
     "verified": "14.364"
   },
   "authors": [
@@ -13,8 +13,12 @@
       "name": "NocTempre"
     }
   ],
-  "esmodules": ["scripts/module.mjs"],
-  "styles": ["styles/monster.css"],
+  "esmodules": [
+    "scripts/module.mjs"
+  ],
+  "styles": [
+    "styles/monster.css"
+  ],
   "languages": [
     {
       "lang": "en",
@@ -62,7 +66,7 @@
         "id": "acks",
         "type": "system",
         "compatibility": {
-          "minimum": "13"
+          "minimum": "14"
         }
       }
     ]

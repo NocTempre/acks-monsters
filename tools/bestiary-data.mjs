@@ -19,7 +19,7 @@
 const MODULE_ID = "acks-monsters";
 const SV = 3; // acks CURRENT_SCHEMA_VERSION
 const now = Date.now();
-const STATS = { coreVersion: "13", createdTime: now, modifiedTime: now };
+const STATS = { coreVersion: "14", createdTime: now, modifiedTime: now };
 const uuid = (id) => `Compendium.${MODULE_ID}.bestiary.Actor.${id}`;
 
 /* -------------------------------------------- */

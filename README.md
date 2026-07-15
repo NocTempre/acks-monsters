@@ -38,7 +38,7 @@ Henchman · Spells · Description · Effects**. Attacks (weapon items), Abilitie
 
 ## Requirements
 
-- ACKS II system (`acks`) v13+ (verified against 14.x).
+- Foundry VTT v14+ and the ACKS II system (`acks`) v14+ (verified against 14.364).
 
 ## Usage
 

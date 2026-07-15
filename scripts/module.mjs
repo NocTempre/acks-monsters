@@ -110,9 +110,9 @@ Hooks.on("getActorContextOptions", (_directory, options) => {
     return id ? game.actors.get(id) : null;
   };
   options.push({
-    name: "ACKS-MONSTERS.context.openFull",
+    label: "ACKS-MONSTERS.context.openFull",
     icon: '<i class="fa-solid fa-dragon"></i>',
-    condition: (li) => findActor(li)?.type === MONSTER_TYPE && !!FullMonsterSheet,
+    visible: (li) => findActor(li)?.type === MONSTER_TYPE && !!FullMonsterSheet,
     callback: (li) => {
       const actor = findActor(li);
       if (actor && FullMonsterSheet) new FullMonsterSheet({ document: actor }).render(true);

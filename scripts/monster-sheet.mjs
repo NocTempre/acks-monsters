@@ -19,6 +19,53 @@ import * as CFG from "./config.mjs";
 
 const T = `modules/${MODULE_ID}/templates`;
 
+/**
+ * Derived monster encumbrance (the system's computeEncumbrance early-returns for
+ * non-characters). Sums CARRIED item weight — weapons, armor, and non-clothing
+ * generic items, plus money — in stone (weight6 is 1/6-stone, matching the core
+ * character calc). Spoils are the monster's own harvestable parts, not carried
+ * gear, so they are excluded. Compared against Normal Load (full speed) and Max
+ * Load (2× normal → half speed) per MM p.13.
+ */
+function computeEncumbrance(actor, extras) {
+  let weight6 = 0;
+  for (const item of actor.items) {
+    if (item.getFlag(MODULE_ID, "spoil")) continue;
+    if (item.type === "item" && item.system?.subtype !== "clothing") {
+      weight6 += (item.system?.weight6 ?? 0) * (item.system?.quantity?.value ?? 1);
+    } else if (item.type === "weapon" || item.type === "armor") {
+      weight6 += item.system?.weight6 ?? 0;
+    }
+  }
+  const money = actor.getTotalMoneyEncumbrance?.() ?? { stone: 0 };
+  const stone = weight6 / 6 + (money.stone ?? 0);
+
+  const normal = extras.load?.normal;
+  const max = extras.load?.capacity ?? (normal != null ? normal * 2 : null);
+  let state = "unknown";
+  let speedFactor = null;
+  let pct = null;
+  let normalPct = null;
+  if (normal != null) {
+    const denom = (max != null ? max : normal * 2) || 1;
+    pct = Math.min(100, Math.max(0, (stone / denom) * 100));
+    normalPct = Math.min(100, (normal / denom) * 100);
+    if (stone <= normal) [state, speedFactor] = ["unencumbered", 1];
+    else if (max != null ? stone <= max : stone <= normal * 2) [state, speedFactor] = ["encumbered", 0.5];
+    else [state, speedFactor] = ["overloaded", 0];
+  }
+  return {
+    stone: Math.round(stone * 10) / 10,
+    normal,
+    max,
+    pct,
+    normalPct,
+    state,
+    speedFactor,
+    stateLabel: game.i18n.localize(`ACKS-MONSTERS.enc.${state}`),
+  };
+}
+
 /** { key: label } choices maps consumed by templates. */
 function choices() {
   return {
@@ -100,6 +147,7 @@ export function createFullMonsterSheet(Base) {
       const items = context.owned?.items ?? [];
       context.spoilItems = items.filter((i) => i.getFlag(MODULE_ID, "spoil"));
       context.carriedItems = items.filter((i) => !i.getFlag(MODULE_ID, "spoil"));
+      context.encumbrance = computeEncumbrance(this.actor, extras);
       context.choices = choices();
       context.scores = CFG.ABILITY_SCORES;
       context.ages = CFG.AGE_CATEGORIES;

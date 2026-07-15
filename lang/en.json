@@ -24,6 +24,16 @@
       "implements": "Implements",
       "spell": "Spells"
     },
+    "enc": {
+      "carried": "Carried",
+      "speed": "speed",
+      "unencumbered": "Unencumbered — full speed",
+      "encumbered": "Encumbered — half speed",
+      "overloaded": "Overloaded — cannot move",
+      "unknown": "Set a Normal Load to track encumbrance",
+      "setLoad": "set Normal Load in Classification",
+      "barTip": "Carried weight vs. Max Load. The tick marks the Normal Load; carrying more than Normal halves speed, more than Max is immobile."
+    },
     "section": {
       "classification": "Classification",
       "rating": "Rating & Saves",

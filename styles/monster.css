@@ -189,6 +189,64 @@
 .acks-monsters .acksm-inv-meta {
   opacity: 0.7;
 }
+/* --- Encumbrance readout (Inventory tab) --- */
+.acks-monsters .acksm-enc {
+  border: 1px solid var(--color-border-light-tertiary, #7a7971);
+  border-radius: 5px;
+  padding: 5px 8px 6px;
+  margin: 0 0 8px;
+}
+.acks-monsters .acksm-enc-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+.acks-monsters .acksm-enc-state {
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+.acks-monsters .acksm-enc-bar {
+  position: relative;
+  height: 8px;
+  margin: 5px 0 4px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+.acks-monsters .acksm-enc-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 4px;
+  background: rgba(80, 140, 80, 0.75);
+  transition: width 0.2s;
+}
+.acks-monsters .acksm-enc-mark {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  width: 2px;
+  background: var(--color-text-dark-primary, #111);
+  opacity: 0.6;
+}
+.acks-monsters .acksm-enc-legend {
+  font-size: 0.74rem;
+  opacity: 0.75;
+}
+.acks-monsters .acksm-enc-encumbered .acksm-enc-fill {
+  background: rgba(190, 140, 30, 0.8);
+}
+.acks-monsters .acksm-enc-encumbered .acksm-enc-state {
+  color: #a9791b;
+}
+.acks-monsters .acksm-enc-overloaded .acksm-enc-fill {
+  background: rgba(170, 45, 45, 0.85);
+}
+.acks-monsters .acksm-enc-overloaded .acksm-enc-state {
+  color: #a52d2d;
+}
+
 .acks-monsters .acksm-empty {
   opacity: 0.6;
   font-style: italic;

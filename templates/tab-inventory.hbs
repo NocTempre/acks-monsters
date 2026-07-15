@@ -11,6 +11,22 @@
         {{/if}}
       </div>
       <p class="acksm-hint">{{localize "ACKS-MONSTERS.hint.inventory"}}</p>
+      <div class="acksm-enc acksm-enc-{{encumbrance.state}}">
+        <div class="acksm-enc-head">
+          <span>{{localize "ACKS-MONSTERS.enc.carried"}} <strong>{{encumbrance.stone}}</strong> st{{#if encumbrance.speedFactor}} · {{localize "ACKS-MONSTERS.enc.speed"}} ×{{encumbrance.speedFactor}}{{/if}}</span>
+          <span class="acksm-enc-state">{{encumbrance.stateLabel}}</span>
+        </div>
+        {{#if encumbrance.pct includeZero=true}}
+        <div class="acksm-enc-bar" data-tooltip="{{localize 'ACKS-MONSTERS.enc.barTip'}}">
+          <div class="acksm-enc-fill" style="width: {{encumbrance.pct}}%"></div>
+          {{#if encumbrance.normalPct}}<div class="acksm-enc-mark" style="left: {{encumbrance.normalPct}}%"></div>{{/if}}
+        </div>
+        {{/if}}
+        <div class="acksm-enc-legend">
+          {{localize "ACKS-MONSTERS.field.loadNormal"}}: {{acksmVal encumbrance.normal "—"}} · {{localize "ACKS-MONSTERS.field.loadCapacity"}}: {{acksmVal encumbrance.max "—"}}
+          {{#unless encumbrance.normal}} · <em>{{localize "ACKS-MONSTERS.enc.setLoad"}}</em>{{/unless}}
+        </div>
+      </div>
       <ul class="item-list unlist">
         {{#each carriedItems as |item|}}
         <li class="item draggable" data-item-id="{{item._id}}">

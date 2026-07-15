@@ -56,7 +56,13 @@
       "blast": {
         "value": 14
       },
+      "breath": {
+        "value": 14
+      },
       "implements": {
+        "value": 15
+      },
+      "wand": {
         "value": 15
       },
       "spell": {
@@ -128,8 +134,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabBite0000"
     },
@@ -170,8 +176,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabClub0000"
     },
@@ -205,8 +211,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabClimb000"
     },
@@ -244,8 +250,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabSkull000"
     },
@@ -280,8 +286,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmBaboonAdlt0.acksmBabPelt0000"
     }
@@ -425,7 +431,7 @@
   },
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784081105402,
-    "modifiedTime": 1784081105402
+    "createdTime": 1784082013021,
+    "modifiedTime": 1784082013021
   }
 }

@@ -56,7 +56,13 @@
       "blast": {
         "value": 16
       },
+      "breath": {
+        "value": 16
+      },
       "implements": {
+        "value": 17
+      },
+      "wand": {
         "value": 17
       },
       "spell": {
@@ -128,8 +134,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmBaboonJuv00.acksmBabJBite000"
     }
@@ -191,7 +197,7 @@
   },
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784081105402,
-    "modifiedTime": 1784081105402
+    "createdTime": 1784082013021,
+    "modifiedTime": 1784082013021
   }
 }

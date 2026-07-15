@@ -56,7 +56,13 @@
       "blast": {
         "value": 16
       },
+      "breath": {
+        "value": 16
+      },
       "implements": {
+        "value": 17
+      },
+      "wand": {
         "value": 17
       },
       "spell": {
@@ -147,7 +153,7 @@
   },
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784081105402,
-    "modifiedTime": 1784081105402
+    "createdTime": 1784082013021,
+    "modifiedTime": 1784082013021
   }
 }

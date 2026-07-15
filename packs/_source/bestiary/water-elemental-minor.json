@@ -56,7 +56,13 @@
       "blast": {
         "value": 10
       },
+      "breath": {
+        "value": 10
+      },
       "implements": {
+        "value": 11
+      },
+      "wand": {
         "value": 11
       },
       "spell": {
@@ -127,8 +133,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmElemWater000.acksmElmWater000Slam"
     },
@@ -162,8 +168,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmElemWater000.acksmElmWater000Mstr"
     },
@@ -200,8 +206,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmElemWater000.acksmElmWater000Resi"
     }
@@ -302,7 +308,7 @@
   },
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784081105402,
-    "modifiedTime": 1784081105402
+    "createdTime": 1784082013021,
+    "modifiedTime": 1784082013021
   }
 }

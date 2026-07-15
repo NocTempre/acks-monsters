@@ -56,7 +56,13 @@
       "blast": {
         "value": 15
       },
+      "breath": {
+        "value": 15
+      },
       "implements": {
+        "value": 16
+      },
+      "wand": {
         "value": 16
       },
       "spell": {
@@ -128,8 +134,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmBrigand0000.acksmBrgBow00000"
     },
@@ -170,8 +176,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmBrigand0000.acksmBrgSword000"
     },
@@ -212,8 +218,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmBrigand0000.acksmBrgDagger00"
     },
@@ -247,8 +253,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmBrigand0000.acksmBrgReflex00"
     },
@@ -282,8 +288,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmBrigand0000.acksmBrgManual00"
     },
@@ -317,8 +323,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmBrigand0000.acksmBrgRiding00"
     },
@@ -355,8 +361,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmBrigand0000.acksmBrgHeart000"
     }
@@ -482,7 +488,7 @@
   },
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784081105402,
-    "modifiedTime": 1784081105402
+    "createdTime": 1784082013021,
+    "modifiedTime": 1784082013021
   }
 }

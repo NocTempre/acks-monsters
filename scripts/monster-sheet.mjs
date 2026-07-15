@@ -152,13 +152,23 @@ export function createFullMonsterSheet(Base) {
       context.scores = CFG.ABILITY_SCORES;
       context.ages = CFG.AGE_CATEGORIES;
       context.x = `flags.${MODULE_ID}.${FLAG_EXTRAS}`;
-      // Pre-localized save rows (roll link + value) for the Classification tab.
+      // Pre-localized save rows for the Classification tab. Resolve each save to
+      // whichever key the running system actually uses — the released acks
+      // 14.0.1 still uses breath/wand, while newer builds use blast/implements —
+      // so the value and roll target the real field and never come up empty.
       const sysSaves = this.actor.system?.saves ?? {};
-      context.saveRows = ["paralysis", "death", "blast", "implements", "spell"].map((k) => ({
-        key: k,
-        value: sysSaves[k]?.value,
-        label: game.i18n.localize(`ACKS-MONSTERS.save.${k}`),
-        tip: game.i18n.localize(`ACKS.saves.${k}.long`),
+      const pick = (...keys) => keys.find((k) => sysSaves[k] !== undefined) ?? keys[0];
+      context.saveRows = [
+        { logical: "paralysis", key: pick("paralysis") },
+        { logical: "death", key: pick("death") },
+        { logical: "blast", key: pick("blast", "breath") },
+        { logical: "implements", key: pick("implements", "wand") },
+        { logical: "spell", key: pick("spell") },
+      ].map((s) => ({
+        key: s.key,
+        value: sysSaves[s.key]?.value,
+        label: game.i18n.localize(`ACKS-MONSTERS.save.${s.logical}`),
+        tip: game.i18n.localize(`ACKS.saves.${s.key}.long`),
       }));
       const def = extras.defenses ?? {};
       context.selected = {

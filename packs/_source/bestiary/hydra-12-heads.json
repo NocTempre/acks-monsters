@@ -56,7 +56,13 @@
       "blast": {
         "value": 8
       },
+      "breath": {
+        "value": 8
+      },
       "implements": {
+        "value": 9
+      },
+      "wand": {
         "value": 9
       },
       "spell": {
@@ -128,8 +134,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmHydra000000.acksmHydBite0000"
     },
@@ -163,8 +169,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmHydra000000.acksmHydHeads000"
     },
@@ -198,8 +204,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmHydra000000.acksmHydRegen000"
     },
@@ -239,8 +245,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmHydra000000.acksmHydBlood000"
     },
@@ -278,8 +284,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmHydra000000.acksmHydScale000"
     },
@@ -316,8 +322,8 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784081105402,
-        "modifiedTime": 1784081105402
+        "createdTime": 1784082013021,
+        "modifiedTime": 1784082013021
       },
       "_key": "!actors.items!acksmHydra000000.acksmHydSkull000"
     }
@@ -451,7 +457,7 @@
   },
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784081105402,
-    "modifiedTime": 1784081105402
+    "createdTime": 1784082013021,
+    "modifiedTime": 1784082013021
   }
 }

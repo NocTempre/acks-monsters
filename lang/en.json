@@ -164,6 +164,7 @@
       "treasureType": "e.g. Q, N or J (per warband)",
       "variants": "Link related stat lines (juveniles, babies, leaders) by pasting each actor's UUID.",
       "henchman": "A monster can serve as a henchman: these reuse the system's retainer fields.",
+      "retainerHeader": "Loyalty and Wage are shown in the sheet header while this monster is a retainer.",
       "henchmanSummary": "Read-only combat data a hireling contributes."
     },
     "item": {

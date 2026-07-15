@@ -139,11 +139,16 @@ export function monsterSystem({
     movement: { base: 120, mod: 0, value: "" },
     initiative: { value: 0, mod: 0 },
     surprise: { mod: 0, surpriseothers: 0, avoidsurprise: 0 },
+    // Write both key spellings so the value lands whether the running system
+    // uses blast/implements (newer) or breath/wand (released 14.0.1). Keys not
+    // in the actor schema are harmlessly dropped on load.
     saves: {
       paralysis: { value: saves.paralysis },
       death: { value: saves.death },
       blast: { value: saves.blast },
+      breath: { value: saves.blast },
       implements: { value: saves.implements },
+      wand: { value: saves.implements },
       spell: { value: saves.spell },
     },
     save: { mod: 0 },

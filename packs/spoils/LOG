@@ -1,5 +1,5 @@
-2026/07/14-22:05:05.641 5760 Delete type=3 #1
-2026/07/14-22:05:05.648 1df4 Level-0 table #5: started
-2026/07/14-22:05:05.652 1df4 Level-0 table #5: 2356 bytes OK
-2026/07/14-22:05:05.654 1df4 Delete type=0 #3
-2026/07/14-22:05:05.656 1df4 Manual compaction at level-0 from '!items!acksmSpBearClaw0' @ 72057594037927935 : 1 .. '!items!acksmSpoilSkull0' @ 0 : 0; will stop at (end)
+2026/07/14-22:20:13.216 4668 Delete type=3 #1
+2026/07/14-22:20:13.223 554 Level-0 table #5: started
+2026/07/14-22:20:13.226 554 Level-0 table #5: 2359 bytes OK
+2026/07/14-22:20:13.229 554 Delete type=0 #3
+2026/07/14-22:20:13.229 554 Manual compaction at level-0 from '!items!acksmSpBearClaw0' @ 72057594037927935 : 1 .. '!items!acksmSpoilSkull0' @ 0 : 0; will stop at (end)

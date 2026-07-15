@@ -1,6 +1,6 @@
 {
-  "_id": "acksmElemFire0000",
-  "_key": "!actors!acksmElemFire0000",
+  "_id": "acksmElemFir0000",
+  "_key": "!actors!acksmElemFir0000",
   "name": "Fire Elemental (Minor)",
   "type": "monster",
   "img": "icons/svg/mystery-man.svg",
@@ -98,7 +98,7 @@
   },
   "items": [
     {
-      "_id": "acksmElmFire0000Slam",
+      "_id": "acksmElmFirSlam0",
       "name": "Elemental Strike",
       "type": "weapon",
       "img": "icons/svg/sword.svg",
@@ -133,13 +133,13 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784082013021,
-        "modifiedTime": 1784082013021
+        "createdTime": 1784104629716,
+        "modifiedTime": 1784104629716
       },
-      "_key": "!actors.items!acksmElemFire0000.acksmElmFire0000Slam"
+      "_key": "!actors.items!acksmElemFir0000.acksmElmFirSlam0"
     },
     {
-      "_id": "acksmElmFire0000Mstr",
+      "_id": "acksmElmFirMstr0",
       "name": "Fire Mastery",
       "type": "ability",
       "img": "icons/svg/book.svg",
@@ -168,13 +168,13 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784082013021,
-        "modifiedTime": 1784082013021
+        "createdTime": 1784104629716,
+        "modifiedTime": 1784104629716
       },
-      "_key": "!actors.items!acksmElemFire0000.acksmElmFire0000Mstr"
+      "_key": "!actors.items!acksmElemFir0000.acksmElmFirMstr0"
     },
     {
-      "_id": "acksmElmFire0000Resi",
+      "_id": "acksmElmFirResi0",
       "name": "Burning Residue",
       "type": "item",
       "img": "icons/svg/item-bag.svg",
@@ -206,10 +206,10 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784082013021,
-        "modifiedTime": 1784082013021
+        "createdTime": 1784104629716,
+        "modifiedTime": 1784104629716
       },
-      "_key": "!actors.items!acksmElemFire0000.acksmElmFire0000Resi"
+      "_key": "!actors.items!acksmElemFir0000.acksmElmFirResi0"
     }
   ],
   "effects": [],
@@ -302,7 +302,7 @@
   },
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784082013021,
-    "modifiedTime": 1784082013021
+    "createdTime": 1784104629716,
+    "modifiedTime": 1784104629716
   }
 }

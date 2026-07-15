@@ -1,6 +1,6 @@
 {
-  "_id": "acksmElemAir00000",
-  "_key": "!actors!acksmElemAir00000",
+  "_id": "acksmElemAir0000",
+  "_key": "!actors!acksmElemAir0000",
   "name": "Air Elemental (Minor)",
   "type": "monster",
   "img": "icons/svg/mystery-man.svg",
@@ -98,7 +98,7 @@
   },
   "items": [
     {
-      "_id": "acksmElmAir00000Slam",
+      "_id": "acksmElmAirSlam0",
       "name": "Elemental Strike",
       "type": "weapon",
       "img": "icons/svg/sword.svg",
@@ -133,13 +133,13 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784082013021,
-        "modifiedTime": 1784082013021
+        "createdTime": 1784104629716,
+        "modifiedTime": 1784104629716
       },
-      "_key": "!actors.items!acksmElemAir00000.acksmElmAir00000Slam"
+      "_key": "!actors.items!acksmElemAir0000.acksmElmAirSlam0"
     },
     {
-      "_id": "acksmElmAir00000Mstr",
+      "_id": "acksmElmAirMstr0",
       "name": "Air Mastery",
       "type": "ability",
       "img": "icons/svg/book.svg",
@@ -168,13 +168,13 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784082013021,
-        "modifiedTime": 1784082013021
+        "createdTime": 1784104629716,
+        "modifiedTime": 1784104629716
       },
-      "_key": "!actors.items!acksmElemAir00000.acksmElmAir00000Mstr"
+      "_key": "!actors.items!acksmElemAir0000.acksmElmAirMstr0"
     },
     {
-      "_id": "acksmElmAir00000Resi",
+      "_id": "acksmElmAirResi0",
       "name": "Gaseous Residue",
       "type": "item",
       "img": "icons/svg/item-bag.svg",
@@ -206,10 +206,10 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784082013021,
-        "modifiedTime": 1784082013021
+        "createdTime": 1784104629716,
+        "modifiedTime": 1784104629716
       },
-      "_key": "!actors.items!acksmElemAir00000.acksmElmAir00000Resi"
+      "_key": "!actors.items!acksmElemAir0000.acksmElmAirResi0"
     }
   ],
   "effects": [],
@@ -308,7 +308,7 @@
   },
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784082013021,
-    "modifiedTime": 1784082013021
+    "createdTime": 1784104629716,
+    "modifiedTime": 1784104629716
   }
 }

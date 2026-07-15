@@ -458,10 +458,14 @@ function hydra() {
 /*  Elementals, Minor tier (MM pp.117-118)      */
 /* -------------------------------------------- */
 
-function elemental({ idSuffix, element, dmgType, speeds, vision, senses, immuneNote, residue }) {
+function elemental({ code, element, dmgType, speeds, vision, senses, immuneNote, residue }) {
+  // `code` is a fixed 3-char element tag so every generated id is exactly the
+  // 16 alphanumerics Foundry's DocumentIdField requires:
+  //   actor  acksmElem + code + 0000        (9+3+4)
+  //   items  acksmElm  + code + role + 0    (8+3+4+1)
   const name = `${element} Elemental (Minor)`;
   return monster({
-    id: `acksmElem${idSuffix}`,
+    id: `acksmElem${code}0000`,
     name,
     system: monsterSystem({
       hpFormula: "8d8",
@@ -510,8 +514,8 @@ function elemental({ idSuffix, element, dmgType, speeds, vision, senses, immuneN
       },
     },
     items: [
-      weapon(`acksmElm${idSuffix}Slam`, "Elemental Strike", { damage: "1d8", dmgType, extra: true }),
-      ability(`acksmElm${idSuffix}Mstr`, `${element} Mastery`, {
+      weapon(`acksmElm${code}Slam0`, "Elemental Strike", { damage: "1d8", dmgType, extra: true }),
+      ability(`acksmElm${code}Mstr0`, `${element} Mastery`, {
         category: "unusual",
         desc: {
           Air: "Deals double damage dice against flying targets. A damaged creature smaller than the elemental must make a size-adjusted Paralysis save or be spun off in a random direction a distance equal to the elemental's height, landing prone (the elemental can cleave after).",
@@ -520,7 +524,7 @@ function elemental({ idSuffix, element, dmgType, speeds, vision, senses, immuneN
           Water: "Deals double damage dice against targets standing or submerged in water. A damaged creature smaller than the elemental must save vs Paralysis (-2 per size difference) or begin drowning. May move on land at swim speed but never further than 60' from a water source.",
         }[element],
       }),
-      spoil(`acksmElm${idSuffix}Resi`, residue.name, {
+      spoil(`acksmElm${code}Resi0`, residue.name, {
         weight6: 110,
         cost: 1100,
         component: true,
@@ -534,7 +538,7 @@ function elemental({ idSuffix, element, dmgType, speeds, vision, senses, immuneN
 function elementals() {
   return [
     elemental({
-      idSuffix: "Air00000",
+      code: "Air",
       element: "Air",
       dmgType: "electrical",
       speeds: [{ type: "fly", combat: 120, run: 360, hover: true }],
@@ -544,7 +548,7 @@ function elementals() {
       residue: { name: "Gaseous Residue", effect: "all air effects" },
     }),
     elemental({
-      idSuffix: "Earth000",
+      code: "Ert",
       element: "Earth",
       dmgType: "seismic",
       speeds: [{ type: "land", combat: 20, run: 60, hover: false }],
@@ -554,7 +558,7 @@ function elementals() {
       residue: { name: "Solid Residue", effect: "all earth effects" },
     }),
     elemental({
-      idSuffix: "Fire0000",
+      code: "Fir",
       element: "Fire",
       dmgType: "fire",
       speeds: [{ type: "land", combat: 40, run: 120, hover: false }],
@@ -564,7 +568,7 @@ function elementals() {
       residue: { name: "Burning Residue", effect: "all fire effects" },
     }),
     elemental({
-      idSuffix: "Water000",
+      code: "Wtr",
       element: "Water",
       dmgType: "cold",
       speeds: [{ type: "swim", combat: 60, run: 180, hover: false }],

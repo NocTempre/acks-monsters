@@ -1,6 +1,6 @@
 {
-  "_id": "acksmElemEarth000",
-  "_key": "!actors!acksmElemEarth000",
+  "_id": "acksmElemErt0000",
+  "_key": "!actors!acksmElemErt0000",
   "name": "Earth Elemental (Minor)",
   "type": "monster",
   "img": "icons/svg/mystery-man.svg",
@@ -98,7 +98,7 @@
   },
   "items": [
     {
-      "_id": "acksmElmEarth000Slam",
+      "_id": "acksmElmErtSlam0",
       "name": "Elemental Strike",
       "type": "weapon",
       "img": "icons/svg/sword.svg",
@@ -133,13 +133,13 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784082013021,
-        "modifiedTime": 1784082013021
+        "createdTime": 1784104629716,
+        "modifiedTime": 1784104629716
       },
-      "_key": "!actors.items!acksmElemEarth000.acksmElmEarth000Slam"
+      "_key": "!actors.items!acksmElemErt0000.acksmElmErtSlam0"
     },
     {
-      "_id": "acksmElmEarth000Mstr",
+      "_id": "acksmElmErtMstr0",
       "name": "Earth Mastery",
       "type": "ability",
       "img": "icons/svg/book.svg",
@@ -168,13 +168,13 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784082013021,
-        "modifiedTime": 1784082013021
+        "createdTime": 1784104629716,
+        "modifiedTime": 1784104629716
       },
-      "_key": "!actors.items!acksmElemEarth000.acksmElmEarth000Mstr"
+      "_key": "!actors.items!acksmElemErt0000.acksmElmErtMstr0"
     },
     {
-      "_id": "acksmElmEarth000Resi",
+      "_id": "acksmElmErtResi0",
       "name": "Solid Residue",
       "type": "item",
       "img": "icons/svg/item-bag.svg",
@@ -206,10 +206,10 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784082013021,
-        "modifiedTime": 1784082013021
+        "createdTime": 1784104629716,
+        "modifiedTime": 1784104629716
       },
-      "_key": "!actors.items!acksmElemEarth000.acksmElmEarth000Resi"
+      "_key": "!actors.items!acksmElemErt0000.acksmElmErtResi0"
     }
   ],
   "effects": [],
@@ -308,7 +308,7 @@
   },
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784082013021,
-    "modifiedTime": 1784082013021
+    "createdTime": 1784104629716,
+    "modifiedTime": 1784104629716
   }
 }

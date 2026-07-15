@@ -1,6 +1,6 @@
 {
-  "_id": "acksmElemWater000",
-  "_key": "!actors!acksmElemWater000",
+  "_id": "acksmElemWtr0000",
+  "_key": "!actors!acksmElemWtr0000",
   "name": "Water Elemental (Minor)",
   "type": "monster",
   "img": "icons/svg/mystery-man.svg",
@@ -98,7 +98,7 @@
   },
   "items": [
     {
-      "_id": "acksmElmWater000Slam",
+      "_id": "acksmElmWtrSlam0",
       "name": "Elemental Strike",
       "type": "weapon",
       "img": "icons/svg/sword.svg",
@@ -133,13 +133,13 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784082013021,
-        "modifiedTime": 1784082013021
+        "createdTime": 1784104629716,
+        "modifiedTime": 1784104629716
       },
-      "_key": "!actors.items!acksmElemWater000.acksmElmWater000Slam"
+      "_key": "!actors.items!acksmElemWtr0000.acksmElmWtrSlam0"
     },
     {
-      "_id": "acksmElmWater000Mstr",
+      "_id": "acksmElmWtrMstr0",
       "name": "Water Mastery",
       "type": "ability",
       "img": "icons/svg/book.svg",
@@ -168,13 +168,13 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784082013021,
-        "modifiedTime": 1784082013021
+        "createdTime": 1784104629716,
+        "modifiedTime": 1784104629716
       },
-      "_key": "!actors.items!acksmElemWater000.acksmElmWater000Mstr"
+      "_key": "!actors.items!acksmElemWtr0000.acksmElmWtrMstr0"
     },
     {
-      "_id": "acksmElmWater000Resi",
+      "_id": "acksmElmWtrResi0",
       "name": "Wet Residue",
       "type": "item",
       "img": "icons/svg/item-bag.svg",
@@ -206,10 +206,10 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784082013021,
-        "modifiedTime": 1784082013021
+        "createdTime": 1784104629716,
+        "modifiedTime": 1784104629716
       },
-      "_key": "!actors.items!acksmElemWater000.acksmElmWater000Resi"
+      "_key": "!actors.items!acksmElemWtr0000.acksmElmWtrResi0"
     }
   ],
   "effects": [],
@@ -308,7 +308,7 @@
   },
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784082013021,
-    "modifiedTime": 1784082013021
+    "createdTime": 1784104629716,
+    "modifiedTime": 1784104629716
   }
 }

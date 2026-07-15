@@ -35,6 +35,7 @@ function choices() {
     trainedRole: CFG.choicesOf(CFG.TRAINED_ROLES),
     treasure: CFG.choicesOf(CFG.TREASURE_TYPES),
     damage: CFG.choicesOf(CFG.DAMAGE_TYPES),
+    alignment: { Lawful: "Lawful", Neutral: "Neutral", Chaotic: "Chaotic" },
     category: { henchman: "Henchman", mercenary: "Mercenary", specialist: "Specialist" },
   };
 }

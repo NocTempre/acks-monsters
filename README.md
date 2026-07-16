@@ -70,7 +70,7 @@ the chosen character's `henchmenList` directly.
 ## Data model
 
 See [`docs/MODEL.md`](docs/MODEL.md) for the full field↔stat-block storage map
-and the consumer API, and [`docs/RULES.md`](docs/RULES.md) for the canonical
+and the consumer API, and the local rules extract (`acks-rules/acks-monsters/RULES.md`) for the canonical
 ACKS II monster-rules extract behind the enumerations.
 
 ## Development

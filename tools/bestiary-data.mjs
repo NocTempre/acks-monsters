@@ -2,7 +2,7 @@
  * Example-compendium source data: document factories plus every sample monster,
  * spoil, and table. Consumed by tools/build-packs.mjs (Node only, never loaded
  * by Foundry). Stat blocks are transcribed from the ACKS II Monstrous Manual
- * listings recorded in docs/RULES.md — each monster demonstrates a different
+ * listings recorded in acks-rules/acks-monsters/RULES.md — each monster demonstrates a different
  * slice of the storage model:
  *
  *   Rock Baboon (+Juv/Baby) — animal baseline, variants linking

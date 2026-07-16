@@ -71,5 +71,5 @@ Read raw: `actor.getFlag("acks-monsters", "extras")`.
 ## Enums
 
 All enumerations live in `scripts/config.mjs` (pure data, English labels). See
-`docs/RULES.md` for the rules behind them. The body-form table carries BME/CCF/
+`acks-rules/acks-monsters/RULES.md` for the rules behind them. The body-form table carries BME/CCF/
 AC/training/lair metadata for downstream calculators.

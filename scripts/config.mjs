@@ -1,7 +1,7 @@
 /**
  * Enumerations and reference tables for the ACKS II Monstrous Manual, extracted
  * from the Monster Overview / Monster Creation / Monster Rules chapters (see
- * docs/RULES.md for the exhaustive prose extract).
+ * acks-rules/acks-monsters/RULES.md for the exhaustive prose extract).
  *
  * PURE DATA — no `foundry` references — so this module is imported by both the
  * runtime (config for the data model & sheet) and the Node build tooling
@@ -304,7 +304,7 @@ export const SPECIAL_ABILITIES = {
  * (ccf), AC modifier (acMod), recommended natural attacks & movement, training
  * modifier (tm) & base training months, and % chance in lair. Ranges are stored
  * as min/max; a single published value sets min === max. Draconine AC follows a
- * special formula (acMod null; see docs/RULES.md).
+ * special formula (acMod null; see acks-rules/acks-monsters/RULES.md).
  */
 export const BODY_FORMS = {
   accipitrine: { label: "Accipitrine (raptor)", bmeMin: 1.2, bmeMax: 1.4, ccfMin: 0.025, ccfMax: 0.05, acMod: 0, attacks: "2 talons", move: "450'-480' (fly)", tm: 1, trainMonths: 2, lairPct: 20 },

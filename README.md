@@ -96,5 +96,20 @@ https://github.com/NocTempre/acks-monsters/releases/latest/download/module.json
 
 ## License
 
-Content derived from ACKS II is used under Autarch's community-use / compatibility
-guidelines. Code is provided as-is.
+**Code:** © NocTempre — proprietary; all rights reserved except as granted to
+Autarch LLC under the **ACKS II App License**. This module is **not** open source
+or Open Game Content, and no license is granted to copy, redistribute, or reuse
+its code. See [`LICENSE`](LICENSE).
+
+**ACKS II content** is used under the **ACKS II App License**. ACKS, ACKS II, and
+Adventurer Conqueror King System are trademarks of **Autarch LLC**.
+
+**Unofficial** — this is an unofficial fan module, not published or endorsed by
+Autarch LLC.
+
+**Registration #:** _[pending registration]_
+
+**Requires:** a legitimate copy of the ACKS II rules this module draws on —
+Adventurer Conqueror King System II (ACKS II), monster stat-block rules
+_[confirm exact publication title(s)]_. The module is not a substitute for the
+books and is free to use.

@@ -1,20 +1,20 @@
 {
-  "_id": "acksmElemFir0000",
-  "_key": "!actors!acksmElemFir0000",
-  "name": "Fire Elemental (Minor)",
+  "_id": "acksmPackMule000",
+  "_key": "!actors!acksmPackMule000",
+  "name": "Pack Mule",
   "type": "monster",
   "img": "icons/svg/mystery-man.svg",
   "system": {
     "_schemaVersion": 3,
     "isNew": false,
     "hp": {
-      "hd": "8d8",
-      "value": 36,
-      "max": 36,
+      "hd": "2d8",
+      "value": 9,
+      "max": 9,
       "bhr": "1d3"
     },
     "aac": {
-      "value": 7,
+      "value": 1,
       "mod": 0
     },
     "thac0": {
@@ -48,25 +48,25 @@
     },
     "saves": {
       "paralysis": {
-        "value": 8
+        "value": 14
       },
       "death": {
-        "value": 9
+        "value": 15
       },
       "blast": {
-        "value": 10
+        "value": 16
       },
       "breath": {
-        "value": 10
+        "value": 16
       },
       "implements": {
-        "value": 11
+        "value": 17
       },
       "wand": {
-        "value": 11
+        "value": 17
       },
       "spell": {
-        "value": 12
+        "value": 18
       }
     },
     "save": {
@@ -81,31 +81,31 @@
       "quantity": 1
     },
     "details": {
-      "biography": "<p>A fragment of the living element of the Sphere of Fire, torn from its collective and instantiated by conjuration.</p>",
+      "biography": "<p>A stoic beast of burden, loaded for an expedition. Invented test statistics.</p>",
       "alignment": "Neutral",
-      "xp": 1100,
+      "xp": 10,
       "treasure": {
         "table": "",
         "type": "none"
       },
       "appearing": {
-        "d": "1",
-        "w": "1"
+        "d": "1d6",
+        "w": "2d6"
       },
-      "morale": 4
+      "morale": 0
     },
     "attacks": ""
   },
   "items": [
     {
-      "_id": "acksmElmFirSlam0",
-      "name": "Elemental Strike",
+      "_id": "acksmMuleHoof000",
+      "name": "Hoof",
       "type": "weapon",
       "img": "icons/svg/sword.svg",
       "system": {
         "_schemaVersion": 3,
         "description": "",
-        "damage": "1d8",
+        "damage": "1d4",
         "bonus": 0,
         "melee": true,
         "missile": false,
@@ -123,8 +123,9 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
-          "damageType": "fire",
-          "extraordinary": true
+          "naturalWeapon": "hoof",
+          "damageType": "bludgeoning",
+          "extraordinary": false
         }
       },
       "ownership": {
@@ -133,83 +134,70 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
       },
-      "_key": "!actors.items!acksmElemFir0000.acksmElmFirSlam0"
+      "_key": "!actors.items!acksmPackMule000.acksmMuleHoof000"
     },
     {
-      "_id": "acksmElmFirMstr0",
-      "name": "Fire Mastery",
-      "type": "ability",
-      "img": "icons/svg/book.svg",
-      "system": {
-        "_schemaVersion": 3,
-        "description": "<p>Deals double damage dice against burning targets or those carrying open flames. A damaged creature must make a Blast save or start burning (1d8 fire at the start of its next initiative, ends after 2 rounds, on immersion, or when the elemental is destroyed). Cannot cross water wider than its diameter.</p>",
-        "proficiencytype": "general",
-        "favorite": false,
-        "pattern": "white",
-        "requirements": "",
-        "roll": "",
-        "rollType": "above",
-        "rollTarget": 0,
-        "blindroll": false,
-        "save": ""
-      },
-      "effects": [],
-      "flags": {
-        "acks-monsters": {
-          "abilityCategory": "unusual"
-        }
-      },
-      "ownership": {
-        "default": 0
-      },
-      "sort": 0,
-      "_stats": {
-        "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
-      },
-      "_key": "!actors.items!acksmElemFir0000.acksmElmFirMstr0"
-    },
-    {
-      "_id": "acksmElmFirResi0",
-      "name": "Burning Residue",
+      "_id": "acksmMuleSack000",
+      "name": "Grain Sack",
       "type": "item",
       "img": "icons/svg/item-bag.svg",
       "system": {
         "_schemaVersion": 3,
-        "description": "<p>Harvest from a destroyed elemental with Alchemy 2. 18 2/6 st.</p>",
+        "description": "<p>6 stone of grain each.</p>",
+        "subtype": "item",
+        "quantity": {
+          "value": 4,
+          "max": 0
+        },
+        "cost": 2,
+        "weight": 0,
+        "weight6": 36
+      },
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14",
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
+      },
+      "_key": "!actors.items!acksmPackMule000.acksmMuleSack000"
+    },
+    {
+      "_id": "acksmMuleRope000",
+      "name": "Coiled Rope",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "_schemaVersion": 3,
+        "description": "",
         "subtype": "item",
         "quantity": {
           "value": 1,
           "max": 0
         },
-        "cost": 1100,
+        "cost": 1,
         "weight": 0,
-        "weight6": 110
+        "weight6": 3
       },
       "effects": [],
-      "flags": {
-        "acks-monsters": {
-          "spoil": true,
-          "component": true,
-          "researchEffects": [
-            "all fire effects"
-          ]
-        }
-      },
+      "flags": {},
       "ownership": {
         "default": 0
       },
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
       },
-      "_key": "!actors.items!acksmElemFir0000.acksmElmFirResi0"
+      "_key": "!actors.items!acksmPackMule000.acksmMuleRope000"
     }
   ],
   "effects": [],
@@ -217,18 +205,22 @@
     "acks-monsters": {
       "extras": {
         "types": [
-          "incarnation"
+          "animal"
         ],
-        "subtype": "elemental",
-        "size": "huge",
+        "subtype": "domestic",
+        "size": "large",
+        "mass": {
+          "stone": 80,
+          "lbs": 800
+        },
         "hd": {
-          "count": 8,
-          "asterisks": 1,
+          "count": 2,
+          "asterisks": 0,
           "dieType": 8
         },
         "saveAs": {
           "class": "fighter",
-          "level": 8
+          "level": 0
         },
         "speeds": [
           {
@@ -239,30 +231,60 @@
           }
         ],
         "vision": [
-          "lightless"
+          "night"
         ],
-        "lightlessRange": 120,
-        "otherSenses": [],
-        "defenses": {
-          "immunities": {
-            "damage": [
-              "fire"
-            ],
-            "mundane": true,
-            "extraordinary": true,
-            "effects": "enchantment; necrotic; poisonous; mundane bludgeoning, piercing, and slashing damage",
-            "note": "A giant pillar of flame; 1' diameter and 1' height per HD."
+        "otherSenses": [
+          {
+            "type": "acuteHearing",
+            "range": null,
+            "note": ""
           }
+        ],
+        "load": {
+          "normal": 20,
+          "capacity": 40
         },
         "secondary": {
+          "expeditionSpeed": 24,
+          "supplyCost": 1,
           "trainingMonths": 1,
-          "intelligence": "sapient"
+          "intelligence": "bestial",
+          "trainingModifier": 2,
+          "untrainedValue": {
+            "adult": 10,
+            "juvenile": 5,
+            "baby": 3
+          },
+          "trainedValue": [
+            {
+              "role": "workbeast",
+              "value": 30,
+              "note": ""
+            }
+          ],
+          "lifespan": {
+            "baby": 0,
+            "juvenile": 0.5,
+            "adolescent": 2,
+            "adult": 5,
+            "middleAged": 15,
+            "old": 22,
+            "ancient": 30,
+            "maximum": 38
+          },
+          "reproduction": {
+            "count": "1",
+            "youngType": "live",
+            "interval": 2,
+            "intervalUnit": "year"
+          }
         },
         "encounter": {
+          "lairChance": null,
           "dungeon": {
             "wandering": {
-              "noun": "Solitary",
-              "number": "1"
+              "noun": "Train",
+              "number": "1d6"
             },
             "lair": {
               "noun": "",
@@ -271,24 +293,20 @@
           },
           "wilderness": {
             "wandering": {
-              "noun": "Solitary",
-              "number": "1"
+              "noun": "Herd",
+              "number": "2d6"
             },
             "lair": {
               "noun": "",
               "number": ""
             }
           }
-        },
-        "description": {
-          "combat": "<p>As incarnations, elementals can be held at bay by <em>holy circle</em> and dispelled with <em>counterspell</em> or <em>dispel magic</em>. They understand the languages of their summoner. Minor tier: Huge, AC 7, 8* HD, 1d8 damage, saves F8, XP 1,100.</p>",
-          "ecology": "<p>Elementals endure until destroyed (indefinite lifespan) and do not reproduce. They cannot be bought or sold.</p>"
         }
       }
     }
   },
   "prototypeToken": {
-    "name": "Fire Elemental (Minor)",
+    "name": "Pack Mule",
     "actorLink": false,
     "disposition": -1,
     "sight": {
@@ -302,7 +320,7 @@
   },
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784104629716,
-    "modifiedTime": 1784104629716
+    "createdTime": 1784255926062,
+    "modifiedTime": 1784255926062
   }
 }

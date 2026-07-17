@@ -1,20 +1,20 @@
 {
-  "_id": "acksmElemAir0000",
-  "_key": "!actors!acksmElemAir0000",
-  "name": "Air Elemental (Minor)",
+  "_id": "acksmGiantRat000",
+  "_key": "!actors!acksmGiantRat000",
+  "name": "Giant Rat",
   "type": "monster",
   "img": "icons/svg/mystery-man.svg",
   "system": {
     "_schemaVersion": 3,
     "isNew": false,
     "hp": {
-      "hd": "8d8",
-      "value": 36,
-      "max": 36,
+      "hd": "1d4",
+      "value": 2,
+      "max": 2,
       "bhr": "1d3"
     },
     "aac": {
-      "value": 7,
+      "value": 1,
       "mod": 0
     },
     "thac0": {
@@ -48,25 +48,25 @@
     },
     "saves": {
       "paralysis": {
-        "value": 8
+        "value": 14
       },
       "death": {
-        "value": 9
+        "value": 15
       },
       "blast": {
-        "value": 10
+        "value": 16
       },
       "breath": {
-        "value": 10
+        "value": 16
       },
       "implements": {
-        "value": 11
+        "value": 17
       },
       "wand": {
-        "value": 11
+        "value": 17
       },
       "spell": {
-        "value": 12
+        "value": 18
       }
     },
     "save": {
@@ -81,31 +81,31 @@
       "quantity": 1
     },
     "details": {
-      "biography": "<p>A fragment of the living element of the Sphere of Air, torn from its collective and instantiated by conjuration.</p>",
+      "biography": "<p>A dog-sized scavenger rat. Invented test statistics over a generic open-content archetype.</p>",
       "alignment": "Neutral",
-      "xp": 1100,
+      "xp": 5,
       "treasure": {
         "table": "",
         "type": "none"
       },
       "appearing": {
-        "d": "1",
-        "w": "1"
+        "d": "3d6",
+        "w": "3d10"
       },
-      "morale": 4
+      "morale": -1
     },
     "attacks": ""
   },
   "items": [
     {
-      "_id": "acksmElmAirSlam0",
-      "name": "Elemental Strike",
+      "_id": "acksmRatBite0000",
+      "name": "Bite",
       "type": "weapon",
-      "img": "icons/svg/sword.svg",
+      "img": "icons/svg/pawprint.svg",
       "system": {
         "_schemaVersion": 3,
         "description": "",
-        "damage": "1d8",
+        "damage": "1d3",
         "bonus": 0,
         "melee": true,
         "missile": false,
@@ -123,8 +123,9 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
-          "damageType": "electrical",
-          "extraordinary": true
+          "naturalWeapon": "bite",
+          "damageType": "piercing",
+          "extraordinary": false
         }
       },
       "ownership": {
@@ -133,19 +134,19 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
       },
-      "_key": "!actors.items!acksmElemAir0000.acksmElmAirSlam0"
+      "_key": "!actors.items!acksmGiantRat000.acksmRatBite0000"
     },
     {
-      "_id": "acksmElmAirMstr0",
-      "name": "Air Mastery",
+      "_id": "acksmRatFever000",
+      "name": "Filth Fever",
       "type": "ability",
       "img": "icons/svg/book.svg",
       "system": {
         "_schemaVersion": 3,
-        "description": "<p>Deals double damage dice against flying targets. A damaged creature smaller than the elemental must make a size-adjusted Paralysis save or be spun off in a random direction a distance equal to the elemental's height, landing prone (the elemental can cleave after).</p>",
+        "description": "<p>A bitten creature must save vs Death or contract a debilitating fever (invented test effect).</p>",
         "proficiencytype": "general",
         "favorite": false,
         "pattern": "white",
@@ -159,7 +160,7 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
-          "abilityCategory": "unusual"
+          "abilityCategory": "disease"
         }
       },
       "ownership": {
@@ -168,36 +169,34 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
       },
-      "_key": "!actors.items!acksmElemAir0000.acksmElmAirMstr0"
+      "_key": "!actors.items!acksmGiantRat000.acksmRatFever000"
     },
     {
-      "_id": "acksmElmAirResi0",
-      "name": "Gaseous Residue",
+      "_id": "acksmRatPelt0000",
+      "name": "Giant Rat Pelt",
       "type": "item",
       "img": "icons/svg/item-bag.svg",
       "system": {
         "_schemaVersion": 3,
-        "description": "<p>Harvest from a destroyed elemental with Alchemy 2. 18 2/6 st.</p>",
+        "description": "<p>A mangy but saleable pelt.</p>",
         "subtype": "item",
         "quantity": {
           "value": 1,
           "max": 0
         },
-        "cost": 1100,
+        "cost": 5,
         "weight": 0,
-        "weight6": 110
+        "weight6": 1
       },
       "effects": [],
       "flags": {
         "acks-monsters": {
           "spoil": true,
-          "component": true,
-          "researchEffects": [
-            "all air effects"
-          ]
+          "component": false,
+          "researchEffects": []
         }
       },
       "ownership": {
@@ -206,10 +205,10 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
       },
-      "_key": "!actors.items!acksmElemAir0000.acksmElmAirResi0"
+      "_key": "!actors.items!acksmGiantRat000.acksmRatPelt0000"
     }
   ],
   "effects": [],
@@ -217,84 +216,117 @@
     "acks-monsters": {
       "extras": {
         "types": [
-          "incarnation"
+          "animal"
         ],
-        "subtype": "elemental",
-        "size": "huge",
+        "subtype": "wild",
+        "size": "small",
+        "mass": {
+          "stone": 1,
+          "lbs": 25
+        },
         "hd": {
-          "count": 8,
-          "asterisks": 1,
-          "dieType": 8
+          "count": 0.5,
+          "asterisks": 0,
+          "dieType": 4
         },
         "saveAs": {
           "class": "fighter",
-          "level": 8
+          "level": 0
         },
         "speeds": [
           {
-            "type": "fly",
-            "combat": 120,
-            "run": 360,
-            "hover": true
+            "type": "land",
+            "combat": 30,
+            "run": 90,
+            "hover": false
+          },
+          {
+            "type": "swim",
+            "combat": 15,
+            "run": 45,
+            "hover": false
           }
         ],
         "vision": [
-          "lightless"
+          "night"
         ],
-        "lightlessRange": 60,
         "otherSenses": [
           {
-            "type": "mechAerial",
-            "range": 360,
-            "note": "range equals movement"
+            "type": "acuteOlfaction",
+            "range": null,
+            "note": ""
           }
         ],
-        "defenses": {
-          "immunities": {
-            "damage": [
-              "electrical"
-            ],
-            "mundane": true,
-            "extraordinary": true,
-            "effects": "enchantment; necrotic; poisonous; mundane bludgeoning, piercing, and slashing damage",
-            "note": "A twirling mass of air crackling with lightning; 6\" diameter and 2' height per HD."
-          }
+        "load": {
+          "normal": 1,
+          "capacity": 2
         },
         "secondary": {
-          "trainingMonths": 1,
-          "intelligence": "sapient"
+          "expeditionSpeed": 18,
+          "supplyCost": 0.1,
+          "trainingMonths": 3,
+          "intelligence": "bestial",
+          "trainingModifier": -1,
+          "lifespan": {
+            "baby": 0,
+            "juvenile": 0.2,
+            "adolescent": 0.5,
+            "adult": 1,
+            "middleAged": 2,
+            "old": 3,
+            "ancient": 4,
+            "maximum": 5
+          },
+          "reproduction": {
+            "count": "2d4",
+            "youngType": "litter",
+            "interval": 3,
+            "intervalUnit": "month"
+          },
+          "untrainedValue": {
+            "adult": 2,
+            "juvenile": 1,
+            "baby": 0.5
+          },
+          "trainedValue": [
+            {
+              "role": "other",
+              "value": 8,
+              "note": "ratter"
+            }
+          ]
         },
         "encounter": {
+          "lairChance": 20,
           "dungeon": {
             "wandering": {
-              "noun": "Solitary",
-              "number": "1"
+              "noun": "Pack",
+              "number": "3d6"
             },
             "lair": {
-              "noun": "",
-              "number": ""
+              "noun": "Nest",
+              "number": "3d10"
             }
           },
           "wilderness": {
             "wandering": {
-              "noun": "Solitary",
-              "number": "1"
+              "noun": "Pack",
+              "number": "3d6"
             },
             "lair": {
-              "noun": "",
-              "number": ""
+              "noun": "Nest",
+              "number": "3d10"
             }
           }
         },
         "description": {
-          "combat": "<p>As incarnations, elementals can be held at bay by <em>holy circle</em> and dispelled with <em>counterspell</em> or <em>dispel magic</em>. They understand the languages of their summoner. Minor tier: Huge, AC 7, 8* HD, 1d8 damage, saves F8, XP 1,100.</p>",
-          "ecology": "<p>Elementals endure until destroyed (indefinite lifespan) and do not reproduce. They cannot be bought or sold.</p>"
+          "combat": "<p>Bites and flees; fights only when cornered or in overwhelming numbers.</p>"
         }
       }
     }
   },
   "prototypeToken": {
-    "name": "Air Elemental (Minor)",
+    "name": "Giant Rat",
     "actorLink": false,
     "disposition": -1,
     "sight": {
@@ -308,7 +340,7 @@
   },
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784104629716,
-    "modifiedTime": 1784104629716
+    "createdTime": 1784255926062,
+    "modifiedTime": 1784255926062
   }
 }

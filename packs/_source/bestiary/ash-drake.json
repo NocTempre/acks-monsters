@@ -1,20 +1,20 @@
 {
-  "_id": "acksmRedDragon00",
-  "_key": "!actors!acksmRedDragon00",
-  "name": "Red Dragon (Adult)",
+  "_id": "acksmAshDrake000",
+  "_key": "!actors!acksmAshDrake000",
+  "name": "Ash Drake",
   "type": "monster",
   "img": "icons/svg/mystery-man.svg",
   "system": {
     "_schemaVersion": 3,
     "isNew": false,
     "hp": {
-      "hd": "10d8",
-      "value": 45,
-      "max": 45,
+      "hd": "9d8",
+      "value": 40,
+      "max": 40,
       "bhr": "1d3"
     },
     "aac": {
-      "value": 7,
+      "value": 6,
       "mod": 0
     },
     "thac0": {
@@ -48,25 +48,25 @@
     },
     "saves": {
       "paralysis": {
-        "value": 7
-      },
-      "death": {
         "value": 8
       },
-      "blast": {
+      "death": {
         "value": 9
+      },
+      "blast": {
+        "value": 10
       },
       "breath": {
-        "value": 9
+        "value": 10
       },
       "implements": {
-        "value": 10
+        "value": 11
       },
       "wand": {
-        "value": 10
+        "value": 11
       },
       "spell": {
-        "value": 11
+        "value": 12
       }
     },
     "save": {
@@ -81,31 +81,31 @@
       "quantity": 1
     },
     "details": {
-      "biography": "<p>An adult winged drake of the fire-scarred wastes: flaming red hide, a 90'×30' cone of dragon-flame, and a hoard worth killing for.</p>",
+      "biography": "<p>A wholly invented cinder-scaled drake for exercising the full schema. Not a published creature.</p>",
       "alignment": "Chaotic",
-      "xp": 3650,
+      "xp": 2400,
       "treasure": {
         "table": "",
-        "type": "Q, N"
+        "type": "Q"
       },
       "appearing": {
-        "d": "1d4",
-        "w": "1d4"
+        "d": "1",
+        "w": "1d2"
       },
-      "morale": 1
+      "morale": 2
     },
     "attacks": ""
   },
   "items": [
     {
-      "_id": "acksmDrgClaw0000",
+      "_id": "acksmDrkClaw0000",
       "name": "Claw",
       "type": "weapon",
       "img": "icons/svg/sword.svg",
       "system": {
         "_schemaVersion": 3,
         "description": "",
-        "damage": "2d3",
+        "damage": "1d6",
         "bonus": 0,
         "melee": true,
         "missile": false,
@@ -134,20 +134,20 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
       },
-      "_key": "!actors.items!acksmRedDragon00.acksmDrgClaw0000"
+      "_key": "!actors.items!acksmAshDrake000.acksmDrkClaw0000"
     },
     {
-      "_id": "acksmDrgBite0000",
+      "_id": "acksmDrkBite0000",
       "name": "Bite",
       "type": "weapon",
       "img": "icons/svg/pawprint.svg",
       "system": {
         "_schemaVersion": 3,
         "description": "",
-        "damage": "2d10",
+        "damage": "2d8",
         "bonus": 0,
         "melee": true,
         "missile": false,
@@ -176,19 +176,19 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
       },
-      "_key": "!actors.items!acksmRedDragon00.acksmDrgBite0000"
+      "_key": "!actors.items!acksmAshDrake000.acksmDrkBite0000"
     },
     {
-      "_id": "acksmDrgBreath00",
-      "name": "Flame Breath",
+      "_id": "acksmDrkBreath00",
+      "name": "Cinder Breath",
       "type": "ability",
       "img": "icons/svg/fire.svg",
       "system": {
         "_schemaVersion": 3,
-        "description": "<p>90'×30' cone of flame dealing 10d6 extraordinary fire damage (Blast save for half). Ignites combustibles; deals full damage to wood and one-tenth to stone. The dragon is immune to its own breath.</p>",
+        "description": "<p>A cone of burning ash dealing 9d6 extraordinary fire damage (Blast save for half). Invented test ability.</p>",
         "proficiencytype": "general",
         "favorite": false,
         "pattern": "white",
@@ -212,54 +212,19 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
       },
-      "_key": "!actors.items!acksmRedDragon00.acksmDrgBreath00"
+      "_key": "!actors.items!acksmAshDrake000.acksmDrkBreath00"
     },
     {
-      "_id": "acksmDrgClutch00",
-      "name": "Clutching Claws",
-      "type": "ability",
-      "img": "icons/svg/book.svg",
-      "system": {
-        "_schemaVersion": 3,
-        "description": "<p>Dive attack with claws for double damage dice. If both claws hit a smaller creature during a dive, it must make a size-adjusted Paralysis save or be grabbed and carried off.</p>",
-        "proficiencytype": "general",
-        "favorite": false,
-        "pattern": "white",
-        "requirements": "",
-        "roll": "",
-        "rollType": "above",
-        "rollTarget": 0,
-        "blindroll": false,
-        "save": ""
-      },
-      "effects": [],
-      "flags": {
-        "acks-monsters": {
-          "abilityCategory": "diveAttack"
-        }
-      },
-      "ownership": {
-        "default": 0
-      },
-      "sort": 0,
-      "_stats": {
-        "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
-      },
-      "_key": "!actors.items!acksmRedDragon00.acksmDrgClutch00"
-    },
-    {
-      "_id": "acksmDrgSpells00",
+      "_id": "acksmDrkSpell000",
       "name": "Innate Spellcasting",
       "type": "ability",
       "img": "icons/svg/book.svg",
       "system": {
         "_schemaVersion": 3,
-        "description": "<p>Casts arcane spells as a caster of level 5 (half HD): 2 first-, 2 second-, and 1 third-level spell per day. Its repertoire is innate.</p>",
+        "description": "<p>Casts arcane spells as a 4th-level caster, 2/2 per day (invented).</p>",
         "proficiencytype": "general",
         "favorite": false,
         "pattern": "white",
@@ -282,135 +247,19 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
       },
-      "_key": "!actors.items!acksmRedDragon00.acksmDrgSpells00"
+      "_key": "!actors.items!acksmAshDrake000.acksmDrkSpell000"
     },
     {
-      "_id": "acksmDrgGizzard0",
-      "name": "Dragon Gizzard (Adult)",
-      "type": "item",
-      "img": "icons/svg/item-bag.svg",
-      "system": {
-        "_schemaVersion": 3,
-        "description": "<p>Harvest with Animal Husbandry and/or Healing 3 (combined ranks). 8 st.</p>",
-        "subtype": "item",
-        "quantity": {
-          "value": 1,
-          "max": 0
-        },
-        "cost": 480,
-        "weight": 0,
-        "weight6": 48
-      },
-      "effects": [],
-      "flags": {
-        "acks-monsters": {
-          "spoil": true,
-          "component": true,
-          "researchEffects": [
-            "locate treasure"
-          ]
-        }
-      },
-      "ownership": {
-        "default": 0
-      },
-      "sort": 0,
-      "_stats": {
-        "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
-      },
-      "_key": "!actors.items!acksmRedDragon00.acksmDrgGizzard0"
-    },
-    {
-      "_id": "acksmDrgGland000",
-      "name": "Pyrrhous Gland",
+      "_id": "acksmDrkGland000",
+      "name": "Ember Gland",
       "type": "item",
       "img": "icons/svg/fire.svg",
       "system": {
         "_schemaVersion": 3,
-        "description": "<p>The fire-gland of a red dragon. 8 st.</p>",
-        "subtype": "item",
-        "quantity": {
-          "value": 1,
-          "max": 0
-        },
-        "cost": 480,
-        "weight": 0,
-        "weight6": 48
-      },
-      "effects": [],
-      "flags": {
-        "acks-monsters": {
-          "spoil": true,
-          "component": true,
-          "researchEffects": [
-            "conflagration",
-            "fireball",
-            "energy invulnerability - fire"
-          ]
-        }
-      },
-      "ownership": {
-        "default": 0
-      },
-      "sort": 0,
-      "_stats": {
-        "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
-      },
-      "_key": "!actors.items!acksmRedDragon00.acksmDrgGland000"
-    },
-    {
-      "_id": "acksmDrgClaws000",
-      "name": "Dragon Front Claws",
-      "type": "item",
-      "img": "icons/svg/item-bag.svg",
-      "system": {
-        "_schemaVersion": 3,
-        "description": "<p>8 st.</p>",
-        "subtype": "item",
-        "quantity": {
-          "value": 1,
-          "max": 0
-        },
-        "cost": 480,
-        "weight": 0,
-        "weight6": 48
-      },
-      "effects": [],
-      "flags": {
-        "acks-monsters": {
-          "spoil": true,
-          "component": true,
-          "researchEffects": [
-            "swift sword"
-          ]
-        }
-      },
-      "ownership": {
-        "default": 0
-      },
-      "sort": 0,
-      "_stats": {
-        "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
-      },
-      "_key": "!actors.items!acksmRedDragon00.acksmDrgClaws000"
-    },
-    {
-      "_id": "acksmDrgHide0000",
-      "name": "Armored Dragon Hide",
-      "type": "item",
-      "img": "icons/svg/item-bag.svg",
-      "system": {
-        "_schemaVersion": 3,
-        "description": "<p>An adult dragon's armored hide: 400gp, 24 st.</p>",
+        "description": "<p>Invented research component.</p>",
         "subtype": "item",
         "quantity": {
           "value": 1,
@@ -418,7 +267,46 @@
         },
         "cost": 400,
         "weight": 0,
-        "weight6": 144
+        "weight6": 40
+      },
+      "effects": [],
+      "flags": {
+        "acks-monsters": {
+          "spoil": true,
+          "component": true,
+          "researchEffects": [
+            "cinder bolt",
+            "ward of ashes"
+          ]
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14",
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
+      },
+      "_key": "!actors.items!acksmAshDrake000.acksmDrkGland000"
+    },
+    {
+      "_id": "acksmDrkHide0000",
+      "name": "Ashen Hide",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "_schemaVersion": 3,
+        "description": "<p>Scorch-proof scale hide.</p>",
+        "subtype": "item",
+        "quantity": {
+          "value": 1,
+          "max": 0
+        },
+        "cost": 350,
+        "weight": 0,
+        "weight6": 60
       },
       "effects": [],
       "flags": {
@@ -434,10 +322,10 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
       },
-      "_key": "!actors.items!acksmRedDragon00.acksmDrgHide0000"
+      "_key": "!actors.items!acksmAshDrake000.acksmDrkHide0000"
     }
   ],
   "effects": [],
@@ -447,21 +335,20 @@
         "types": [
           "monstrosity"
         ],
-        "subtype": "red dragon (winged drake)",
-        "size": "gigantic",
-        "bodyForm": "draconine",
+        "subtype": "drake",
+        "size": "huge",
         "mass": {
-          "stone": 900,
-          "lbs": 9000
+          "stone": 400,
+          "lbs": 4000
         },
         "hd": {
-          "count": 10,
-          "asterisks": 3,
+          "count": 9,
+          "asterisks": 2,
           "dieType": 8
         },
         "saveAs": {
           "class": "fighter",
-          "level": 10
+          "level": 8
         },
         "speeds": [
           {
@@ -484,19 +371,14 @@
         "lightlessRange": 90,
         "otherSenses": [
           {
-            "type": "acuteHearing",
-            "range": null,
-            "note": ""
-          },
-          {
             "type": "acuteOlfaction",
             "range": null,
-            "note": ""
+            "note": "smells smoke leagues away"
           }
         ],
         "load": {
-          "normal": 180,
-          "capacity": 360
+          "normal": 100,
+          "capacity": 200
         },
         "defenses": {
           "immunities": {
@@ -504,70 +386,90 @@
               "fire"
             ],
             "mundane": true,
-            "extraordinary": false,
-            "effects": "its own breath weapon",
+            "extraordinary": true,
+            "effects": "its own breath",
             "note": ""
           },
-          "resistances": {
+          "susceptibilities": {
             "damage": [
-              "fire"
+              "cold"
             ],
             "mundane": false,
-            "extraordinary": true,
+            "extraordinary": false,
             "effects": "",
-            "note": ""
+            "note": "sluggish below freezing"
           }
         },
         "spellcasting": {
           "class": "Arcane (innate)",
-          "level": 5,
-          "note": "2/2/1 spells per day; repertoire is innate (no formula or study); speaks Common, Draconic, and one other language per age category"
+          "level": 4,
+          "note": "2/2 spells per day, innate repertoire (invented)"
         },
         "secondary": {
           "expeditionSpeed": 48,
-          "trainingMonths": 1,
+          "trainingMonths": 2,
           "intelligence": "sapient",
+          "oviparous": true,
           "reproduction": {
             "count": "1d4",
             "youngType": "egg",
-            "intervalUnit": ""
+            "interval": 10,
+            "intervalUnit": "year"
           },
-          "oviparous": true
+          "untrainedValue": {
+            "adult": 3000,
+            "juvenile": 1500,
+            "baby": 800
+          },
+          "trainedValue": [
+            {
+              "role": "guard",
+              "value": 8000,
+              "note": ""
+            }
+          ],
+          "lifespan": {
+            "baby": 0,
+            "juvenile": 5,
+            "adolescent": 15,
+            "adult": 30,
+            "middleAged": 120,
+            "old": 180,
+            "ancient": 240,
+            "maximum": 300
+          }
         },
         "encounter": {
-          "lairChance": 40,
+          "lairChance": 45,
           "dungeon": {
             "wandering": {
               "noun": "Solitary",
-              "number": "1d4"
+              "number": "1"
             },
             "lair": {
               "noun": "Lair",
-              "number": "1d4"
+              "number": "1d2"
             }
           },
           "wilderness": {
             "wandering": {
               "noun": "Solitary",
-              "number": "1d4"
+              "number": "1"
             },
             "lair": {
               "noun": "Lair",
-              "number": "1d4"
+              "number": "1d2"
             }
           }
         },
         "description": {
-          "appearance": "<p>Gigantic (900 st.). Hide of flaming red, burnt orange, or charcoal.</p>",
-          "combat": "<p>40% chance caught asleep in its lair (surprised the first round). Natural weapons always deal extraordinary damage. Speech chance 20% at adult age — this specimen speaks and casts spells (counts as one additional special ability for XP).</p>",
-          "ecology": "<p>Dragons live indefinitely, growing through ten age categories. A mated pair without offspring incubates 1d4 eggs (600gp, 8 st, 2 hp each; hatch in 1d4×12 months).</p>",
-          "lore": "<p>\"The last dwarf to truly rule the Meniri Mountains was King Orik Kairn, who died in 225 BE to the dragon-flame of Orm.\" — Sürcaneus of Cyfaraun</p>"
+          "combat": "<p>Opens with its cinder breath, then lands to rake and bite. Hoards whatever glitters.</p>"
         }
       }
     }
   },
   "prototypeToken": {
-    "name": "Red Dragon (Adult)",
+    "name": "Ash Drake",
     "actorLink": false,
     "disposition": -1,
     "sight": {
@@ -581,7 +483,7 @@
   },
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784104629716,
-    "modifiedTime": 1784104629716
+    "createdTime": 1784255926062,
+    "modifiedTime": 1784255926062
   }
 }

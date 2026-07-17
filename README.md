@@ -49,14 +49,15 @@ Henchman · Spells · Description · Effects**. Attacks (weapon items), Abilitie
 3. Fill in the tabbed stat block. Attacks/abilities/spoils are added as normal
    ACKS items; open a monster-owned weapon/ability/item to set its ACKS Monster
    metadata (damage type, ability category, spoil component/effects).
-4. The **example compendia** ship 15 fully-populated monsters spanning the
-   storage model — Rock Baboon family (variants linking), Hydra (HD/save
-   ranges, per-head attacks), all four Minor Elementals (immunities, senses,
-   movement modes), Cave Bear (proficiencies, hug, trained-value roles), Adult
-   Red Dragon (breath weapon, innate spellcasting, defenses, hoarder treasure),
-   Heavy Horse (domestic mount), Lizardman + Champion (multi-type beastman,
-   weapons + natural attacks, oviparous), Orc, and Brigand — plus standalone
-   spoils items and a blank treasure table.
+4. The **example compendia** ship 8 invented test monsters spanning the storage
+   model — Giant Rat (small animal, swim row), Skeleton (undead+construct,
+   defenses block), Dire Wolf (senses, war-mount values), Goblin + Chief (gear
+   inventory, warband nouns, variant links), Pack Mule (carried gear vs
+   Normal/Max Load — ships Encumbered on purpose), Ash Drake (breath weapon,
+   innate spellcasting, immunity/susceptibility, fly, oviparous, hoard), and
+   Marsh Lurker (HD range, multi-tentacle attacks, aquatic senses) — plus
+   standalone spoils items and a blank treasure table. Stats are invented over
+   generic open-content archetypes; nothing is reproduced from published books.
 
 ### Henchmen
 

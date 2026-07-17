@@ -1,19 +1,19 @@
 {
-  "_id": "acksmSpDrgGizz00",
-  "name": "Dragon Gizzard (Adult)",
+  "_id": "acksmSpLrkIchor0",
+  "name": "Lurker Ichor",
   "type": "item",
   "img": "icons/svg/item-bag.svg",
   "system": {
     "_schemaVersion": 3,
-    "description": "<p>Harvest with Animal Husbandry and/or Healing 3 (combined ranks). 8 st.</p>",
+    "description": "<p>Invented research component.</p>",
     "subtype": "item",
     "quantity": {
       "value": 1,
       "max": 0
     },
-    "cost": 480,
+    "cost": 120,
     "weight": 0,
-    "weight6": 48
+    "weight6": 12
   },
   "effects": [],
   "flags": {
@@ -21,7 +21,8 @@
       "spoil": true,
       "component": true,
       "researchEffects": [
-        "locate treasure"
+        "water breathing",
+        "grasp of the deep"
       ]
     }
   },
@@ -31,8 +32,8 @@
   "sort": 0,
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784104629716,
-    "modifiedTime": 1784104629716
+    "createdTime": 1784255926062,
+    "modifiedTime": 1784255926062
   },
-  "_key": "!items!acksmSpDrgGizz00"
+  "_key": "!items!acksmSpLrkIchor0"
 }

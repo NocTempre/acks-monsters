@@ -1,20 +1,20 @@
 {
-  "_id": "acksmBaboonJuv00",
-  "_key": "!actors!acksmBaboonJuv00",
-  "name": "Juvenile Rock Baboon",
+  "_id": "acksmGobChief000",
+  "_key": "!actors!acksmGobChief000",
+  "name": "Goblin Chief",
   "type": "monster",
   "img": "icons/svg/mystery-man.svg",
   "system": {
     "_schemaVersion": 3,
     "isNew": false,
     "hp": {
-      "hd": "1d8",
-      "value": 4,
-      "max": 4,
+      "hd": "3d8",
+      "value": 13,
+      "max": 13,
       "bhr": "1d3"
     },
     "aac": {
-      "value": 1,
+      "value": 4,
       "mod": 0
     },
     "thac0": {
@@ -48,25 +48,25 @@
     },
     "saves": {
       "paralysis": {
-        "value": 14
+        "value": 12
       },
       "death": {
-        "value": 15
+        "value": 13
       },
       "blast": {
-        "value": 16
+        "value": 14
       },
       "breath": {
-        "value": 16
+        "value": 14
       },
       "implements": {
-        "value": 17
+        "value": 15
       },
       "wand": {
-        "value": 17
+        "value": 15
       },
       "spell": {
-        "value": 18
+        "value": 16
       }
     },
     "save": {
@@ -82,30 +82,30 @@
     },
     "details": {
       "biography": "",
-      "alignment": "Neutral",
-      "xp": 10,
+      "alignment": "Chaotic",
+      "xp": 50,
       "treasure": {
         "table": "",
-        "type": "none"
+        "type": "E (per warband)"
       },
       "appearing": {
         "d": "",
         "w": ""
       },
-      "morale": 0
+      "morale": 1
     },
     "attacks": ""
   },
   "items": [
     {
-      "_id": "acksmBabJBite000",
-      "name": "Bite",
+      "_id": "acksmChfSword000",
+      "name": "Notched Sword",
       "type": "weapon",
-      "img": "icons/svg/pawprint.svg",
+      "img": "icons/svg/sword.svg",
       "system": {
         "_schemaVersion": 3,
         "description": "",
-        "damage": "1",
+        "damage": "1d6+1",
         "bonus": 0,
         "melee": true,
         "missile": false,
@@ -123,8 +123,8 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
-          "naturalWeapon": "bite",
-          "damageType": "piercing",
+          "naturalWeapon": "weapon",
+          "damageType": "slashing",
           "extraordinary": false
         }
       },
@@ -134,10 +134,40 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
       },
-      "_key": "!actors.items!acksmBaboonJuv00.acksmBabJBite000"
+      "_key": "!actors.items!acksmGobChief000.acksmChfSword000"
+    },
+    {
+      "_id": "acksmChfMail0000",
+      "name": "Looted Mail Shirt",
+      "type": "item",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "_schemaVersion": 3,
+        "description": "<p>Cut down from human size.</p>",
+        "subtype": "item",
+        "quantity": {
+          "value": 1,
+          "max": 0
+        },
+        "cost": 30,
+        "weight": 0,
+        "weight6": 12
+      },
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14",
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
+      },
+      "_key": "!actors.items!acksmGobChief000.acksmChfMail0000"
     }
   ],
   "effects": [],
@@ -145,45 +175,56 @@
     "acks-monsters": {
       "extras": {
         "types": [
-          "animal"
+          "humanoid"
         ],
-        "subtype": "wild",
+        "subtype": "chief (leads each warband)",
         "size": "small",
-        "bodyForm": "simian",
+        "mass": {
+          "stone": 5,
+          "lbs": 50
+        },
         "hd": {
-          "count": 1,
+          "count": 3,
           "asterisks": 0,
           "dieType": 8
         },
         "saveAs": {
           "class": "fighter",
-          "level": 0
+          "level": 3
         },
         "speeds": [
           {
             "type": "land",
-            "combat": 30,
-            "run": 90,
+            "combat": 20,
+            "run": 60,
             "hover": false
           }
         ],
         "vision": [
-          "night"
+          "lightless"
         ],
+        "lightlessRange": 60,
+        "load": {
+          "normal": 6,
+          "capacity": 12
+        },
         "secondary": {
-          "intelligence": "semiSapient"
+          "intelligence": "sapient"
         },
         "variants": [
           {
-            "label": "Rock Baboon (adult)",
-            "uuid": "Compendium.acks-monsters.bestiary.Actor.acksmBaboonAdlt0"
+            "label": "Goblin",
+            "uuid": "Compendium.acks-monsters.bestiary.Actor.acksmGoblin00000"
           }
-        ]
+        ],
+        "description": {
+          "combat": "<p>While the chief lives, its warband gains +1 morale (invented test rider).</p>"
+        }
       }
     }
   },
   "prototypeToken": {
-    "name": "Juvenile Rock Baboon",
+    "name": "Goblin Chief",
     "actorLink": false,
     "disposition": -1,
     "sight": {
@@ -197,7 +238,7 @@
   },
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784104629716,
-    "modifiedTime": 1784104629716
+    "createdTime": 1784255926062,
+    "modifiedTime": 1784255926062
   }
 }

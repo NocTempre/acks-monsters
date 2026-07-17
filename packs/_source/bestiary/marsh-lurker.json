@@ -1,20 +1,20 @@
 {
-  "_id": "acksmOrcWarrior0",
-  "_key": "!actors!acksmOrcWarrior0",
-  "name": "Orc Warrior",
+  "_id": "acksmMarshLurk00",
+  "_key": "!actors!acksmMarshLurk00",
+  "name": "Marsh Lurker",
   "type": "monster",
   "img": "icons/svg/mystery-man.svg",
   "system": {
     "_schemaVersion": 3,
     "isNew": false,
     "hp": {
-      "hd": "1d8",
-      "value": 4,
-      "max": 4,
+      "hd": "4d8",
+      "value": 18,
+      "max": 18,
       "bhr": "1d3"
     },
     "aac": {
-      "value": 3,
+      "value": 4,
       "mod": 0
     },
     "thac0": {
@@ -48,25 +48,25 @@
     },
     "saves": {
       "paralysis": {
-        "value": 13
+        "value": 11
       },
       "death": {
-        "value": 14
+        "value": 12
       },
       "blast": {
-        "value": 15
+        "value": 13
       },
       "breath": {
-        "value": 15
+        "value": 13
       },
       "implements": {
-        "value": 16
+        "value": 14
       },
       "wand": {
-        "value": 16
+        "value": 14
       },
       "spell": {
-        "value": 17
+        "value": 15
       }
     },
     "save": {
@@ -81,16 +81,16 @@
       "quantity": 1
     },
     "details": {
-      "biography": "<p>Grotesque beastmen bred as warriors from men and wild boars by the ancient Zaharans.</p>",
-      "alignment": "Chaotic",
-      "xp": 10,
+      "biography": "<p>A wholly invented tentacled bog predator for exercising the full schema. Not a published creature.</p>",
+      "alignment": "Neutral",
+      "xp": 190,
       "treasure": {
         "table": "",
-        "type": "G (per warband)"
+        "type": "C"
       },
       "appearing": {
-        "d": "2d4",
-        "w": "2d6"
+        "d": "1",
+        "w": "1d3"
       },
       "morale": 0
     },
@@ -98,14 +98,56 @@
   },
   "items": [
     {
-      "_id": "acksmOrcSpear000",
-      "name": "Spear",
+      "_id": "acksmLrkTent0000",
+      "name": "Tentacle",
       "type": "weapon",
       "img": "icons/svg/sword.svg",
       "system": {
         "_schemaVersion": 3,
         "description": "",
-        "damage": "1d6",
+        "damage": "1d4",
+        "bonus": 0,
+        "melee": true,
+        "missile": false,
+        "equipped": true,
+        "pattern": "transparent",
+        "tags": [],
+        "counter": {
+          "value": 4,
+          "max": 4
+        },
+        "cost": 0,
+        "weight": 0,
+        "weight6": 0
+      },
+      "effects": [],
+      "flags": {
+        "acks-monsters": {
+          "naturalWeapon": "tentacle",
+          "damageType": "bludgeoning",
+          "extraordinary": false
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14",
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
+      },
+      "_key": "!actors.items!acksmMarshLurk00.acksmLrkTent0000"
+    },
+    {
+      "_id": "acksmLrkBite0000",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/pawprint.svg",
+      "system": {
+        "_schemaVersion": 3,
+        "description": "",
+        "damage": "1d8",
         "bonus": 0,
         "melee": true,
         "missile": false,
@@ -123,7 +165,7 @@
       "effects": [],
       "flags": {
         "acks-monsters": {
-          "naturalWeapon": "weapon",
+          "naturalWeapon": "bite",
           "damageType": "piercing",
           "extraordinary": false
         }
@@ -134,40 +176,33 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
       },
-      "_key": "!actors.items!acksmOrcWarrior0.acksmOrcSpear000"
+      "_key": "!actors.items!acksmMarshLurk00.acksmLrkBite0000"
     },
     {
-      "_id": "acksmOrcSword000",
-      "name": "Short Sword",
-      "type": "weapon",
-      "img": "icons/svg/sword.svg",
+      "_id": "acksmLrkGrab0000",
+      "name": "Grab",
+      "type": "ability",
+      "img": "icons/svg/book.svg",
       "system": {
         "_schemaVersion": 3,
-        "description": "",
-        "damage": "1d6",
-        "bonus": 0,
-        "melee": true,
-        "missile": false,
-        "equipped": true,
-        "pattern": "transparent",
-        "tags": [],
-        "counter": {
-          "value": 1,
-          "max": 1
-        },
-        "cost": 0,
-        "weight": 0,
-        "weight6": 0
+        "description": "<p>A creature struck by two tentacles in one round must save vs Paralysis (size-adjusted) or be grabbed. Invented test ability.</p>",
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "above",
+        "rollTarget": 0,
+        "blindroll": false,
+        "save": ""
       },
       "effects": [],
       "flags": {
         "acks-monsters": {
-          "naturalWeapon": "weapon",
-          "damageType": "slashing",
-          "extraordinary": false
+          "abilityCategory": "grabRestrain"
         }
       },
       "ownership": {
@@ -176,27 +211,27 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
       },
-      "_key": "!actors.items!acksmOrcWarrior0.acksmOrcSword000"
+      "_key": "!actors.items!acksmMarshLurk00.acksmLrkGrab0000"
     },
     {
-      "_id": "acksmOrcTeeth000",
-      "name": "Orc Canine Teeth",
+      "_id": "acksmLrkIchor000",
+      "name": "Lurker Ichor",
       "type": "item",
       "img": "icons/svg/item-bag.svg",
       "system": {
         "_schemaVersion": 3,
-        "description": "<p>Harvest with Animal Husbandry and/or Healing 2. 1/6 st.</p>",
+        "description": "<p>Invented research component.</p>",
         "subtype": "item",
         "quantity": {
           "value": 1,
           "max": 0
         },
-        "cost": 10,
+        "cost": 120,
         "weight": 0,
-        "weight6": 1
+        "weight6": 12
       },
       "effects": [],
       "flags": {
@@ -204,7 +239,8 @@
           "spoil": true,
           "component": true,
           "researchEffects": [
-            "beguile humanoid"
+            "water breathing",
+            "grasp of the deep"
           ]
         }
       },
@@ -214,10 +250,10 @@
       "sort": 0,
       "_stats": {
         "coreVersion": "14",
-        "createdTime": 1784104629716,
-        "modifiedTime": 1784104629716
+        "createdTime": 1784255926062,
+        "modifiedTime": 1784255926062
       },
-      "_key": "!actors.items!acksmOrcWarrior0.acksmOrcTeeth000"
+      "_key": "!actors.items!acksmMarshLurk00.acksmLrkIchor000"
     }
   ],
   "effects": [],
@@ -225,27 +261,34 @@
     "acks-monsters": {
       "extras": {
         "types": [
-          "humanoid",
-          "beastman"
+          "monstrosity"
         ],
-        "subtype": "warrior",
-        "size": "man",
+        "subtype": "bestial",
+        "size": "large",
         "mass": {
-          "stone": 20,
-          "lbs": 200
+          "stone": 90,
+          "lbs": 900
         },
         "hd": {
-          "count": 1,
-          "asterisks": 0,
+          "count": 4,
+          "countMax": 8,
+          "asterisks": 1,
           "dieType": 8
         },
         "saveAs": {
           "class": "fighter",
-          "level": 1
+          "level": 4,
+          "levelMax": 8
         },
         "speeds": [
           {
             "type": "land",
+            "combat": 20,
+            "run": 60,
+            "hover": false
+          },
+          {
+            "type": "swim",
             "combat": 40,
             "run": 120,
             "hover": false
@@ -254,82 +297,66 @@
         "vision": [
           "lightless"
         ],
-        "lightlessRange": 30,
+        "lightlessRange": 60,
+        "otherSenses": [
+          {
+            "type": "mechAquatic",
+            "range": 120,
+            "note": "feels ripples across still water"
+          }
+        ],
         "load": {
-          "normal": 7,
-          "capacity": 14
+          "normal": 30,
+          "capacity": 60
         },
         "secondary": {
-          "expeditionSpeed": 24,
-          "supplyCost": 0.5,
-          "trainingMonths": 1,
-          "intelligence": "sapient",
-          "battleRating": {
-            "individual": 0.01,
-            "unit": 1
-          },
-          "lifespan": {
-            "baby": 0,
-            "juvenile": 1,
-            "adolescent": 12,
-            "adult": 16,
-            "middleAged": 30,
-            "old": 45,
-            "ancient": 60,
-            "maximum": 75
-          },
+          "expeditionSpeed": 12,
+          "intelligence": "bestial",
+          "trainingMonths": 10,
+          "trainingModifier": -3,
           "reproduction": {
-            "count": "1",
-            "youngType": "infant",
-            "interval": 1,
+            "count": "2d6",
+            "youngType": "spawn",
+            "interval": 2,
             "intervalUnit": "year"
           },
           "untrainedValue": {
-            "adult": 58,
-            "juvenile": 16,
-            "baby": 12
-          },
-          "trainedValue": [
-            {
-              "role": "other",
-              "value": 225,
-              "note": "or more"
-            }
-          ]
+            "adult": 400,
+            "juvenile": 150,
+            "baby": 60
+          }
         },
         "encounter": {
-          "lairChance": 35,
+          "lairChance": 40,
           "dungeon": {
             "wandering": {
-              "noun": "Gang",
-              "number": "2d4"
+              "noun": "Solitary",
+              "number": "1"
             },
             "lair": {
-              "noun": "Lair",
-              "number": "1 warband"
+              "noun": "Nest",
+              "number": "1d3"
             }
           },
           "wilderness": {
             "wandering": {
-              "noun": "Warband (gangs)",
-              "number": "2d6"
+              "noun": "Solitary",
+              "number": "1"
             },
             "lair": {
-              "noun": "Village (warbands)",
-              "number": "1d10"
+              "noun": "Nest",
+              "number": "1d3"
             }
           }
         },
         "description": {
-          "appearance": "<p>Just over 6' tall and around 200 lbs, with pig-like faces, reddish eyes, black hair, and ochre to olive skin, dressed in vivid, clashing colors.</p>",
-          "combat": "<p>Warriors wear leather armor with spear, short sword, and shield; archers wear scale with short bow, 20 arrows, and short sword (50% of gangs are archers). Lightless Vision only (30') — orcs cannot see in normal darkness beyond it.</p>",
-          "ecology": "<p>Gangs are led by a champion (4 AC, 1+1 HD, 8 hp, +1 damage), warbands by a sub-chieftain (5 AC, 2 HD, 12 hp), lairs by a chieftain (6 AC, 4 HD, 20 hp, +2 damage; +2 morale to all while alive). Lairs hold drudges and whelps equal to 100% / 200% of warriors; villages may add ogres, giant boars, captives, a shaman, and a witch doctor.</p>"
+          "combat": "<p>Lies beneath the surface and drags prey under. Each tentacle strikes separately; grabbed prey is pulled toward the bite.</p>"
         }
       }
     }
   },
   "prototypeToken": {
-    "name": "Orc Warrior",
+    "name": "Marsh Lurker",
     "actorLink": false,
     "disposition": -1,
     "sight": {
@@ -343,7 +370,7 @@
   },
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784104629716,
-    "modifiedTime": 1784104629716
+    "createdTime": 1784255926062,
+    "modifiedTime": 1784255926062
   }
 }

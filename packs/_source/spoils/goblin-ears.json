@@ -1,19 +1,19 @@
 {
-  "_id": "acksmSpoilPelt00",
-  "name": "Rock Baboon Pelt",
+  "_id": "acksmSpGobEars00",
+  "name": "Goblin Ears",
   "type": "item",
   "img": "icons/svg/item-bag.svg",
   "system": {
     "_schemaVersion": 3,
-    "description": "<p>A rock baboon's pelt fetches 25gp and weighs 4/6 st.</p>",
+    "description": "<p>Proof for a village bounty.</p>",
     "subtype": "item",
     "quantity": {
       "value": 1,
       "max": 0
     },
-    "cost": 25,
+    "cost": 2,
     "weight": 0,
-    "weight6": 4
+    "weight6": 1
   },
   "effects": [],
   "flags": {
@@ -29,8 +29,8 @@
   "sort": 0,
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784104629716,
-    "modifiedTime": 1784104629716
+    "createdTime": 1784255926062,
+    "modifiedTime": 1784255926062
   },
-  "_key": "!items!acksmSpoilPelt00"
+  "_key": "!items!acksmSpGobEars00"
 }

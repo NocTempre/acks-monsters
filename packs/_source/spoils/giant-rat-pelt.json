@@ -1,29 +1,26 @@
 {
-  "_id": "acksmSpLizScale0",
-  "name": "Lizardman Scales",
+  "_id": "acksmSpRatPelt00",
+  "name": "Giant Rat Pelt",
   "type": "item",
   "img": "icons/svg/item-bag.svg",
   "system": {
     "_schemaVersion": 3,
-    "description": "<p>Harvest with Animal Husbandry and/or Healing 2. 3/6 st.</p>",
+    "description": "<p>A mangy but saleable pelt.</p>",
     "subtype": "item",
     "quantity": {
       "value": 1,
       "max": 0
     },
-    "cost": 35,
+    "cost": 5,
     "weight": 0,
-    "weight6": 3
+    "weight6": 1
   },
   "effects": [],
   "flags": {
     "acks-monsters": {
       "spoil": true,
-      "component": true,
-      "researchEffects": [
-        "swimming",
-        "armor +1"
-      ]
+      "component": false,
+      "researchEffects": []
     }
   },
   "ownership": {
@@ -32,8 +29,8 @@
   "sort": 0,
   "_stats": {
     "coreVersion": "14",
-    "createdTime": 1784104629716,
-    "modifiedTime": 1784104629716
+    "createdTime": 1784255926062,
+    "modifiedTime": 1784255926062
   },
-  "_key": "!items!acksmSpLizScale0"
+  "_key": "!items!acksmSpRatPelt00"
 }

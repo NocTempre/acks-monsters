@@ -288,10 +288,17 @@
   gap: 4px;
 }
 .acks-monsters .acksm-lore prose-mirror {
+  /* The tab content is a flexcol with align-items:flex-start (system CSS), and
+     a prose-mirror has no intrinsic width — without stretching it collapses to
+     a 2px border sliver. */
+  align-self: stretch;
   min-height: 70px;
   border: 1px solid var(--color-border-light-tertiary, #7a7971);
   border-radius: 4px;
   margin-bottom: 6px;
+}
+.acks-monsters .acksm-lore prose-mirror .editor-content {
+  padding: 4px 8px;
 }
 
 /* Treasure is edited on the Ecology tab; hide the reused system header's

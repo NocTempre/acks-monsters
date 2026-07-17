@@ -1,5 +1,5 @@
-2026/07/16-22:38:46.210 31c4 Delete type=3 #1
-2026/07/16-22:38:46.224 25d8 Level-0 table #5: started
-2026/07/16-22:38:46.224 25d8 Level-0 table #5: 620 bytes OK
-2026/07/16-22:38:46.224 25d8 Delete type=0 #3
-2026/07/16-22:38:46.224 25d8 Manual compaction at level-0 from '!tables!acksmTreasBlank0' @ 72057594037927935 : 1 .. '!tables!acksmTreasBlank0' @ 0 : 0; will stop at (end)
+2026/07/17-08:39:31.428 9630 Delete type=3 #1
+2026/07/17-08:39:31.428 5600 Level-0 table #5: started
+2026/07/17-08:39:31.434 5600 Level-0 table #5: 973 bytes OK
+2026/07/17-08:39:31.435 5600 Delete type=0 #3
+2026/07/17-08:39:31.436 5600 Manual compaction at level-0 from '!tables!acksmTreasDummy0' @ 72057594037927935 : 1 .. '!tables.results!acksmTreasDummy0.acksmTResSilver0' @ 0 : 0; will stop at (end)

@@ -775,21 +775,42 @@ export function buildSpoils() {
 }
 
 export function buildTreasure() {
+  // Invented dummy hoard so the treasure link can be tested out of the box:
+  // drop the table onto a Full Monster's Ecology tab, then roll it.
+  const result = (id, range, name) => ({
+    _id: id,
+    _key: `!tables.results!acksmTreasDummy0.${id}`,
+    type: "text",
+    name,
+    description: "",
+    img: "icons/svg/coins.svg",
+    weight: 1,
+    range,
+    drawn: false,
+    flags: {},
+    _stats: { ...STATS },
+  });
   return [
     {
-      _id: "acksmTreasBlank0",
-      _key: "!tables!acksmTreasBlank0",
-      name: "Example Treasure Table (blank)",
+      _id: "acksmTreasDummy0",
+      _key: "!tables!acksmTreasDummy0",
+      name: "Example Treasure Table (dummy)",
       img: "icons/svg/chest.svg",
-      description: "<p>Blank example — drop this table onto a Full Monster's Treasure tab and add results.</p>",
-      formula: "1d100",
+      description:
+        "<p>Invented dummy hoard — drop this table onto a Full Monster's Ecology tab treasure panel to link it, then roll. Replace with real hoard tables.</p>",
+      formula: "1d4",
       replacement: true,
       displayRoll: true,
       folder: null,
       sort: 0,
       ownership: { default: 0 },
       flags: {},
-      results: [],
+      results: [
+        result("acksmTResGold000", [1, 1], "140 gp in a rotted sack"),
+        result("acksmTResSilver0", [2, 2], "A cracked silver mirror (25 gp)"),
+        result("acksmTResGems000", [3, 3], "3 garnets (10 gp each)"),
+        result("acksmTResNothing", [4, 4], "Nothing but dust and old bones"),
+      ],
       _stats: { ...STATS },
     },
   ];

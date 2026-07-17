@@ -294,6 +294,12 @@
   margin-bottom: 6px;
 }
 
+/* Treasure is edited on the Ecology tab; hide the reused system header's
+   treasure panel on the Full Monster sheet only (no template fork). */
+.acks-monsters .sheet-header .form-group:has(> .treasure-link-panel) {
+  display: none;
+}
+
 /* --- Injected item-sheet flag fieldset (NOT scoped to .acks-monsters) --- */
 .acks-monsters-flags {
   margin: 6px 0 2px;

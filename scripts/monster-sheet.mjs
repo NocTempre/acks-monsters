@@ -142,6 +142,20 @@ export function createFullMonsterSheet(Base) {
       const context = await super._prepareContext(options);
       const extras = MonsterExtras.fromActor(this.actor);
       context.extras = extras;
+      // Enrich the entry-prose fields so text enrichers run in them the way the
+      // core sheet already enriches biography — most importantly acks-content's
+      // @PdfText tags, which stream book prose per seat. The raw value still
+      // drives editing (prose-mirror `value`); the enriched HTML is the display.
+      const TE = foundry.applications.ux.TextEditor.implementation;
+      const desc = extras.description ?? {};
+      context.enrichedDesc = Object.fromEntries(
+        await Promise.all(
+          ["appearance", "combat", "ecology", "encounterText", "lore", "notes"].map(async (k) => [
+            k,
+            await TE.enrichHTML(desc[k] ?? ""),
+          ]),
+        ),
+      );
       // Split generic items into carried inventory vs. flagged spoils so the
       // two lists live on separate tabs (a monster can carry gear AND drop parts).
       const items = context.owned?.items ?? [];

@@ -300,6 +300,23 @@
 .acks-monsters .acksm-lore prose-mirror .editor-content {
   padding: 4px 8px;
 }
+/* Display (not editing): the editors should grow to fit their content — most
+   importantly acks-content's streamed book text — rather than each capping at
+   the 70px floor and scrolling internally. Core lays the editor-content out
+   position:absolute (inset 0) so it never contributes height; return it to flow
+   only while inactive, so the whole tab (part root is scrollable) does the
+   scrolling. The active ProseMirror editor keeps core's bounded/scrolling
+   layout untouched. */
+.acks-monsters .acksm-lore prose-mirror.inactive {
+  height: auto;
+  overflow: visible;
+}
+.acks-monsters .acksm-lore prose-mirror.inactive .editor-content {
+  position: static;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+}
 
 /* Treasure is edited on the Ecology tab; hide the reused system header's
    treasure panel on the Full Monster sheet only (no template fork). */

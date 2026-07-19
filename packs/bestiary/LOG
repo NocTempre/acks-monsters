@@ -1,5 +1,0 @@
-2026/07/16-22:38:46.129 31c4 Delete type=3 #1
-2026/07/16-22:38:46.129 25d8 Level-0 table #5: started
-2026/07/16-22:38:46.129 25d8 Level-0 table #5: 16151 bytes OK
-2026/07/16-22:38:46.129 25d8 Delete type=0 #3
-2026/07/16-22:38:46.129 25d8 Manual compaction at level-0 from '!actors!acksmAshDrake000' @ 72057594037927935 : 1 .. '!actors.items!acksmSkeleton000.acksmSkelSword00' @ 0 : 0; will stop at (end)

@@ -14,10 +14,22 @@
  * { key: label } map that Foundry DataModel `choices` and <select> builders use.
  */
 
-/** Derive a Foundry-friendly { key: label } choices map from an enum. */
-export function choicesOf(enumObj) {
-  return Object.fromEntries(Object.entries(enumObj).map(([k, v]) => [k, v.label]));
-}
+// Enums shared across the ACKS module family — damage / natural-weapon / vision
+// / sense / movement types and alignment — plus the { key: label } choices-map
+// helper now live in acks-lib (single source of truth). acks-lib's
+// NATURAL_WEAPONS is the superset: it carries this sheet's sting / feeler /
+// envelopment beyond its own list, so nothing is lost. Re-exported here so this
+// module's own consumers keep importing them from ./config.mjs unchanged.
+// Monster-specific enums (types, sizes, body forms, saves LUT, …) stay below.
+export {
+  choicesOf,
+  DAMAGE_TYPES,
+  NATURAL_WEAPONS,
+  VISION_TYPES,
+  SENSE_TYPES,
+  MOVEMENT_TYPES,
+  ALIGNMENTS,
+} from "../../acks-lib/scripts/vocab.mjs";
 
 /* -------------------------------------------- */
 /*  Type, size, alignment, intelligence         */
@@ -49,13 +61,6 @@ export const SIZES = {
   colossal: { label: "Colossal", weightMax: null, acMod: -8, maxHD: 40, frontage: "8×6 sq" },
 };
 
-/** Alignment (MM Overview p.15; Creation p.398). */
-export const ALIGNMENTS = {
-  lawful: { label: "Lawful" },
-  neutral: { label: "Neutral" },
-  chaotic: { label: "Chaotic" },
-};
-
 /** Degree of intelligence (Creation p.396). */
 export const INTELLIGENCE = {
   mindless: { label: "Mindless" },
@@ -65,87 +70,8 @@ export const INTELLIGENCE = {
 };
 
 /* -------------------------------------------- */
-/*  Damage types & natural weapons              */
+/*  Saves, treasure, ages                       */
 /* -------------------------------------------- */
-
-/** Damage types (MM Overview p.12). */
-export const DAMAGE_TYPES = {
-  acidic: { label: "Acidic" },
-  arcane: { label: "Arcane" },
-  bludgeoning: { label: "Bludgeoning" },
-  cold: { label: "Cold" },
-  electrical: { label: "Electrical" },
-  fire: { label: "Fire" },
-  luminous: { label: "Luminous" },
-  necrotic: { label: "Necrotic" },
-  piercing: { label: "Piercing" },
-  poisonous: { label: "Poisonous" },
-  seismic: { label: "Seismic" },
-  slashing: { label: "Slashing" },
-  varies: { label: "Varies by Weapon" },
-};
-
-/** Natural weapons → default damage type (MM Overview p.12). */
-export const NATURAL_WEAPONS = {
-  bite: { label: "Bite", damage: "piercing" },
-  claw: { label: "Claw", damage: "slashing" },
-  talon: { label: "Talon", damage: "slashing" },
-  gore: { label: "Gore", damage: "piercing" },
-  horn: { label: "Horn", damage: "piercing" },
-  tusk: { label: "Tusk", damage: "piercing" },
-  stinger: { label: "Stinger", damage: "piercing" },
-  sting: { label: "Sting", damage: "piercing" },
-  hoof: { label: "Hoof", damage: "bludgeoning" },
-  tail: { label: "Tail", damage: "bludgeoning" },
-  tentacle: { label: "Tentacle", damage: "bludgeoning" },
-  tongue: { label: "Tongue", damage: "bludgeoning" },
-  constriction: { label: "Constriction", damage: "bludgeoning" },
-  ram: { label: "Ram", damage: "bludgeoning" },
-  pincer: { label: "Pincer", damage: "slashing" },
-  feeler: { label: "Feeler", damage: "bludgeoning" },
-  spine: { label: "Spine", damage: "piercing" },
-  envelopment: { label: "Envelopment", damage: "acidic" },
-  weapon: { label: "Weapon", damage: "varies" },
-};
-
-/* -------------------------------------------- */
-/*  Senses & vision                             */
-/* -------------------------------------------- */
-
-/** Vision capabilities (MM Overview pp.12–13). */
-export const VISION_TYPES = {
-  standard: { label: "Standard" },
-  night: { label: "Night Vision" },
-  lightless: { label: "Lightless Vision", ranged: true },
-  acute: { label: "Acute Vision" },
-  blind: { label: "Blind" },
-};
-
-/** Other special senses (MM Overview p.13). */
-export const SENSE_TYPES = {
-  acuteHearing: { label: "Acute Hearing" },
-  acuteOlfaction: { label: "Acute Olfaction" },
-  acuteVision: { label: "Acute Vision" },
-  echolocation: { label: "Echolocation", ranged: true },
-  mechAerial: { label: "Aerial Mechanoreception", ranged: true },
-  mechAquatic: { label: "Aquatic Mechanoreception", ranged: true },
-  mechTerrestrial: { label: "Terrestrial Mechanoreception", ranged: true },
-  mechWebbed: { label: "Webbed Mechanoreception", ranged: true },
-};
-
-/* -------------------------------------------- */
-/*  Movement, saves, treasure, ages             */
-/* -------------------------------------------- */
-
-/** Movement types; the multi-row Speed table (MM Overview p.11). */
-export const MOVEMENT_TYPES = {
-  land: { label: "Land" },
-  burrow: { label: "Burrow" },
-  climb: { label: "Climb" },
-  fly: { label: "Fly" },
-  swim: { label: "Swim" },
-  webcrawl: { label: "Webcrawl" },
-};
 
 /** Save-as class progressions (MM Rules; abbreviations MM Overview p.12). */
 export const SAVE_CLASSES = {

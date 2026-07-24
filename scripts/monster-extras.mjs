@@ -18,30 +18,29 @@ import {
   SIZES,
   BODY_FORMS,
   SAVE_CLASSES,
-  MOVEMENT_TYPES,
-  VISION_TYPES,
-  SENSE_TYPES,
   INTELLIGENCE,
   YOUNG_TYPES,
   INTERVAL_UNITS,
   TRAINED_ROLES,
   DAMAGE_TYPES,
-  choicesOf,
 } from "./config.mjs";
+// Leaf field-builders and the movement / senses / vision shapes come from
+// acks-lib now (single source across the family). num()/str()/choice() are
+// nullable — a blank field means "unspecified", never a real 0. Monster-specific
+// shapes (defenses, hd, mass, …) stay defined below with `fields`.
+import {
+  num,
+  str,
+  bool,
+  html,
+  choice,
+  choiceSet,
+  speedsField,
+  sensesField,
+  visionField,
+} from "../../acks-lib/scripts/fields.mjs";
 
 const fields = foundry.data.fields;
-
-/** Nullable number — blank means "unspecified", distinct from a real 0. */
-const num = (opts = {}) => new fields.NumberField({ required: false, nullable: true, initial: null, ...opts });
-/** Free-text string (blank allowed) — only for truly unique data. */
-const str = (opts = {}) => new fields.StringField({ required: false, blank: true, initial: "", ...opts });
-/** Enumerated single choice; blank = unspecified. */
-const choice = (enumObj, opts = {}) =>
-  new fields.StringField({ required: false, blank: true, initial: "", choices: choicesOf(enumObj), ...opts });
-/** Enumerated multi choice (a Set). */
-const choiceSet = (enumObj) => new fields.SetField(new fields.StringField({ choices: choicesOf(enumObj) }));
-const html = () => new fields.HTMLField({ required: false, blank: true, initial: "" });
-const bool = (initial = false) => new fields.BooleanField({ initial });
 
 export default class MonsterExtras extends foundry.abstract.DataModel {
   /** Array-valued paths, reconstructed from FormDataExtended's numeric-keyed objects. */
@@ -126,22 +125,13 @@ export default class MonsterExtras extends foundry.abstract.DataModel {
         cha: num({ integer: true }),
       }),
 
-      // --- Multi-row speed table ---
-      speeds: new ArrayField(
-        new SchemaField({
-          type: choice(MOVEMENT_TYPES, { initial: "land" }),
-          combat: num({ integer: true }),
-          run: num({ integer: true }),
-          hover: bool(false),
-        }),
-      ),
+      // --- Multi-row speed table (acks-lib speedsField: type / combat / run / hover) ---
+      speeds: speedsField(),
 
-      // --- Senses ---
-      vision: choiceSet(VISION_TYPES),
+      // --- Senses (acks-lib visionField / sensesField) ---
+      vision: visionField(),
       lightlessRange: num({ integer: true }),
-      otherSenses: new ArrayField(
-        new SchemaField({ type: choice(SENSE_TYPES, { initial: "acuteHearing" }), range: num({ integer: true }), note: str() }),
-      ),
+      otherSenses: sensesField(),
 
       // --- Carrying ---
       load: new SchemaField({ normal: num(), capacity: num() }),

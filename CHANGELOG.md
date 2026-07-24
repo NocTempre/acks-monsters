@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.6.1
+
+- **Field-builders and the movement / senses / vision shapes consumed from
+  acks-lib.** The nullable leaf builders (`num` / `str` / `bool` / `html` /
+  `choice` / `choiceSet`) and the Speed / Senses / Vision field shapes are now
+  imported from acks-lib's `fields.mjs` instead of defined inline. The resulting
+  schema is byte-identical, so stored monster extras are unaffected. This also
+  corrects 0.6.0's note that the leaf builders "stay local": acks-lib's `num` /
+  `str` are the same nullable "unspecified" builders (not required-with-zero),
+  so they fold cleanly. acks-lib's `speedsField` was extended to the full ACKS
+  Speed row (`combat` / `hover`) to match this sheet before adoption.
+- **`defenses` stays local, deliberately.** A monster's immunity / resistance
+  `effects` is open Monstrous-Manual prose ("all death effects") with a free
+  `note`; acks-lib's `defensesField` models the closed `EFFECT_KEYS` /
+  `CONDITION_KEYS` an ability grants (its consumer, acks-abilities, needs the
+  enum). Different models on purpose — not folded.
+- Requires acks-lib >= 0.14.0 (the release that completed the shared Speed row).
+
 ## 0.6.0
 
 - **Shared enums consumed from acks-lib.** The six enums this sheet held that
